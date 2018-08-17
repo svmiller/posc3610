@@ -10,7 +10,10 @@ permalink: /course-materials/
 
 Vasquez, John A. 2009. [*The War Puzzle Revisited*](https://www.amazon.com/Revisited-Cambridge-Studies-International-Relations/dp/0521708230). New York, NY: Cambridge University Press. 
 
-I list this book as "required reading" despite the fact the book will be "required" for the sake of the research paper. Almost all other readings for this class can be obtained by the student via any one of a number of electronic storage facilities on the World Wide Web (e.g., JSTOR, Blackwell-synergy). Clemson University has subscriptions to all these services, which can be accessed through the university's library website. I will note when a particular reading is inaccessible for Clemson students and make it available on Canvas.
+I list this book as "required reading" despite the fact the book will be "required" for the sake of the research paper. Almost all other readings for this class can be obtained by the student via any one of a number of electronic storage facilities on the World Wide Web (e.g., JSTOR, Blackwell-synergy). Clemson University has subscriptions to all these services, which can be accessed through the university's library website. I will note when a particular reading is inaccessible for Clemson students and make it [available on Canvas](https://www.clemson.edu/canvas/).
+
+I recommend two options toward obtaining this book instead of overpaying for it at the Clemson University bookstore. One, [the library has this available as a PASCAL eBook](http://libcat.clemson.edu/record=b3650354). Click that link and connect with your Clemson username and password to read the book online. You can even download some chapters as PDFs too. Those, like me, who still enjoy books in hard copy should [get the book on Amazon](https://www.amazon.com/Revisited-Cambridge-Studies-International-Relations/dp/0521708230). Amazon will be cheaper than the Clemson University bookstore and it has [two-day shipping for students](https://www.amazon.com/Amazon-Student/b?ie=UTF8&node=668781011).
+
 
 
 ## Additional Course Materials
