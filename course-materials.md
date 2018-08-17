@@ -14,7 +14,7 @@ I list this book as "required reading" despite the fact the book will be "requir
 
 I recommend two options toward obtaining this book instead of overpaying for it at the Clemson University bookstore. One, [the library has this available as a PASCAL eBook](http://libcat.clemson.edu/record=b3650354). Click that link and connect with your Clemson username and password to read the book online. You can even download some chapters as PDFs too. Those, like me, who still enjoy books in hard copy should [get the book on Amazon](https://www.amazon.com/Revisited-Cambridge-Studies-International-Relations/dp/0521708230). Amazon will be cheaper than the Clemson University bookstore and it has [two-day shipping for students](https://www.amazon.com/Amazon-Student/b?ie=UTF8&node=668781011).
 
-## Steps to War Paper Materials
+## "Steps to War" Paper Materials
 
 The following documents outline expectations for the "Steps to War" paper due at the end of the semester. An additional document describing most of the wars is [available on Canvas](https://www.clemson.edu/canvas/).
 
