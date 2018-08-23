@@ -197,10 +197,10 @@ ggcal(mydate, myfills) +
   theme(plot.title=element_text(face="bold"),
         plot.caption=element_text(hjust=1, size=9,
                                     margin=margin(t=10), face="italic")) +
-  scale_fill_manual(values=c("Class Day"="steelblue", 
-                             "Other Day"="lightsteelblue",
-                             "Exam"="lightpink2",
-                             "Paper Due (Turnitin)" = "indianred4"),
+  scale_fill_manual(values=c("Class Day"="#a1dab4", 
+                             "Other Day"="#ffffcc",
+                             "Exam"="#41b6c4",
+                             "Paper Due (Turnitin)" = "#225ea8"),
                     breaks=c("Class Day","Exam","Paper Due (Turnitin)")) +
   theme(legend.position="bottom") +
 #  geom_point(shape=1, size=7) +
