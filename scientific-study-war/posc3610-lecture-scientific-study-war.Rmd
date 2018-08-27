@@ -1,0 +1,454 @@
+---
+title: "The Scientific Study of War"
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: /Dropbox/teaching/clemson-academic.png
+date: 
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-beamer.tex
+    latex_engine: xelatex
+    dev: cairo_pdf
+    fig_caption: true
+    slide_level: 3
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+---
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, warning=F)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+```
+
+```{r loadstuff, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE)
+
+library(tidyverse)
+library(stevemisc)
+library(knitr)
+library(mirt)
+library(QuickUDS)
+
+MB <- read_csv("~/Dropbox/data/military-balance/2015/mb2015.csv")
+NMC <- read_csv("~/Dropbox/data/cow/cinc/NMC_5_0.csv")
+Polity <- readxl::read_xls("~/Dropbox/data/polity/p4v2016.xls")
+
+
+logmin <- function(var){
+	if (min(var, na.rm = TRUE) == 0) {
+	result <- as.integer(log(var+1))
+	result <- result - min(result, na.rm = TRUE)
+	}
+	else {
+	result <- as.integer(log(var))
+	result <- result - min(result, na.rm = TRUE)	
+	}
+}
+
+MB$ldefbudg <- logmin(MB$defbudg)
+MB$ldefbudg <- with(MB, logmin(defbudg))
+MB$lpop <- logmin(MB$pop)
+MB$lact <- logmin(MB$active)
+MB$lres <- logmin(MB$reserve)
+MB$larmy <- logmin(MB$army)
+MB$lnavy <- logmin(MB$navy)
+MB$laf <- logmin(MB$af)
+MB$lpara <- logmin(MB$para)
+MB$larmyequip <- logmin(MB$armyequip)
+MB$lnavyequip <- logmin(MB$navyequip)
+MB$lafequip <- logmin(MB$afequip)
+
+MB$otherrank <- NA
+MB$otherrank[MB$otherequip == 0] <- 0
+MB$otherrank[MB$otherequip == 1] <- 1
+MB$otherrank[MB$otherequip >= 2 & MB$otherequip < 10] <- 2
+MB$otherrank[MB$otherequip >= 10 & MB$otherequip < 50] <- 3
+MB$otherrank[MB$otherequip >= 50 & MB$otherequip < 100] <- 4
+MB$otherrank[MB$otherequip >= 100] <- 5
+
+MB$nukes <- 0
+MB$nukes[MB$country == "United States"] <- 6
+MB$nukes[MB$country == "United Kingdom"] <- 5
+MB$nukes[MB$country == "Russia"] <- 6
+MB$nukes[MB$country == "Pakistan"] <- 5
+MB$nukes[MB$country == "Israel"] <- 4
+MB$nukes[MB$country == "India"] <- 5
+MB$nukes[MB$country == "France"] <- 5
+MB$nukes[MB$country == "China"] <- 5
+
+
+sub <- with(MB, data.frame(country, year, ldefbudg, lpop, lact, lres, larmy, lnavy, laf, lpara, larmyequip, lnavyequip, lafequip, otherrank, nukes))
+
+model <- mirt(sub[ , 3:ncol(sub)], model = 1, 
+               itemtype = "graded", SE = TRUE, verbose = FALSE,
+               technical = list(NCYCLES = 5500))
+
+scores <-  fscores(model, full.scores = TRUE, full.scores.SE = TRUE)
+trial <- cbind(sub,scores)
+library(sqldf)
+sqldf("select country, year, F1, SE_F1 from trial")
+
+trial$ub <- with(trial, F1 + (1.96)*SE_F1)
+trial$lb <- with(trial, F1 - (1.96)*SE_F1)
+
+# trial <- transform(trial,LOCATION=reorder(LOCATION,int))
+trial <- trial[order(trial$F1), ]
+
+measures <- c("pmm_arat", "blm", "bmr_democracy",
+              "bnr_extended", "pmm_bollen", "doorenspleet",
+              "wgi_democracy","fh_total_reversed", 
+              "fh_electoral", "gwf_democracy_extended", 
+              "pmm_hadenius", "kailitz_tri",
+              "lexical_index", "mainwaring", 
+              "magaloni_democracy_extended",
+              "pmm_munck", "pacl", "PEPS1v",
+              "pitf", "polity2", "reign_democracy", 
+              "polyarchy_original_contestation",
+              "prc", "svolik_democracy", 
+              "ulfelder_democracy_extended",
+              "utip_dichotomous_strict", "v2x_polyarchy",
+              "vanhanen_democratization", "wth_democ1")
+
+# Generate Extended UDS
+
+extended_model <- democracy_model(measures, 
+                                  verbose = FALSE, 
+                                  technical = list(NCYCLES = 2500))
+
+extended_scores <- democracy_scores(model = extended_model)
+
+```
+
+# Introduction
+### Goal for Today
+
+*Discuss what we mean by "science" and how we can relate it to the study of war.*
+
+# What Is Science?
+### What Is Science?
+
+It's easy to misuse the term "science", including shorthand for:
+
+- Things that seem cool but we don't understand
+- TED talks that are almost always bad
+- An acquired repository of "facts"
+- Technology
+- An umbrella term for STEM stuff (i.e. "the hard sciences")
+- Whatever it is that Neil Degrasse Tyson talks about.
+
+
+Science is ultimately none of that.
+
+### What Is Science?
+
+Science is a *method*, not a discipline. 
+
+- Informally: test assumptions against observable evidence in a systematic manner.
+- Each step is made explicit.
+
+Other components:
+
+- Scientific method is ultimately value-neutral.
+- It seeks generalizations, not to explain specific observations.
+
+For shorthand, we call this the empirical implications of theoretical models (EITM) or hypothetico-deductivism.
+
+###
+
+> The method of the book, then, is to develop the deductive implications of the four basic axioms for a given, highly specific set of conditions; review evidence indicating whether or not these implications are empirically correct; and present new evidence as necessary and possible to resolve outstanding empirical questions (Zaller 1992, 51).
+
+## H-D and EITM
+### Hypothetico-Deductivism (H-D)
+
+Kyburg (1988, 65) outlined the H-D model.
+
+- A hypothesis *H* is set up for testing or examination.
+- We deduce an observation sentence *O* from *H* and its necessary qualifiers, boundary conditions, etc.
+- We test *H* with an experiment or examination and observe either *O* or ~*O*.
+
+If ~*O*, then ~*H*. If *O*, we fail to refute *H*.
+
+### Hypothetico-Deductivism (H-D)
+
+Replace *H* with theory *T* and we have the standard political science model (Hausman 1992, 304).
+
+1. *Formulate* some hypothesis *H* from theory *T*.
+2. *Deduce* prediction *P* from *H* with necessary qualifiers (e.g. "ceteris paribus").
+3. *Test* *P*.
+4. *Judge* whether *H* is confirmed or disconfirmed, contingent on *P* or ~*P*.
+
+### Empirical Implications of Theoretical Models (EITM)
+
+EITM is shorthand for this approach, and a push across political science.
+
+1. Start with theory, informed by case study, field work, or "puzzle".
+2. Outline model establishing causal linkages.
+3. Stipulate deductions and hypotheses.
+4. Outline measurement and research design to test deductions.
+5. Collect and analyze data.
+
+The results are inductively compared to the theory and its hypotheses.
+
+### What Causes War?
+
+Here is an example puzzle: war is costly and ex post inefficient. Why do states fight it?
+
+- Intuition: wars happen because states cannot commit to pre-war solution.
+- Further intuition: democracies, *can* credibly commit and thus avoid war.
+- Deduction/hypothesis: if both sides in a dispute are a democracy, they will not fight a war.
+- Research design: all dyadic (i.e. A vs. B) disputes.
+    - Dependent variable: did dispute escalate to war (yes or no)
+    - Independent variable: were both sides democratic (yes or no)
+- Collect and analyze data: hello, regression...
+
+## Measurement Concerns
+### Elements of Scientific Theories
+
+At the risk of spoiling a methods class, some terms to clarify:
+
+- *Dependent variable* (DV): something we want to explain
+- *Independent variable*: something we believe explains variation in the DV.
+- *Conceptual definition*: outlining what a term we use is.
+    - Spoiler alert: *all* political science is conceptual (e.g. "democracy", "war", "allied", "power", "security")
+- *Operational definition:* an actual implementation of the conceptual definition
+
+### An Illustration of an Operational Definition
+
+Democratic peace theorists argue "democracies" are more peaceful than other state types.
+
+- Simple enough, but how do you measure it?
+
+### The Polity Project
+
+The Polity project is the longest-running data set on democracy, measuring "democracy" as:
+
+- Competitiveness of executive recruitment
+- Openness of executive recruitment
+- Constraints on chief executive
+- Competitiveness of political participation
+
+This creates a 21-point scale [-10, 10] of "democracy" largely as measure of executive constraints.
+
+###
+
+```{r turkish-democracy-polity-1800-2016, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,fig.width = 14, fig.height = 8.5}
+
+Polity %>% 
+  filter(ccode == 640) %>%
+  ggplot(.,aes(year, polity2)) + theme_steve_web() +
+  geom_line(size = 1.1) +
+  scale_x_continuous(breaks = seq(1800, 2020, by = 10)) +
+  scale_y_continuous(limits = c(-10, 10),
+                     breaks = seq(-10, 10, by = 2)) +
+  geom_hline(yintercept = 6, linetype="dashed") +
+  xlab("Year") + ylab("Polity2 Score") +
+  annotate("text", family = "Open Sans", x= 1876, y = -3,
+           label = "Ottoman\nConstitution\n(1876)", size=3) +
+  annotate("text", family = "Open Sans", x= 1908, y = 0,
+           label = "Young Turk\nRevolution\n(1908)", size=3) +
+  annotate("text", family = "Open Sans", x= 1946, y = 8,
+           label = "Direct\nElection\n(1946)", size=3) +
+  annotate("text", family = "Open Sans", x= 1960, y = 3.25,
+           label = "Coup\n(1960)", size=3) +
+  annotate("text", family = "Open Sans", x= 1971, y = -2.5,
+           label = "Coup\n(1971)", size=3) +
+  annotate("text", family = "Open Sans", x= 1980, y = -5.5,
+           label = "Coup\n(1980)", size=3) +
+  annotate("text", family = "Open Sans", x= 2014, y = 10,
+           label = "Election of\nErdogan\n(2014)", size=3) +
+  annotate("text", family = "Open Sans", x= 1919, y = -9,
+           label = "Post-WWI\nInterregnum", size=3) +
+  annotate("rect", xmin=1917, 
+           xmax=1922, ymin=-Inf, ymax=Inf, alpha=.3, fill="red") +
+  annotate("text", family = "Open Sans", x= 1800, hjust=0, y= 6.5, size=3,
+           label= "Conventional cutoff for democracy (polity2 = 6)") +
+  labs(title = "A History of Turkish Democracy in the Polity Data, 1800-2016",
+       subtitle = "The trajectory of Turkish democracy is always fledgling, replete with coups, and is in a current state of a clear regression to authoritarianism under Erdogan.",
+       caption = "Data: Polity Project, Center for Systemic Peace (v. 2016)")
+
+```
+
+###
+
+```{r american-democracy-polity-1800-2016, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,fig.width = 14, fig.height = 8.5}
+
+Polity %>% 
+  filter(ccode == 2) %>%
+  ggplot(.,aes(year, polity2)) + theme_steve_web() +
+  geom_line(size = 1.1) +
+  scale_x_continuous(breaks = seq(1800, 2020, by = 10)) +
+  scale_y_continuous(limits = c(-10, 10),
+                     breaks = seq(-10, 10, by = 2)) +
+  geom_hline(yintercept = 6, linetype="dashed") +
+  xlab("Year") + ylab("Polity2 Score") +
+  annotate("text", family = "Open Sans", x= 2016, hjust=1, y= 6.5, size=3,
+           label= "Conventional cutoff for democracy (polity2 = 6)") +
+  labs(title = "A History of U.S. Democracy in the Polity Data, 1800-2016",
+       subtitle = "The U.S. as maximally democratic through the duration of the data belies important variation in U.S. democracy through its history.",
+       caption = "Data: Polity Project, Center for Systemic Peace (v. 2016)")
+
+```
+
+###
+
+```{r american-democracy-quickuds-1789-2017, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,fig.width = 14, fig.height = 8.5}
+extended_scores %>%
+  filter(cown == 2) %>%
+  ggplot(.,aes(x=year, y=z1, ymin=z1_pct025, ymax=z1_pct975)) + theme_steve_web() +
+  geom_ribbon(alpha = I(0.2), color = "#000000", fill="#619cff") + 
+  geom_line(size=1.1, color="#619cff") +
+  scale_x_continuous(breaks = seq(1790, 2020, by = 10)) +
+  xlab("Year") + ylab("Latent Democracy Estimate") +
+  labs(title = "A History of American Democracy, 1789-2017",
+       subtitle = "The estimates from the graded response model tell a more faithful story of American democracy that capture gradual enfranchisement, civil rights movements, and the current backsliding.",
+       caption = "Data: QuickUDS (via Xavier Marquez, c.f. Pemstein et al. [2010])")
+
+```
+
+### An Illustration of an Operational Definition
+
+Stam (1996) argues "military quality" explains why one side wins a war.
+
+- Simple enough, but how do you measure it?
+
+How about the overall size of the military?
+
+###
+
+```{r, echo=F, eval = T}
+
+NMC %>% 
+  filter(year == 2012 & milper != 0 & milex != 0) %>% 
+  mutate(`Military Quality` = milex/milper,
+         Country = countrycode::countrycode(ccode, "cown", "country.name"),
+         Country = ifelse(Country == "United States of America", "United States", Country),
+         Country = ifelse(ccode == 200, "United Kingdom", Country),
+         Country = ifelse(ccode == 816, "Vietnam", Country)) %>% 
+  rename(Year = year,
+         `Military Personnel` = milper) %>%
+  select(Country, Year, `Military Personnel`) %>% 
+  arrange(-`Military Personnel`) %>% head(10) %>%
+  kable(., align=c("l","c","c"),
+        caption="Largest Militaries (in Thousands) in the World (Data: CoW-NMC, 2012)")
+```
+
+Does this look right?
+
+
+### Stam's Argument
+
+Body count doesn't get at "quality."
+
+- If it did, we would've expected Iraq to hang w/ the U.S. much better than it did in 1990.
+
+Operationalization of "military quality": military spending divided over military personnel.
+
+###
+
+```{r, echo=F, eval = T}
+NMC %>% 
+  filter(year == 2012 & milper != 0 & milex != 0) %>% 
+  mutate(`Military Quality` = milex/milper,
+         Country = countrycode::countrycode(ccode, "cown", "country.name"),
+         Country = ifelse(Country == "United States of America", "United States", Country),
+         Country = ifelse(ccode == 200, "United Kingdom", Country)) %>% 
+  rename(Year = year) %>%
+  select(Country, Year, `Military Quality`) %>% 
+  arrange(-`Military Quality`) %>% head(10) %>%
+  kable(., align=c("l","c","c"),
+        caption="Highest Troop Qualities in the World (Data: CoW-NMC, 2012)")
+```
+
+This isn't perfect. So how about this:
+
+###
+
+```{r latent-military-capabilities-2015, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,fig.width = 14, fig.height = 8.5}
+
+ggplot(trial[170:161,],aes(F1,reorder(country, F1),xmin=lb,xmax=ub))+
+    geom_errorbarh(height=0)+
+    geom_vline(xintercept=0,lty=2)+
+    geom_point()+facet_wrap(~year,scale="free_x") +ylab("Country") + xlab("Estimated Latent Military Capacity") + theme_steve_web() +
+  labs(title = "Steve's Toy Measure of Latent Military Capability",
+       subtitle = "There's a fair bit of face validity here: the U.S. is discernibly stronger than every country in the world except China.")
+
+```
+
+### If You're Curious About What I Did...
+
+It's an item response model of:
+
+- size of defense budget
+- size of population
+- size of active personnel
+- size of reserve personnel
+- size of active army personnel
+- size of active navy personnel
+- size of active air force personnel
+- size of active paramilitary/irregulars
+- number of tanks, recon equipment, <!--AIFVs, APCs, --> armored fighting vehicles, artillery
+- number of subs, principal surface combatants, amphibious equipment
+- number of combat-capable aircraft
+- number of military satellites in space
+- number of nukes (FAS)
+
+### Reliability and Validity
+
+This highlights the issue of reliability and validity in measurements.
+
+- *Reliability*: does measure consistently capture what we want it to capture?
+- *Validity*: does measure "capture" the concept in question without picking up unintended characteristics?
+
+## Evaluating a Theory
+### Deduction and Induction
+
+Science is fundamentally *deductive* rather than *inductive*.
+
+- Major emphasis: nothing can be learned from a confirming instance.
+- Requires the future to be exactly like the past.
+- The logic is also circular: induction is used to justify induction.
+
+This does lead to something dissatisfying about the scientific method.
+
+- We can't prove our theories *true*.
+- At the most, we say our findings are consistent with the theory.
+
+### Criteria for a Good Theory
+
+How to evaluate theories:
+
+- Logical consistency
+- Accuracy of predictions
+
+Another dissatisfying component here:
+
+- "All models are wrong; some are useful."
+
+# Conclusion
+### Conclusion
+
+Science is a method that we'll use to study what causes war. Some caveats:
+
+- We seek to generalize, not explain specific events.
+- This will involve a lot of regression. Get comfortable with it.
+- Predictions are "consistent" and not "true."
+- "All models are wrong; some are useful."
+
+### PSA
+
+For those new to the course:
+
+- Go to http://posc3610.svmiller.com
+    - Lecture slides there as well.
+- Check Canvas too. Know where the Turnitin link is.
