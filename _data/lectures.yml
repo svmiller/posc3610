@@ -2,3 +2,8 @@
   filename: welcome
   dirname: welcome
   tldr: "This lecture discusses the syllabus and outlines course expectations for the rest of the semester."
+
+- title: "The Scientific Study of War"
+  filename: scientific-study-war
+  dirname: scientific-study-war
+  tldr: "Science is a method, not a collection of facts. We seek to generalize, not explain specific events. Predictions are 'consistent' and not 'true.' All models are wrong; some are useful."
