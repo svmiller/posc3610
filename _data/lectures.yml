@@ -7,3 +7,8 @@
   filename: scientific-study-war
   dirname: scientific-study-war
   tldr: "Science is a method, not a collection of facts. We seek to generalize, not explain specific events. Predictions are 'consistent' and not 'true.' All models are wrong; some are useful."
+
+- title: "'Dangerous Dyads' and an Introduction to Applied Research"
+  filename: dangerous-dyads
+  dirname: dangerous-dyads
+  tldr: "Bremer's (1992) 'dangerous dyads' served as a foundation statistical model for evaluating conflict onset. Also: here's how to read a research design section and regression table."
