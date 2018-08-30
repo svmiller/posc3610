@@ -424,7 +424,7 @@ Almost every regression you encounter in this class will be a logistic/probit re
 
 Interpret the model in the context of *positive* or *negative* relationships relative to the "likelihood" of the outcome being present.
 
-- *Negative relationshp*: as the independent variable goes up (e.g. joint democracy), the likelihood of a MID goes down.
+- *Negative relationship*: as the independent variable goes up (e.g. joint democracy), the likelihood of a MID goes down.
 - *Positive relationship*: as the independent variable goes up (e.g. the dyad is contiguous), the likelihood of a MID goes up.
 
 ### Our Expectations of the Seven Factors
