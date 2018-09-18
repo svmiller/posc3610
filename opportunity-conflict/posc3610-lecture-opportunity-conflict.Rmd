@@ -1,0 +1,424 @@
+---
+title: Identifying Opportunity for Conflict
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: /Dropbox/teaching/clemson-academic.png
+date: 
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-beamer.tex
+    latex_engine: xelatex
+    dev: cairo_pdf
+    fig_caption: true
+    slide_level: 3
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+---
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, warning=F)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+options(knitr.kable.NA = '')
+```
+
+
+```{r loadstuff, cache=T, eval=T, echo=F, message=F, error=F, warning=F}
+library(tidyverse)
+library(janitor)
+library(knitr)
+
+Data <- read.csv("~/Dropbox/projects/mid-project/gml-mid-data/2.02/gml-ndy-2.02.csv") %>% tbl_df()
+Cont <- read.csv("~/Dropbox/data/cow/contiguity/3.2/contdird.csv") %>% tbl_df()
+Majors <- read.csv("~/Dropbox/data/cow/states/majors2016.csv") %>% tbl_df()
+Contcd <- read.csv("~/Dropbox/data/cow/coldepcont/contcold.csv") %>% tbl_df()
+
+Contcd %>%
+  rename(ccode1 = statelno, ccode2 = statehno) %>%
+  select(ccode1, ccode2, year, land, sea, total) %>%
+  left_join(Data, .) -> Data
+
+Cont %>%
+  rename(ccode1 = state1no, ccode2 = state2no) %>%
+  select(ccode1, ccode2, year, conttype) %>%
+  left_join(Data, .) -> Data
+
+Data %>%
+  mutate(conttype = ifelse(is.na(conttype), 6, conttype),
+         land = ifelse(is.na(land), 0, land),
+         sea = ifelse(is.na(sea), 0, sea),
+         total = ifelse(is.na( total), 0, total),
+         contig = ifelse(conttype == 6 & total == 0, 0, 1),
+         # Code regions...
+         region1 = NA,
+         region1 = ifelse(ccode1 < 200, "Americas", region1),
+         region1 = ifelse(ccode1 >= 200 & ccode1 < 400, "Europe", region1),
+         region1 = ifelse(ccode1 >= 400 & ccode1 < 600, "Africa", region1),
+         region1 = ifelse(ccode1 >= 600 & ccode1 < 700, "ME/NA", region1),
+         region1 = ifelse(ccode1 >= 700 & ccode1 < 900, "Asia", region1),
+         region1 = ifelse(ccode1 >= 900, "Oceania", region1),
+         region2 = NA,
+         region2 = ifelse(ccode2 < 200, "Americas", region2),
+         region2 = ifelse(ccode2 >= 200 & ccode2 < 400, "Europe", region2),
+         region2 = ifelse(ccode2 >= 400 & ccode2 < 600, "Africa", region2),
+         region2 = ifelse(ccode2 >= 600 & ccode2 < 700, "ME/NA", region2),
+         region2 = ifelse(ccode2 >= 700 & ccode2 < 900, "Asia", region2),
+         region2 = ifelse(ccode2 >= 900, "Oceania", region2),
+         # Code majors...
+         maj1 = NA,
+         maj1 = ifelse(ccode1 == 2 & year >= 1898, 1, maj1),
+         maj1 = ifelse(ccode1 == 200, 1, maj1),
+         maj1 = ifelse(ccode1 == 220 & year <= 1940, 1, maj1),
+         maj1 = ifelse(ccode1 == 220 & year >= 1945, 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & year <= 1918, 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & (year >= 1925 & year <= 1945), 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & year >= 1991, 1, maj1),
+         maj1 = ifelse(ccode1 == 300 & year <= 1918, 1, maj1),
+         maj1 = ifelse(ccode1 == 325 & (year >= 1860 & year <= 1943), 1, maj1),
+         maj1 = ifelse(ccode1 == 365 & year <= 1917, 1, maj1),
+         maj1 = ifelse(ccode1 == 365 & year >= 1922, 1, maj1),
+         maj1 = ifelse(ccode1 == 710 & year >= 1950, 1, maj1),
+         maj1 = ifelse(ccode1 == 740 & (year >= 1895 & year <= 1945), 1, maj1),
+         maj1 = ifelse(ccode1 == 740 & year >= 1991, 1, maj1),
+         maj1 = ifelse(is.na(maj1), 0, maj1),
+         maj2 = NA,
+         maj2 = ifelse(ccode2 == 2 & year >= 1898, 1, maj2),
+         maj2 = ifelse(ccode2 == 200, 1, maj2),
+         maj2 = ifelse(ccode2 == 220 & year <= 1940, 1, maj2),
+         maj2 = ifelse(ccode2 == 220 & year >= 1945, 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & year <= 1918, 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & (year >= 1925 & year <= 1945), 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & year >= 1991, 1, maj2),
+         maj2 = ifelse(ccode2 == 300 & year <= 1918, 1, maj2),
+         maj2 = ifelse(ccode2 == 325 & (year >= 1860 & year <= 1943), 1, maj2),
+         maj2 = ifelse(ccode2 == 365 & year <= 1917, 1, maj2),
+         maj2 = ifelse(ccode2 == 365 & year >= 1922, 1, maj2),
+         maj2 = ifelse(ccode2 == 710 & year >= 1950, 1, maj2),
+         maj2 = ifelse(ccode2 == 740 & (year >= 1895 & year <= 1945), 1, maj2),
+         maj2 = ifelse(ccode2 == 740 & year >= 1991, 1, maj2),
+         maj2 = ifelse(is.na(maj2), 0, maj2)) -> Data
+
+Data %>%
+  mutate(region = NA,
+         region = ifelse(region1 == "Americas" & region2 == "Americas", "Americas", region),
+         region = ifelse(region1 == "Europe" & region2 == "Europe", "Europe", region),
+         region = ifelse(region1 == "Africa" & region2 == "Africa", "Africa", region),
+         region = ifelse(region1 == "ME/NA" & region2 == "ME/NA", "ME/NA", region),
+         region = ifelse(region1 == "Asia" & region2 == "Asia", "Asia", region),
+         region = ifelse(region1 == "Oceania" & region2 == "Oceania", "Oceania", region),
+         prd = NA,
+         prd = ifelse(contig == 1 | (maj1 == 1 | maj2 == 1), 1, 0)) -> Data
+
+
+```
+
+# Introduction
+### Goal for Today
+
+*Discuss contiguity and how to identify opportunities for conflict.*
+
+### Dangerous Dyads
+
+| **Factor** | **Rank** | **Relationship** |
+|:----------|:-------:|:-------------------:|
+| Contiguity | 1 | + |
+| Major power in the dyad | 2 | + |
+| Shared alliance | 3 | - |
+| Joint Militarization | 4 | + |
+| Joint democracy | 5 | - |
+| Jointly advanced economies | 6 | - |
+| Power preponderance | 7 | - |
+
+
+Table: Bremer's (1992) "Dangerous Dyads"
+
+# Identifying Opportunity for Conflict
+## Contiguity
+### Types of Contiguity
+
+- Direct land contiguity (e.g. USA-Canada)
+- 12 miles or less of water (e.g. USA-Russia)
+- 24 miles or less of water (e.g. United Kingdom-France; Russia-Japan)
+- 150 miles or less of water (e.g. USA-Cuba)
+- 400 miles or less of water (e.g. United Kingdom-Germany)
+
+### The Diomede Islands in the Bering Strait
+
+![America is on the left; Russia is on the right](diomede-islands.jpg)
+
+### Additional Contiguous Relationships
+
+Two states may be contiguous through colonial dependencies.
+
+- e.g. United Kingdom-China [Hong Kong]
+- further: U.S.-UK (Canada historically, now the Virgin Islands and Bermuda)
+
+Contiguity rules are the same as before, but stretch to include colonial holdings/dependencies.
+
+###
+
+```{r contiguity-conflict-period, eval=T, echo=F, message=F}
+
+Data %>%
+  mutate(era = NA,
+         era = ifelse(year < 1946, "1816-1945", era),
+         era = ifelse(year > 1945 & year < 2002, "1946-2001", era),
+         era = ifelse(year > 2001, "2002-2010", era)) %>%
+  filter(midonset == 1) %>%
+  group_by(era, contig) %>%
+  summarize(n = n()) %>%
+  mutate(freq = round((n / sum(n))*100, 2),
+         freq = paste0(freq, "%")) %>% select(-n) %>% ungroup() %>% spread(era, freq) -> mids
+
+mids %>%
+    mutate(contig = ifelse(contig == "0", "No", contig),
+         contig = ifelse(contig == "1", "Yes", contig)) %>%
+  rename(`**Contiguous?**` = contig,
+         `**1816-1945**` = `1816-1945`,
+         `**1946-2001**` = `1946-2001`,
+         `**2002-2010**` = `2002-2010`) %>%
+  kable(.,caption="Contiguity and Militarized Conflict (GML MID Data [v. 2.02])",
+        align=c("l","c","c","c"))
+  
+
+#Data %>%
+#  mutate(era = NA,
+#         era = ifelse(year < 1946, "1816-1945", era),
+#         era = ifelse(year > 1945 & year < 2002, "1946-2001", era),
+#         era = ifelse(year > 2001, "2002-2010", era)) %>%
+#  filter(midonset == 1 & hostlev == 5 & (dispnum != 258 | dispnum != 257)) %>%
+#  group_by(era, contig) %>%
+#  summarize(n = n()) %>%
+#  mutate(freq = round((n / sum(n))*100, 2),
+#         freq = paste0(freq, "%")) %>% select(-n) %>% ungroup() %>% spread(era, freq) -> wars
+
+
+#rbind(c("*MIDs*",NA,NA,NA), mids,c("&nbsp;",NA,NA,NA), c("*Wars*",NA,NA,NA), wars) %>%
+#  mutate(contig = ifelse(contig == "0", "No", contig),
+#         contig = ifelse(contig == "1", "Yes", contig)) %>%
+#  rename(`**Contiguous?**` = contig,
+#         `**1816-1945**` = `1816-1945`,
+#         `**1946-2001**` = `1946-2001`,
+#         `**2002-2010**` = `2002-2010`) %>%
+#  kable(.,caption="Contiguity and Militarized Conflict (GML MID Data [v. 2.01])",
+#        align=c("l","c","c","c"))
+```
+
+<!-- ### Contiguity and War
+
+A comment about contiguity and war onset.
+
+- A few "big ones" are going to account for this (e.g. Gulf War, Iraq War, world wars)
+- Controlling for those, contiguity accounts for 61% of all pre-WWII wars and 45% of post-WWII wars.
+
+There are still quite a few non-contiguous wars, like:
+
+- Spanish-American War
+- Vietnam War
+- Italo-Turkish War
+- Boxer Rebellion -->
+
+## Contiguity as Opportunity
+### Why Are Contiguous States Prone to Conflict?
+
+1. Opportunity
+2. Interactions/Willingness
+3. Territory
+
+We'll discuss the first two today.
+
+### The Opportunity Argument
+
+Contiguous states have more opportunity for conflict.
+
+- Think of this as a "reach" argument.
+- Also an argument of necessity.
+
+How can we measure "opportunity?"
+
+## Measuring Opportunity
+### Measuring Opportunity
+
+1. Regional dyads
+2. Political relevant dyads
+3. Politically relevant information environment (PRIE)
+4. Political activity
+
+### Irrelevant Dyads
+
+This ultimately becomes an issue of a sampling frame with both substantive/statistical concerns.
+
+- Substantive: why bother estimating the probability of conflict between Mongolia and Nigeria?
+- Statistical: flooding analysis with "irrelevant" observation artificially deflates standard error.
+    - i.e. it makes miniscule/unimportant effects seem "significant."
+
+
+### Irrelevant Dyads
+
+Our goal: devise a sampling frame that includes *all* dyads that could have or have had at least one MID.
+
+- That's how we will get "opportunity" as "necessary condition" (i.e. without it, a MID cannot happen).
+
+### Regional Dyads
+
+Earliest attempt at measuring opportunity came in Bueno de Mesquita's "regional dyads."
+
+- Relied on CoW's classification system.
+
+### Correlates of War Regions
+
+| **Region** | **`ccode` Domain** | **Examples** |
+|:-----------|:------------------:|:------------:|
+| Americas   | [2, 200) | USA (2), CAN (20), MEX (70), ..., URU (165) |
+| Europe     | [200, 400) | UKG (200), IRE (205), ..., ICE (395) |
+| Africa     | [400, 600) | CPV (402), STP (403), ..., SYC (591) |
+| ME/NA      | [600, 700) | MAR (600), ALG (615), ..., OMN (698) |
+| Asia       | [700, 900) | AFG (700), TKM (701), ..., TLS (860) |
+| Oceania    | [900, 999) | AUS (900), PNG (910), ..., SAM (990) |
+
+
+### 
+
+
+```{r regions-mids, echo=F, eval=T}
+
+Data %>% 
+  mutate(region = ifelse(region1 == region2, "Same Region", "Different Region")) %>%
+    group_by(midonset, region) %>% summarize(n=n()) %>% group_by(region) %>%
+  mutate(freq = round((n / sum(n))*100, 2),
+         freq = paste0(freq, "%")) %>% select(-n) %>% ungroup() %>% spread(region, freq) %>%
+   rename(`**MID Onset**` = midonset) %>%
+  kable(.,caption="Regional Dyads and MIDs (GML MID Data [v. 2.02])",
+        align=c("l","c","c"))
+
+```
+
+### How to Read This Table
+
+Goal: we want that "different region" and MID quadrant to be 0%.
+
+- If regions are an adequate sampling frame, there would be *no* cross-region MIDs *ever*.
+
+What we find: .19% of all dyad-years had MIDs between two combatants from different regions.
+
+- Not bad. But...
+
+### The Problem of Regions
+
+Regions are arbitrary and miss a lot of detail.
+
+- e.g. Canada and St. Lucia share a region, but the probability of a MID is zero.
+- Russia-Turkey is the most war-prone dyad and are incidentally coded in different regions.
+- We're going to miss just about everything interesting the U.S. has been doing since the 1900s.
+
+### Political Relevant Dyads
+
+Weede's "politically relevant dyads" offer a refinement, whereby "political relevance" includes:
+
+- Contiguous dyads of any type, and/or:
+- At least one "major" power in the dyad.
+
+### 
+
+```{r list-majors, eval=T, echo=F}
+
+Majors %>%
+  select(-ccode, -version) %>%
+  kable(.,
+        caption="The Major Powers, 1816-2016 [CoW, v. 2016]")
+
+```
+
+### 
+
+```{r prds-mids, echo=F, eval=T}
+
+Data %>% 
+  mutate(prd = ifelse(prd == 1, "Politically Relevant", "Politically Irrelevant")) %>%
+    group_by(midonset, prd) %>% summarize(n=n()) %>% group_by(prd) %>%
+  mutate(freq = round((n / sum(n))*100, 2),
+         freq = paste0(freq, "%")) %>% select(-n) %>% ungroup() %>% spread(prd, freq) %>%
+   rename(`**MID Onset**` = midonset) %>%
+  kable(.,caption="Politically Relevant Dyads and MIDs (GML MID Data [v. 2.02])",
+        align=c("l","c","c"))
+
+```
+
+### Assessing Political Relevance
+
+Political relevance better captures opportunity than regions. Yet:
+
+- It's still missing several prominent cases (e.g. Israel, Iraq)
+- Not all "majors" have the "reach" of the U.S. (see: Austria-Hungary, Germany, Japan).
+
+### Politically Relevant Information Environments (PRIEs)
+
+Maoz (1996) offers a refinement of political relevance with PRIE. Namely:
+
+- Disaggregating majors to regional/global.
+    - e.g. USA was almost always a regional power before Spanish-American War.
+- Qualifies "major" status for several "majors."
+    - e.g. Japan is a "major" power, but only in Asia.
+    - Same for Austria-Hungary in Europe.
+    - Russia is a global major only for Cold War, a regional major in Europe/Asia every other time.
+    
+###
+
+| **MID Onset** | PRIE = 0 | PRIE = 1 |
+|:--------------|:--------:|:--------:|
+| 0 | 99.92% | 96.55% |
+| 1 | 0.07% | 3.45% | 
+
+Table: PRIEs and MIDs (Quackenbush, 2006)
+
+PRIE does about the same as political relevance and it's still imperfect.
+
+### Political Activity
+
+Quackenbush introduces "politically active dyads" as a refinement of these measures. Codes activity if:
+
+- Dyads are contiguous, directly or through colony.
+- One of the dyad members is a global power.
+- One of the dyad members is a regional power in the region of the other.
+- One of the dyad members is allied to a global power. Or:
+- One of the dyad members is allied to a regional power in region of the other.
+
+### 
+
+| **MID Onset** | Politically Inactive | Politically Active |
+|:--------------|:--------:|:--------:|
+| 0 | 99.96% | 98.54% |
+| 1 | 0.03% | 1.46% | 
+
+Table: Politically Active Dyads and MIDs (Quackenbush, 2006)
+
+###
+
+| **Presence of..** | **Necessary for...** | **K/N = e(p)** | **P_{i}** | **P_{ii}** |
+|:------------------|:--------------------:|:--------------:|:---------:|:----------:|
+| Political Relevance | MID                | 357/3002 = .12 | .109 | .00 |
+| PRIE | MID | 425/3002 = .14 | .131 | .00 |
+| Regional Dyad | MID | 248/3002 = .08 | .074 | .00 |
+| Political activity  | MID |  150/3002 = .05 | .043 | .00 |
+
+Table: An Empirical Test of Necessary Conditions (Quackenbush, 2006)
+
+# Conclusion
+### Conclusion
+
+Contiguity is the most important correlate of conflict.
+
+- More for MIDs, less for war.
+- Common (mis)perception: contiguity proxies opportunity/"reach".
+- Isolating opportunity may be best done through measuring political activity.
+    - At the least, don't flood your sampling frame with irrelevant cases (e.g. Mongolia-Nigeria).
