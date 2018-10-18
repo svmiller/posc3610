@@ -1,0 +1,712 @@
+---
+title: "The Democratic Peace"
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: /Dropbox/teaching/clemson-academic.png
+date: 
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-beamer.tex
+    latex_engine: xelatex
+    dev: cairo_pdf
+    fig_caption: false
+    slide_level: 3
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+---
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, warning=F)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+options(knitr.kable.NA = '')
+```
+
+```{r loadstuff, include=FALSE, eval=T}
+knitr::opts_chunk$set(cache=FALSE)
+
+
+library(tidyverse)
+library(stevemisc)
+library(knitr)
+library(dotwhisker)
+library(artyfarty)
+# library(QuickUDS)
+
+Polity <- readxl::read_xls("~/Dropbox/data/polity/p4v2016.xls")
+Dat <- read.csv("~/Dropbox/projects/mid-project/gml-mid-data/2.1/gml-ndy-2.1.csv") %>% tbl_df()
+
+Polity %>%
+  select(ccode, scode, year, polity2) %>%
+      mutate(ccode = ifelse(ccode == 305 & year < 1919, 300, ccode),
+             ccode = ifelse(ccode == 347, 345, ccode),
+             ccode = ifelse(ccode == 364, 365, ccode),
+             ccode = ifelse(ccode == 769, 770, ccode),
+             ccode = ifelse(ccode == 818, 816, ccode),
+             ccode = ifelse(ccode == 529, 530, ccode)) %>%
+  rename(ccode1 = ccode,
+         scode1 = scode,
+         polity21 = polity2) %>%
+  left_join(Dat, .) -> Dat
+
+Polity %>%
+  select(ccode, scode, year, polity2) %>%
+      mutate(ccode = ifelse(ccode == 305 & year < 1919, 300, ccode),
+             ccode = ifelse(ccode == 347, 345, ccode),
+             ccode = ifelse(ccode == 364, 365, ccode),
+             ccode = ifelse(ccode == 769, 770, ccode),
+             ccode = ifelse(ccode == 818, 816, ccode),
+             ccode = ifelse(ccode == 529, 530, ccode)) %>%
+  rename(ccode2 = ccode,
+         scode2 = scode,
+         polity22 = polity2) %>%
+  left_join(Dat, .) -> Dat
+
+Dat %>% 
+  mutate(war = ifelse(hostlev == 5, 1, 0),
+         bilat = ifelse(numa + numb == 2, 1, 0),
+         jointdem = ifelse(polity21 >= 6 & polity22 >= 6, 1, 0),
+         onedem = ifelse((polity21 >=6 & polity22 < 6) | (polity21 < 6 & polity22 >= 6), 1, 0),
+         nodem = ifelse(polity21 < 6 & polity22 < 6, 1, 0),
+         demcat = NA,
+         demcat = ifelse(jointdem == 1, "Joint Democracy", demcat),
+         demcat = ifelse(onedem == 1, "One Side Democratic", demcat),
+         demcat = ifelse(nodem == 1, "No Side Democratic", demcat)) -> Dat
+
+
+```
+
+```{r data, include=FALSE, eval=F}
+
+Data <- read.csv("~/Dropbox/projects/mid-project/gml-mid-data/2.1/gml-ndy-2.1.csv") %>% tbl_df()
+Part <- read.csv("~/Dropbox/projects/mid-project/gml-mid-data/2.1/gml-midb-2.1.csv") %>% tbl_df()
+States <- read.csv("~/Dropbox/data/cow/states/states2016.csv") %>% tbl_df()
+
+Cont <- read.csv("~/Dropbox/data/cow/contiguity/3.2/contdird.csv") %>% tbl_df()
+Majors <- read.csv("~/Dropbox/data/cow/states/majors2016.csv") %>% tbl_df()
+Contcd <- read.csv("~/Dropbox/data/cow/coldepcont/contcold.csv") %>% tbl_df()
+Alliance <- read_csv("~/Dropbox/data/cow/alliance/4.1/alliance_v4.1_by_dyad_yearly.csv")
+NMC <- read_csv("~/Dropbox/data/cow/cinc/NMC_5_0.csv")
+Polity <- readxl::read_xls("~/Dropbox/data/polity/p4v2016.xls")
+ATOP <- haven::read_dta("~/Dropbox/data/atop/atop3_0ddyr.dta")
+IGO <- read.csv("~/Dropbox/data/cow/igo/IGO_dyadunit_v2.3.csv", na.string=c("-1", "-9")) %>% tbl_df()
+Trade <- read.csv("~/Dropbox/data/cow/trade/Dyadic_COW_4.0.csv", na.string=c("-9")) %>% tbl_df()
+
+Contcd %>%
+  rename(ccode1 = statelno, ccode2 = statehno) %>%
+  select(ccode1, ccode2, year, land, sea, total) %>%
+  left_join(Data, .) -> Data
+
+Cont %>%
+  rename(ccode1 = state1no, ccode2 = state2no) %>%
+  select(ccode1, ccode2, year, conttype) %>%
+  left_join(Data, .) -> Data
+
+Data %>%
+  mutate(conttype = ifelse(is.na(conttype), 6, conttype),
+         land = ifelse(is.na(land), 0, land),
+         sea = ifelse(is.na(sea), 0, sea),
+         total = ifelse(is.na( total), 0, total),
+         contig = ifelse(conttype == 6 & total == 0, 0, 1),
+         # Code regions...
+         region1 = NA,
+         region1 = ifelse(ccode1 < 200, "Americas", region1),
+         region1 = ifelse(ccode1 >= 200 & ccode1 < 400, "Europe", region1),
+         region1 = ifelse(ccode1 >= 400 & ccode1 < 600, "Africa", region1),
+         region1 = ifelse(ccode1 >= 600 & ccode1 < 700, "ME/NA", region1),
+         region1 = ifelse(ccode1 >= 700 & ccode1 < 900, "Asia", region1),
+         region1 = ifelse(ccode1 >= 900, "Oceania", region1),
+         region2 = NA,
+         region2 = ifelse(ccode2 < 200, "Americas", region2),
+         region2 = ifelse(ccode2 >= 200 & ccode2 < 400, "Europe", region2),
+         region2 = ifelse(ccode2 >= 400 & ccode2 < 600, "Africa", region2),
+         region2 = ifelse(ccode2 >= 600 & ccode2 < 700, "ME/NA", region2),
+         region2 = ifelse(ccode2 >= 700 & ccode2 < 900, "Asia", region2),
+         region2 = ifelse(ccode2 >= 900, "Oceania", region2),
+         # Code majors...
+         maj1 = NA,
+         maj1 = ifelse(ccode1 == 2 & year >= 1898, 1, maj1),
+         maj1 = ifelse(ccode1 == 200, 1, maj1),
+         maj1 = ifelse(ccode1 == 220 & year <= 1940, 1, maj1),
+         maj1 = ifelse(ccode1 == 220 & year >= 1945, 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & year <= 1918, 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & (year >= 1925 & year <= 1945), 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & year >= 1991, 1, maj1),
+         maj1 = ifelse(ccode1 == 300 & year <= 1918, 1, maj1),
+         maj1 = ifelse(ccode1 == 325 & (year >= 1860 & year <= 1943), 1, maj1),
+         maj1 = ifelse(ccode1 == 365 & year <= 1917, 1, maj1),
+         maj1 = ifelse(ccode1 == 365 & year >= 1922, 1, maj1),
+         maj1 = ifelse(ccode1 == 710 & year >= 1950, 1, maj1),
+         maj1 = ifelse(ccode1 == 740 & (year >= 1895 & year <= 1945), 1, maj1),
+         maj1 = ifelse(ccode1 == 740 & year >= 1991, 1, maj1),
+         maj1 = ifelse(is.na(maj1), 0, maj1),
+         maj2 = NA,
+         maj2 = ifelse(ccode2 == 2 & year >= 1898, 1, maj2),
+         maj2 = ifelse(ccode2 == 200, 1, maj2),
+         maj2 = ifelse(ccode2 == 220 & year <= 1940, 1, maj2),
+         maj2 = ifelse(ccode2 == 220 & year >= 1945, 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & year <= 1918, 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & (year >= 1925 & year <= 1945), 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & year >= 1991, 1, maj2),
+         maj2 = ifelse(ccode2 == 300 & year <= 1918, 1, maj2),
+         maj2 = ifelse(ccode2 == 325 & (year >= 1860 & year <= 1943), 1, maj2),
+         maj2 = ifelse(ccode2 == 365 & year <= 1917, 1, maj2),
+         maj2 = ifelse(ccode2 == 365 & year >= 1922, 1, maj2),
+         maj2 = ifelse(ccode2 == 710 & year >= 1950, 1, maj2),
+         maj2 = ifelse(ccode2 == 740 & (year >= 1895 & year <= 1945), 1, maj2),
+         maj2 = ifelse(ccode2 == 740 & year >= 1991, 1, maj2),
+         maj2 = ifelse(is.na(maj2), 0, maj2)) -> Data
+
+Data %>%
+  mutate(region = NA,
+         region = ifelse(region1 == "Americas" & region2 == "Americas", "Americas", region),
+         region = ifelse(region1 == "Europe" & region2 == "Europe", "Europe", region),
+         region = ifelse(region1 == "Africa" & region2 == "Africa", "Africa", region),
+         region = ifelse(region1 == "ME/NA" & region2 == "ME/NA", "ME/NA", region),
+         region = ifelse(region1 == "Asia" & region2 == "Asia", "Asia", region),
+         region = ifelse(region1 == "Oceania" & region2 == "Oceania", "Oceania", region),
+         prd = NA,
+         prd = ifelse(contig == 1 | (maj1 == 1 | maj2 == 1), 1, 0)) -> Data
+
+
+Alliance %>%
+  select(ccode1, ccode2, year, defense, neutrality, nonaggression, entente) %>%
+  left_join(Data, .) %>%
+  mutate(defense = ifelse(is.na(defense), 0, defense),
+         neutrality = ifelse(is.na(neutrality), 0, neutrality),
+         nonaggression = ifelse(is.na(nonaggression), 0, nonaggression),
+         entente = ifelse(is.na(entente), 0, entente)) -> Data
+
+NMC %>%
+  select(ccode:cinc) %>%
+  rename(ccode1 = ccode,
+         milex1 = milex,
+         milper1 = milper,
+         irst1 = irst,
+         pec1 = pec,
+         tpop1 = tpop,
+         upop1 = upop,
+         cinc1 = cinc) %>%
+  left_join(Data, .) -> Data
+
+NMC %>%
+  select(ccode:cinc) %>%
+  rename(ccode2 = ccode,
+         milex2 = milex,
+         milper2 = milper,
+         irst2 = irst,
+         pec2 = pec,
+         tpop2 = tpop,
+         upop2 = upop,
+         cinc2 = cinc) %>%
+  left_join(Data, .) -> Data
+
+#democracy %>% tbl_df() %>%
+#  select(cown, year, polity2) %>%
+#  rename(ccode1 = cown,
+#         polity21 = polity2) %>%
+#  left_join(NDY, .)
+
+Polity %>%
+  select(ccode, scode, year, polity2) %>%
+      mutate(ccode = ifelse(ccode == 305 & year < 1919, 300, ccode),
+             ccode = ifelse(ccode == 347, 345, ccode),
+             ccode = ifelse(ccode == 364, 365, ccode),
+             ccode = ifelse(ccode == 769, 770, ccode),
+             ccode = ifelse(ccode == 818, 816, ccode),
+             ccode = ifelse(ccode == 529, 530, ccode)) %>%
+  rename(ccode1 = ccode,
+         scode1 = scode,
+         polity21 = polity2) %>%
+  left_join(Data, .) -> Data
+
+Polity %>%
+  select(ccode, scode, year, polity2) %>%
+      mutate(ccode = ifelse(ccode == 305 & year < 1919, 300, ccode),
+             ccode = ifelse(ccode == 347, 345, ccode),
+             ccode = ifelse(ccode == 364, 365, ccode),
+             ccode = ifelse(ccode == 769, 770, ccode),
+             ccode = ifelse(ccode == 818, 816, ccode),
+             ccode = ifelse(ccode == 529, 530, ccode)) %>%
+  rename(ccode2 = ccode,
+         scode2 = scode,
+         polity22 = polity2) %>%
+  left_join(Data, .) -> Data
+
+Data %>% 
+  mutate(war = ifelse(hostlev == 5, 1, 0),
+         landcontig = ifelse(conttype == 1, 1, 0),
+         othercontig = ifelse(conttype > 1 & conttype != 0, 1, 0),
+         bilat = ifelse(numa + numb == 2, 1, 0),
+         allied = ifelse(defense == 1 | neutrality == 1 | nonaggression == 1 | entente == 1, 1, 0),
+         jointdem = ifelse(polity21 >= 6 & polity22 >= 6, 1, 0),
+         relpow = ifelse(cinc1 > cinc2, cinc1/cinc2, cinc2/cinc1),
+         relpowd = ifelse(relpow >=3, 1, 0)) -> Data
+
+Data %>%
+  mutate(dyad = as.numeric(paste0("1",sprintf("%03d", ccode1), 
+                                    sprintf("%03d", ccode2))),
+         fatal = ifelse(fatality > 0, 1, 0),
+         fatmid = ifelse(fatal == 1 & midongoing == 1, 1, 0),
+         fatmidonset = ifelse(fatmid == 1 & midonset == 1, 1, 0)) -> Data
+
+Data <- sbtscs(Data, midongoing, year, dyad) %>% tbl_df() %>%
+  rename(midspell = spell)
+Data <- sbtscs(Data, fatmid, year, dyad) %>% tbl_df() %>%
+  rename(fatspell = spell)
+
+IGO %>%
+  select(ccode1, ccode2, year, AAAID:Wassen) %>%
+  replace(is.na(.), 0) %>% 
+  mutate(numigo = rowSums(.[4:ncol(.)])) %>%
+  select(ccode1, ccode2, year, numigo) %>%
+  left_join(Data, .) %>%
+  fill(numigo) -> Data
+
+Trade %>%
+  select(ccode1, ccode2, year, smoothtotrade) %>%
+  left_join(Data, .) -> Data
+
+```
+
+# Introduction
+### Goal for Today
+
+*Discuss the democratic peace and its importance to the study of conflict.*
+
+###
+
+```{r polity, echo=F, eval=T, fig.width = 14, fig.height = 8.5, warning = F, message = F}
+
+Polity %>% 
+  mutate(dem = ifelse(polity2 >= 6, 1, 0)) %>%
+  group_by(year) %>%
+  summarize(demrate = mean(dem, na.rm=T)) %>%
+  ggplot(., aes(year, demrate)) + geom_line(size=1) + theme_steve_web() +
+  scale_y_continuous(labels=scales::percent, limits=c(0,1)) +
+  xlab("Year") + ylab("Percentage of International System That's Democratic") +
+  scale_x_continuous(breaks = seq(1800, 2020, by = 10)) +
+  geom_ribbon(aes(ymin=0, ymax=demrate),
+              alpha=0.3, fill="blue") +
+  labs(caption="Data: The Polity Project (Center for Systemic Peace)",
+       subtitle="States coded with `polity2` value at or above 6 are coded as democratic.",
+       title="The Proliferation of Democracies in the International System (1800-2016)")
+
+```
+
+###
+
+```{r demrates, echo=F, eval=T, fig.width = 14, fig.height = 8.5, warning = F, message = F}
+Cont <- read.csv("~/Dropbox/data/cow/contiguity/3.2/contdird.csv") %>% tbl_df() %>%
+  rename(ccode1 = state1no, ccode2 = state2no) %>%
+  select(ccode1, ccode2, year, conttype)
+
+Polity %>% 
+  mutate(dem = ifelse(polity2 >= 6, 1, 0)) %>%
+  group_by(year) %>%
+  summarize(`Proportion of Democracies` = mean(dem, na.rm=T)) -> dems
+
+
+Dat %>% 
+  left_join(., Cont) %>%
+  filter(!is.na(conttype)) %>%
+  group_by(year) %>%
+  summarize(`Proportion of States in a MID` = mean(midongoing, na.rm=T)) %>%
+  left_join(dems, .) %>%
+  gather(Category, Value, `Proportion of Democracies`:`Proportion of States in a MID`) %>%
+  filter(year >= 1816 & year <= 2010) %>%
+  ggplot(.,aes(year, Value, group=Category, color=Category, linetype=Category)) + theme_steve_web() +
+  geom_line(size=1.1) +
+  scale_color_manual(values = pal("google")) +
+  scale_x_continuous(breaks = seq(1820, 2010, by = 10)) +
+  scale_y_continuous(labels = scales::percent) +
+  xlab("Year") + ylab("Percentage") +
+  labs(title = "The International System Has Seen Less Conflict as It Became More Democratic",
+       subtitle = "Admittedly, most of the relationship is observable after WWII and may cluster on something else.",
+       caption = "Data: GML MID Data (v. 2.1) and the Polity Project")
+```
+
+# Democratic Peace Theory
+### Democratic Peace Theory
+
+Democratic peace theory (DPT) may constitute the most important advancement in IR scholarship.
+
+- Originally a finding by Babst (1964), a skeptical Singer and Small (1976) confirmed it.
+- Has important theoretical origins in Immanuel Kant (1795).
+- Levy (1988) notes it's the closest thing to an empirical law in all political science.
+
+Long story short: democracies don't fight each other, and never in war.
+
+### Democratic Peace Theory
+
+Nonetheless, DPT is a bit of a misnomer.
+
+- It's a democratic peace *fact.* It *needs* a theory.
+- In many ways, this is still true.
+
+So, why don't democracies fight each other?
+
+## The Arguments
+### Maoz and Russett (1993)
+
+Maoz and Russett (1993) test two competing explanations.
+
+
+- Normative model
+- Structural (institutional) model
+
+### Normative Model
+
+The authors identify two assumptions of the normative model. 
+
+1. States externalize their *internal* norms of behavior.
+2. A conflict between democrats and autocrats will be characterized by the norms of the latter.
+
+### Normative Model
+
+Autocrats have few if any normative bounds on their behavior.
+
+- They may capture the state through use of lethal force and violence.
+- They may also keep their hold on power through the same means.
+- Autocratic foreign policy behavior reflects the autocrat's preferences.
+
+### Normative Model
+
+Democracies, by contrast, rest on different norms.
+
+- e.g. equal competition, minority rights, consent to be governed.
+- Force and repression to govern would be deemed "illegitimate."
+- This imposes "normative" restraints on behavior.
+
+International politics becomes an extension of domestic politics.
+
+### The Normative Model
+
+The argument:
+
+- In a jointly democratic dispute, both sides are secure in their knowledge of the other's normative restraints.
+- In a mixed or autocratic dispute, nothing is in place to restrain escalation.
+
+Democracies will not fight each other, but will fight other pairs of states.
+
+
+### Structural (Institutional) Model
+
+The authors identify two assumptions of the structural model.
+
+1. Dangerous foreign policy dilemmas require a lengthy mobilization of domestic support.
+2. Only emergencies allow democracies to circumvent this mobilization process.
+
+
+### Structural (Institutional) Model
+
+The argument:
+
+- In a jointly democratic dispute, selling the conflict domestically takes too much time.
+    - Cooler heads will prevail.
+- There are no mutual structural constraints in a mixed or autocratic dispute.
+    - This resembles an "emergency" that will allow democratic leaders to circumvent the lengthy mobilization process.
+
+Democracies will not fight each other, but will fight other pairs of states.
+
+## 
+### The Results
+
+```{r, echo=F, eval=T}
+Dat %>%
+  group_by(jointdem) %>%
+  filter(!is.na(jointdem)) %>%
+  filter(midonset == 1) %>%
+  summarize(n = sum(war)) %>%
+  mutate(jointdem = ifelse(jointdem == 0, "No Joint Democracy", jointdem),
+         jointdem = ifelse(jointdem == 1, "Joint Democracy", jointdem)) %>%
+  rename(`**Joint Democracy?**` = jointdem,
+         `**Number of Wars**` = n) %>%
+  kable(., caption = "Simple Bivariate Relationship Between Joint Democracy and War (GML MID Non-Directed Dyad-Year Data [v. 2.1]",
+        align = c("l", "c"))
+
+```
+
+### So What Are Those Joint Democratic Wars?
+
+Flukes, basically:
+
+- Coding artifact of ephemeral declaration of war from WWII allies to Finland (MID#0258)
+- Franco-Siamese War (MID#0196) even though Britain never actually fought France.
+- India-Pakistan "Kargil War" (MID#4007) even though Pakistan was reverting to a police state
+- Cyprus-Turkey 1974 conflict (MID#1293) even though Turkey was relapsing to authoritarianism again.
+
+### A More Systematic Analysis
+
+Here's a more rigorous dyad-year analysis:
+
+- *DV*: MID ocurrence, MID initiation, MID escalation
+- *IV*: joint democracy, only one side democratic.
+    - We include both to test for a "cats-and-dogs" effect.
+    - i.e. we expect joint democracy to have a negative effect and one-side-democratic to have a positive effect.
+- *Controls:* distance, power parity, peace years, *S*-score for affinity in alliances.
+
+###
+
+```{r simple-dp-models, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+
+
+tribble(
+  ~term, ~estimate, ~std.error, ~model,
+  "Both Democratic", -.3527, .1279, "Dispute Occurrence",
+  "One Side Democratic", .4586, .0776, "Dispute Occurrence",
+  "Alliance Affinity", -.2747, .2330, "Dispute Occurrence",
+  "ln(Distance)", -.2469, .0131, "Dispute Occurrence",
+  "Power Parity", .0477, .1514, "Dispute Occurrence",
+  "Peace Years", -.2979, .0171, "Dispute Occurrence"
+) %>%
+  mutate(statistic = estimate/std.error,
+         p.value = 1.96*pnorm(-abs(statistic))) %>%
+  dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 1.1)) + theme_steve_web() +
+  xlab("Coefficient Estimate") +
+  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
+  theme(legend.position = "bottom") +
+  labs(title = "Democracies are Peaceful, but Just With Each Other",
+       subtitle = "Jointly democratic dyads are less likely to be in a MID but dyads in which just one side is democratic is more conflict-prone than jointly autocratic dyads.",
+       caption = "Data: Quackenbush (2015).") +
+  scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
+
+```
+
+###
+
+```{r dp-models-with-interactions, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+
+tribble(
+  ~term, ~estimate, ~std.error, ~model,
+  "State A is Democratic", -.1213, .0842, "Model 1 (No Interaction)",
+  "State B is Democratic", .1821, .0760, "Model 1 (No Interaction)",
+  "Joint Democracy", NA, NA, "Model 1 (No Interaction)",
+  "Alliance Affinity", -.4162, .2363, "Model 1 (No Interaction)",
+  "ln(Distance)", -.2627, .0139, "Model 1 (No Interaction)",
+  "Relative Power", .6359, .0865, "Model 1 (No Interaction)",
+  "Peace Years", -.2787, .0180, "Model 1 (No Interaction)",
+  "State A is Democratic", .3499, .0985, "Model 2 (Joint Democracy Interaction)",
+  "State B is Democratic", .5954, .0905, "Model 2 (Joint Democracy Interaction)",
+  "Joint Democracy", -1.2622, .1522, "Model 2 (Joint Democracy Interaction)",
+  "Alliance Affinity", -.3162, .2365, "Model 2 (Joint Democracy Interaction)",
+  "ln(Distance)", -.2729, .0162, "Model 2 (Joint Democracy Interaction)",
+  "Relative Power", .6326, .0860, "Model 2 (Joint Democracy Interaction)",
+  "Peace Years", -.2758, .0178, "Model 2 (Joint Democracy Interaction)"
+) %>%
+  mutate(statistic = estimate/std.error,
+         p.value = 1.96*pnorm(-abs(statistic))) %>%
+  dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 1.1)) + theme_steve_web() +
+  xlab("Coefficient Estimate") +
+  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
+  theme(legend.position = "bottom") +
+  labs(title = "Democracies Appear to be Conflict Prone, but Just Not With Each Other",
+       subtitle = "Jointly democratic dyads are less likely to be in a MID but dyads in which just one side is democratic is more conflict-prone than jointly autocratic dyads.",
+       caption = "Data: Quackenbush (2015).") +
+  scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
+
+```
+
+
+###
+
+```{r monadic-dp, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+tribble(
+  ~term, ~estimate, ~std.error, ~model,
+  "Democracy", .0109, .0842, "MID Involvement",
+  "ln(Power)", .2860, .0326, "MID Involvement",
+  "Democracy", -.0042, .1647, "MID Initiation",
+  "ln(Power)", .3479, .0347, "MID Initiation"
+) %>%
+  mutate(statistic = estimate/std.error,
+         p.value = 1.96*pnorm(-abs(statistic))) %>%
+  dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 1.1)) + theme_steve_web() +
+  xlab("Coefficient Estimate") +
+  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
+  theme(legend.position = "bottom") +
+  labs(title = "There Is No Monadic Democratic Peace",
+       subtitle = "Democracies are no different in their proclivity for conflict and almost all models have failed to vindicate the monadic proposition.",
+       caption = "Data: Quackenbush (2015).") +
+  scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
+```
+
+### Other Findings and Arguments
+
+Democratic peace findings generally cluster into two categories:
+
+1. Democratic war avoidance
+2. Democratic war behavior
+
+### Democratic War Avoidance
+
+1. Democracies don't fight wars against each other.
+2. Democra*tizing* states are war-prone (e.g. Serbia). Mature democracies are the peaceful ones.
+3. Democracies conclude what disputes they do have with negotiation and compromise.
+4. Democracies as major powers are more constrained than democratic minor powers.
+
+### Democratic War Behavior
+
+1. Democracies are essentially as war-prone as non-democracies.
+2. Democracies win the wars they fight.
+3. Democracies fight shorter wars.
+4. Democracies are as likely as non-democracies to target weak rivals.
+5. Democracies are more likely to initiate wars against autocracies (not the other way around).
+6. Democracies incur fewer battle deaths in the wars they initiate.
+
+### Auxiliary Arguments
+
+Others have added some tweaks to the core arguments.
+
+- "Kantian peace"
+- "Selectorate peace"
+
+Neither seriously challenges that democracy is a force for peace, just that there's more happening than the standard DPT argument.
+
+### 
+
+```{r, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+Data <- read.csv("~/Dropbox/projects/mid-project/gml-mid-data/2.02/gml-ndy-2.02.csv") %>% tbl_df()
+Cont <- read.csv("~/Dropbox/data/cow/contiguity/3.2/contdird.csv") %>% tbl_df()
+Majors <- read.csv("~/Dropbox/data/cow/states/majors2016.csv") %>% tbl_df()
+Contcd <- read.csv("~/Dropbox/data/cow/coldepcont/contcold.csv") %>% tbl_df()
+Trade <- read.csv("~/Dropbox/data/cow/trade/Dyadic_COW_4.0.csv") %>% tbl_df()
+
+Trade %>% 
+  select(ccode1, ccode2, year, smoothtotrade) %>%
+  left_join(Data, .) -> Data
+
+Contcd %>%
+  rename(ccode1 = statelno, ccode2 = statehno) %>%
+  select(ccode1, ccode2, year, land, sea, total) %>%
+  left_join(Data, .) -> Data
+
+Cont %>%
+  rename(ccode1 = state1no, ccode2 = state2no) %>%
+  select(ccode1, ccode2, year, conttype) %>%
+  left_join(Data, .) -> Data
+
+Data %>%
+  mutate(conttype = ifelse(is.na(conttype), 6, conttype),
+         land = ifelse(is.na(land), 0, land),
+         sea = ifelse(is.na(sea), 0, sea),
+         total = ifelse(is.na( total), 0, total),
+         contig = ifelse(conttype == 6 & total == 0, 0, 1),
+         # Code regions...
+         region1 = NA,
+         region1 = ifelse(ccode1 < 200, "Americas", region1),
+         region1 = ifelse(ccode1 >= 200 & ccode1 < 400, "Europe", region1),
+         region1 = ifelse(ccode1 >= 400 & ccode1 < 600, "Africa", region1),
+         region1 = ifelse(ccode1 >= 600 & ccode1 < 700, "ME/NA", region1),
+         region1 = ifelse(ccode1 >= 700 & ccode1 < 900, "Asia", region1),
+         region1 = ifelse(ccode1 >= 900, "Oceania", region1),
+         region2 = NA,
+         region2 = ifelse(ccode2 < 200, "Americas", region2),
+         region2 = ifelse(ccode2 >= 200 & ccode2 < 400, "Europe", region2),
+         region2 = ifelse(ccode2 >= 400 & ccode2 < 600, "Africa", region2),
+         region2 = ifelse(ccode2 >= 600 & ccode2 < 700, "ME/NA", region2),
+         region2 = ifelse(ccode2 >= 700 & ccode2 < 900, "Asia", region2),
+         region2 = ifelse(ccode2 >= 900, "Oceania", region2),
+         # Code majors...
+         maj1 = NA,
+         maj1 = ifelse(ccode1 == 2 & year >= 1898, 1, maj1),
+         maj1 = ifelse(ccode1 == 200, 1, maj1),
+         maj1 = ifelse(ccode1 == 220 & year <= 1940, 1, maj1),
+         maj1 = ifelse(ccode1 == 220 & year >= 1945, 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & year <= 1918, 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & (year >= 1925 & year <= 1945), 1, maj1),
+         maj1 = ifelse(ccode1 == 255 & year >= 1991, 1, maj1),
+         maj1 = ifelse(ccode1 == 300 & year <= 1918, 1, maj1),
+         maj1 = ifelse(ccode1 == 325 & (year >= 1860 & year <= 1943), 1, maj1),
+         maj1 = ifelse(ccode1 == 365 & year <= 1917, 1, maj1),
+         maj1 = ifelse(ccode1 == 365 & year >= 1922, 1, maj1),
+         maj1 = ifelse(ccode1 == 710 & year >= 1950, 1, maj1),
+         maj1 = ifelse(ccode1 == 740 & (year >= 1895 & year <= 1945), 1, maj1),
+         maj1 = ifelse(ccode1 == 740 & year >= 1991, 1, maj1),
+         maj1 = ifelse(is.na(maj1), 0, maj1),
+         maj2 = NA,
+         maj2 = ifelse(ccode2 == 2 & year >= 1898, 1, maj2),
+         maj2 = ifelse(ccode2 == 200, 1, maj2),
+         maj2 = ifelse(ccode2 == 220 & year <= 1940, 1, maj2),
+         maj2 = ifelse(ccode2 == 220 & year >= 1945, 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & year <= 1918, 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & (year >= 1925 & year <= 1945), 1, maj2),
+         maj2 = ifelse(ccode2 == 255 & year >= 1991, 1, maj2),
+         maj2 = ifelse(ccode2 == 300 & year <= 1918, 1, maj2),
+         maj2 = ifelse(ccode2 == 325 & (year >= 1860 & year <= 1943), 1, maj2),
+         maj2 = ifelse(ccode2 == 365 & year <= 1917, 1, maj2),
+         maj2 = ifelse(ccode2 == 365 & year >= 1922, 1, maj2),
+         maj2 = ifelse(ccode2 == 710 & year >= 1950, 1, maj2),
+         maj2 = ifelse(ccode2 == 740 & (year >= 1895 & year <= 1945), 1, maj2),
+         maj2 = ifelse(ccode2 == 740 & year >= 1991, 1, maj2),
+         maj2 = ifelse(is.na(maj2), 0, maj2)) -> Data
+
+Data %>%
+  mutate(region = NA,
+         region = ifelse(region1 == "Americas" & region2 == "Americas", "Americas", region),
+         region = ifelse(region1 == "Europe" & region2 == "Europe", "Europe", region),
+         region = ifelse(region1 == "Africa" & region2 == "Africa", "Africa", region),
+         region = ifelse(region1 == "ME/NA" & region2 == "ME/NA", "ME/NA", region),
+         region = ifelse(region1 == "Asia" & region2 == "Asia", "Asia", region),
+         region = ifelse(region1 == "Oceania" & region2 == "Oceania", "Oceania", region),
+         prd = NA,
+         prd = ifelse(contig == 1 | (maj1 == 1 | maj2 == 1), 1, 0)) -> Data
+
+Data %>%
+  filter(prd == 1) %>%
+  mutate(dyad = as.numeric(paste0("1",sprintf("%03d", ccode1), 
+                                    sprintf("%03d", ccode2))),
+         logtrade = ifelse(smoothtotrade < 0, NA, log(smoothtotrade + 1))) -> PRD
+
+PRD <- sbtscs(PRD, midongoing, year, dyad) %>% tbl_df()
+
+require(brglm)
+require(splines)
+M1 <- brglm(midonset ~ logtrade + bs(spell, 4),
+             data=PRD, family=binomial(logit), 
+             na.action = na.exclude, method="brglm.fit", pl=TRUE)
+
+newdat <- data.frame(logtrade = seq(min(PRD$logtrade, na.rm=TRUE), max(PRD$logtrade, na.rm=T), by = 0.01),
+                     spell = 0)
+
+predict(M1, newdat) -> preds
+
+PRD <- cbind(PRD, pmid = predict(M1,type='response'))
+
+PRD %>%
+  group_by(year) %>%
+  filter(year > 1869) %>%
+  summarize(pmid = mean(midongoing, na.rm=T),
+            meantrade = mean(logtrade, na.rm=T),
+            rmeantrade = (meantrade - min(meantrade))/(max(meantrade) - min(meantrade))) %>%
+  ggplot(.,aes(x = year)) +
+  geom_line(aes(y = pmid, color = "Proportion of States in a MID"), size=1.1) +
+  geom_line(aes(y = meantrade/6, color = "Total Volume of Trade (Logged)"), size=1.1) + 
+  scale_y_continuous(sec.axis = sec_axis(~.*6, name = "Average Total Volume of Trade in the World (Logged)")) +
+  theme_steve_web() + ylab("Proportion of States in a MID") + xlab("Year") +
+  scale_x_continuous(breaks=seq(1870, 2010, by = 5)) +
+  labs(colour = "Category",
+       title = "IR Scholars Generally See Trade as Conducive to Global Peace",
+       subtitle = "The argument is intuitive; interconnected states see conflict as too costly and an unnecessary disruption of commerce.",
+       caption = "Data: Correlates of War Dyadic Trade Data (v. 4.0) and Gibler-Miller-Little MID Data (v. 2.02)")
+
+```
+
+
+# Conclusion
+### Conclusion
+
+Democratic peace might be the most important finding in IR, but doubts persist:
+
+- "Capitalist peace" (ed. there are a laundry list of problems with this argument)
+- Common systems or common interests? (ed. we don't adequately model temporal variation)
+- Territorial peace (i.e. have we put the cart before the horse?)
