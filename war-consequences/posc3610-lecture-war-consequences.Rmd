@@ -244,7 +244,9 @@ tribble(
   mutate(statistic = estimate/std.error,
          p.value = 1.645*pnorm(-abs(statistic)),
          model = "War Onset") %>%
-  dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 2.5)) + theme_steve_web() +
+  dwplot(.,
+         dot_args = list(aes(colour = model, shape = model), size=3.5),
+         whisker_args = list(size=1)) + theme_steve_web() +
   xlab("Coefficient Estimate") +
   geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
   theme(legend.position = "bottom") +
