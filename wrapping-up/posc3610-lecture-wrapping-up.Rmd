@@ -1,0 +1,240 @@
+---
+title: "Wrapping Up: What Do We Know About International Conflict?"
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: /Dropbox/teaching/clemson-academic.png
+date: 
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-beamer.tex
+    latex_engine: xelatex
+    dev: cairo_pdf
+    fig_caption: false
+    slide_level: 3
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE)
+
+library(tidyverse)
+library(stevemisc)
+library(countrycode)
+library(knitr)
+# library(maddison)
+
+Disputes <- read_csv("~/Dropbox/projects/mid-project/gml-mid-data/2.03/gml-ndy-disputes-2.03.csv")
+
+```
+
+# Introduction
+### Puzzle for Today
+
+*What do we know about war? And what's still left as a matter of disagreement?*
+
+# What Do We Know About War?
+## Received Wisdom and General Consensus
+### Dangerous Dyads
+
+Bremer's (1992) "dangerous dyads" still holds up well.
+
+
+1. Contiguity
+2. Joint democracy
+3. Power preponderance
+4. Major powers
+5. Joint alliance
+6. Advanced economies
+7. Militarization
+
+###
+
+![](../dangerous-dyads/figs/dangerous-dyads-dwplot.pdf)
+
+###
+
+```{r, eval=T, echo=F, fig.height=8.5, fig.width=14, message = F, warning=F}
+tribble(
+  ~period, ~Type, ~perc, ~count,
+  #-----, -------, -----, -----
+  "1648-1714", "Territory", 77, 17,
+  "1648-1714", "Territory + Territory-related", 86, 19,
+  "1648-1714", "Other Issue", 14, 3,
+  "1715-1814", "Territory", 72, 26,
+  "1715-1814", "Territory + Territory-related", 83, 4+26,
+  "1715-1814", "Other Issue", 17, 6,
+  "1815-1914", "Territory", 58, 18,
+  "1815-1914", "Territory + Territory-related", 84, 18+8,
+  "1815-1914", "Other Issue", 16, 5,
+  "1918-1941", "Territory", 73, 22,
+  "1918-1941", "Territory + Territory-related", 93, 28,
+  "1918-1941", "Other Issue", 7, 2,
+  "1945-[1990]", "Territory", 47, 27,
+  "1945-[1990]", "Territory + Territory-related", 79, 27+19,
+  "1945-[1990]", "Other Issue", 21, 12
+) %>%
+  mutate(Type = forcats::fct_relevel(Type, "Territory", "Territory + Territory-related", "Other Issue"),
+         perc = perc/100) %>%
+  ggplot(.,aes(x=period, y=perc, fill=Type)) + theme_steve_web() +
+  geom_bar(stat="identity", position = "dodge",
+           alpha = I(0.8), color="black") +
+  scale_fill_brewer(palette="Set1") +
+  xlab("Historical Period") + ylab("Percentage of All Wars") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Percentage and Frequency of Wars By Issue Type, 1648-1990",
+       subtitle = "Most wars over time have been fought over territory or territory-related issues than other issue types.",
+       caption = "Data: Vasquez (1993) via Holsti (1991). Note: counts appear on top of the bars by issue-type.") +
+  geom_text(aes(label = count, group = Type), color="black",
+            position = position_dodge(width=.9), size=4,
+            vjust = -.5, family ="Open Sans")
+
+```
+
+
+### Democracies Are a Peculiar Class of Countries
+
+We'll note disagreement later, but generally democracies are a unique class of countries.
+
+- Democracies find ways to avoid war with each other.
+- Democracies tend to perform well in war.
+- However, democracies are no more or less war-prone than other state types.
+
+That we even observe this defies received wisdom from our structural theories.
+
+### War is Bargaining
+
+We generally see war as bargaining failure (or, alternatively, bargaining via other means).
+
+- Issue indivisibility
+- Commitment problems
+- Asymmetric information
+
+### When Does Deterrence Work?
+
+Deterrence is a long-standing debate, but we tend to believe it works the more credible threats are.
+
+- Unilateral deterrence offers more paths to peace.
+
+Worth noting: credible threats make deterrence more likely to succeed, but does not guarantee it.
+
+- It won't guarantee it if challengers are highly motivated.
+
+### Not All Wars Look Like the "Big Ones"
+
+...and thank god, but it does mean we're mindful of what we're studying. Generally:
+
+- Expansion follows opportunity and willingness.
+- Easier to rethink it as an expected utility calculation.
+
+### Not All Wars Look Like the "Big Ones" (Continued)
+
+
+Further correlates of war's cost and outcomes:
+
+- "Rougher" terrain
+- Balance among disputants
+- More troops in the combat zone.
+- *Fewer* states involved
+
+One caveat: modeling "costs" of war is tricky, and we tend to do it ex post.
+
+### Conflict and War are Concentrated in a Handful of Countries
+
+Wars are definitely not "independent and identically distributed." There are usual suspects.
+
+- Rivalry explains a big part of this.
+- Commitment problems following bargaining
+
+###
+
+```{r, eval=T, echo=F, fig.height=8.5, fig.width=14, message = F, warning=F}
+Disputes %>%
+  group_by(dispnum) %>%
+  distinct(dispnum, .keep_all=T) %>%
+  mutate(war = ifelse(hostlev == 5, 1, 0),
+         fatal = ifelse(fatality1 == 1 | fatality2 == 1, 1, 0)) %>%
+  group_by(ccode1, ccode2) %>%
+  summarize(`No. of MIDs` = n(),
+            `No. of Wars` = sum(war),
+            `No. of Fatal MIDs` = sum(fatal)) %>%
+  arrange(-`No. of MIDs`) %>%
+  mutate(`Country A` = countrycode::countrycode(ccode1, "cown", "country.name"),
+         `Country B` = countrycode::countrycode(ccode2, "cown", "country.name")) %>%
+  ungroup() %>% select(-ccode1, -ccode2) %>%
+  select(`Country A`, `Country B`, `No. of MIDs`:`No. of Fatal MIDs`) %>% head(10) %>%
+  kable(.,
+        caption = "Dyads With the Most MIDs (and Type of MIDs), 1816-2010 (GML MID Data, v. 2.03)")
+  
+```
+
+## Areas of Contention
+### Are Alliances War-Prone or Paths to Peace?
+
+There is still a fair bit of debate about what role alliances play in conflict onset.
+
+- Recent exchanges between Leeds and Johnson (2017) and Vasquez et al. (2017) highlight this disagreement.
+
+You generally saw this in our lectures.
+
+- No relationship between alliance proliferation and war at system-level.
+- Allies are unlikely to fight each other.
+- Some allies *are* likely to fight each other.
+
+### Are Conflict Processes the Same for Onset and Escalation?
+
+Recall Diehl (2006) encouraged us to think of different phases.
+
+- Different phases may have different contextual influences.
+
+We generally don't want to stray too far from a "dangerous dyads" framework, but we've found:
+
+- Power parity leads to MIDs, but MIDs between equals are less likely to lead to war.
+- Joint democracy leads to fewer MIDs, not necessarily fewer wars.
+- Satisfied states have fewer MIDs, not necessarily fewer wars.
+- Allies still have disputes; just unlikely to escalate to war.
+
+
+### Power Matters, but How?
+
+"Power" is a central topic in IR, but how it matters is unclear.
+
+- Is it the contested benefit or the source of bargaining breakdown?
+- Simple explanations of power via CINC do poorly.
+
+Whatever role "power" has in conflict onset, we tend to eschew "neorealist" explanations.
+
+### Does the Democratic Peace Have Anything to Do With Democracy?
+
+Democratic peace might be the most important finding in IR, but doubts persist:
+
+- "Capitalist peace" (ed. there are a laundry list of problems with this argument)
+- Common systems or common interests? (ed. we don't adequately model temporal variation)
+- Territorial peace (i.e. have we put the cart before the horse?)
+
+In other words, democracies don't fight each other, but does that have anything to do with democracy?
+
+
+### What Are the Consequences of War?
+
+War sucks and it creates costs, but there's still some major disagreement:
+
+- Effects can be permanent and temporary, short-term and long-term, direct and indirect, positive and negative.
+
+Discussions of "Phoenix" factors compound what we can say about war's lasting consequences.
+
+# Conclusion
+### Conclusion
+
+We've done a lot of work on the causes of war.
+
+- We have lots of answers.
+- We generally don't have a single answer.
+
+I enjoyed this class; I hope you did too.
+
+- We'll discuss your final exam next.
