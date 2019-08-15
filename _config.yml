@@ -15,7 +15,7 @@ description: |
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://posc3610.svmiller.com" # the base hostname & protocol for your site
-syllabus: "http://posc3610.svmiller.com/syllabus/posc3610-fall2018-syllabus.pdf"
+syllabus: "http://posc3610.svmiller.com/syllabus/posc3610-fall2019-syllabus.pdf"
 githubdir: "svmiller/posc3610"
 
 # Author/user information
