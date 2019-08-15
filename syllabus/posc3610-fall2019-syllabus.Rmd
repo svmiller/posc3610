@@ -1,0 +1,512 @@
+---
+output: 
+  pdf_document:
+    keep_tex: false
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-syllabus.tex
+geometry: margin=1in
+
+title: "POSC 3610: International Conflict"
+author: Steven V. Miller
+date: "Fall 2019"
+
+email: "svmille@clemson.edu"
+web: "posc3610.svmiller.com"
+officehours: "TR 1:00 p.m.-3:30 p.m."
+office: "230A Brackett Hall"
+classroom: "211 Brackett Hall"
+classhours: "TR 9:30-10:45 a.m."
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+   - \usepackage[normalem]{ulem}
+---
+
+```{r setup, include=FALSE}
+# knitr::opts_chunk$set(cache=FALSE, dev='pdf')
+knitr::opts_chunk$set(cache=F,
+                      fig.path = 'figs/',
+                      cache.path='cache/',
+                      warning=F,
+                      message=F)
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+mon <- as.Date("2019-08-19")
+lastday <- as.Date("2019-12-06")
+finalexam <- as.Date("2019-12-11") # 8 a.m.
+# fri <- as.Date("2016-01-08")
+
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%m/%d")
+ tfri <- format(tfri, format="%m/%d")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Week ",zadv,sep='',", ", tmon," - ",tfri)
+ return(tmp)
+}
+
+options(scipen=999)
+library(tidyverse)
+library(stevemisc)
+library(ggpmisc)
+library(anonymizer)
+library(ggcal)
+library(stringr)
+library(kfigr)
+library(broom)
+
+mydate <- seq(mon+2, lastday, by="1 day")
+mydate <- c(mydate, finalexam)
+
+# Empty dates in which I won't be here. -----
+# Oct. 1-Oct. 6: Denmark
+# Oct. 15: Fall break
+# Nov. 25-29: Thanksgiving
+
+remove_dates <- c(as.Date("2019-08-29"),
+                  as.Date("2019-10-15"),
+                  seq(as.Date("2019-10-01"), as.Date("2019-10-06"), by = "1 day"),
+                   seq(as.Date("2019-11-25"), as.Date("2019-11-29"), by = "1 day"))
+
+mydate <- mydate[! mydate %in% remove_dates]
+
+myfills <- ifelse(format(mydate, "%w") %in% c(0,1, 3, 5,6), "Other Day" ,"Class Day")
+
+# Fill in exams
+
+exam_dates <- c(as.Date("2019-10-17"), finalexam)
+myfills <- ifelse(mydate %in% exam_dates, "Exam" ,myfills)
+
+# Fill in paper due dates
+
+myfills <- ifelse(mydate %in% c(as.Date("2019-11-30")), "Paper Due (Turnitin)", myfills)
+
+give_me_days <- seq(as.Date("2019-08-01"), as.Date("2019-12-31"), by="1 day")
+give_me_days <- as.numeric(str_sub(give_me_days, start= -2))
+
+
+
+library(RefManageR)
+# library(knitcitations)
+# library(rcrossref)
+bib <- ReadBib("~/Dropbox/master.bib")
+myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
+library(stevemisc)
+
+```
+
+
+# Course Description
+
+The onset, expansion and consequences of inter-state conflict lie at the heart of international relations scholarship.  This class will explore these topics, highlighting what we know and what we do not know. We will start by clarifying our concepts and what we mean when we use terms like "dispute" and "war." The rest proceeds as an overview of the literature in the spirit of the Correlates of War project. We will discuss the ubiquitous and problematic issue of "power" in international relations. We will reiterate that most conflicts are between land-contiguous neighbors and concern territorial issues between them. Thereafter, we will discuss numerous other correlates of war and peace, like alliances, joint democracy, and rivalry. We will also talk about conflict processes like deterrence, compellence, dispute escalation and the dynamics of war. Students that complete this class should have a broad overview of prominent quantitative scholarship on the cause of disputes and war in the international system, situating them in scholarship in the "peace science" field.
+
+# Teaching Assistant
+
+Mr. Chikezie Isiguzo (cisiguz@g.clemson.edu) will serve as a graduate teaching assistant this semester. He will assist in proctoring exams and grading your papers.
+
+
+# Course Objectives
+
+1. Define inter-state conflict, militarized interstate disputes, and war.
+
+2. Summarize the basic premise of why structural properties of the international system may lead states to fight each other.
+
+3. Grasp not just democratic peace theory, but the full implications of the central claim of the peaceful nature of democracies.
+
+4. Delineate why territory, as opposed to neighborly interactions, leads states to conflict.
+
+5. Model war as a costly lottery.
+
+6. Understand why sample selection is critical to claims about war and peace in international politics.
+
+7. Read research designs and interpret regression results.
+
+# Required Readings
+
+```{r, echo = FALSE, results="asis"} 
+bib[c("vasquez2009twp")]
+```
+
+I list this book as "required reading" despite the fact the book will be "required" for the sake of the research paper. Almost all other readings for this class can be obtained by the student via any one of a number of electronic storage facilities on the World Wide Web (e.g., JSTOR, Blackwell-synergy). Clemson University has subscriptions to all these services, which can be accessed through the university's library website. I will note when a particular reading is inaccessible for Clemson students and make it available on Canvas.
+
+<!-- ## Recommended Readings
+
+Students who are serious about the readings may consider purchasing the following books. The Levy and Thompson (2010) is informative as a broad overview of  the material. The McLaughlin and Vasquez (2013) book contains many articles we will discuss in class and directly addresses them in a way that students may find useful. Vasquez (2009) provides an overall framework (i.e. "Steps to War") that implicitly frames the presentation of material this semester.
+
+Mitchell, Sarah McLaughlin and John A. Vasquez (2013). *Conflict, War, and Peace; An Introduction to Scientific Research.* Washington, DC: Congressional Quarterly Press.
+
+{r, echo = FALSE, results="asis"} 
+bib[c("levythompson2010cw","quackenbush2015ic","mitchellvasquez2013cwp")]
+
+
+-->
+
+# Course Policy
+
+This section of the syllabus details multiple policies that will be implemented in this class through the semester. Continued enrollment in this class constitutes acceptance of the terms outlined in this document.
+
+## Grading Policy
+
+- **20%** of your grade will be determined by your attendance and participation in class.
+
+- **20%** of your grade will be determined by a midterm to be administered on **Thursday, Oct. 17** during normal class hours.  There will be **NO** make-ups.
+
+- **20%** of your grade will be determined by a research paper you will write. The paper will focus on the "Steps to War" argument (see: the required reading). You will summarize Vasquez' (2009) "Steps to War" argument and apply it to a specific war from a list of wars that I will provide. You can choose which war you want to summarize though space is finite and I will assign topics on a first-come-first-served basis. This paper must be submitted through *Turnitin* on the Canvas module for the course *before* **Saturday, Nov. 30, 9 a.m.**[^before] I will distribute more specific information about the paper and the list of wars from which to choose through Canvas and on the course website early in the semester.
+
+[^before]: Allow me to reiterate what this means. A paper submitted at nine hours, zero minutes, and zero seconds is *late* by this interpretation. I do not accept late work. Do not assume your laptop's clock perfectly coincides with the system's time or atomic time. I do not care that you tell me you had phantom "computer" issues or that your file somehow got "corrupted" while trying to submit your assignment at the proverbial eleventh hour. Learn to budget your time better.
+
+- **40%** of your grade will be determined by a final exam. Clemson University has scheduled this final exam on **Wednesday, Dec. 11, 8-10:30 a.m.**  There will be **NO** make-ups.
+
+## Attendance Policy
+
+```{r, include=FALSE}
+read_csv("~/Dropbox/teaching/attendance-grades-relationship.csv") %>%
+  select(name:class,-id) %>%
+  mutate(name = anonymize(name, .seed = 8675309, .algo = "crc32"),
+         class = as_factor(class),
+         term = forcats::fct_relevel(term,
+                                     "Fall 2014", "Spring 2015",
+                                     "Fall 2015", "Spring 2016",
+                                     "Fall 2016", "Spring 2017",
+                                     "Fall 2017", "Spring 2018",
+                                     "Fall 2018", "Spring 2019")) %>%
+  group_by(term, class) %>%
+  mutate(maxgrade = max(grade, na.rm=T),
+         grade = ifelse(maxgrade > 100, grade - (maxgrade-100), grade)) %>%
+  ungroup() %>%
+  mutate(perattend = (attendance/max)*100) -> Attend
+
+# library(ggpmisc)
+
+M1 <- lm(grade ~ perattend, Attend)
+M2 <- lm(grade ~ perattend, data=subset(Attend, perattend >= 75))
+my.formula <- y ~ scale(x, center=T, scale=F)
+
+M1df <- tidy(M1)
+M2df <- tidy(M2)
+# library(ggplot2)
+
+```
+
+> *Showing up is 80 percent of life* -- Woody Allen, [via Marshall Brickman](http://quoteinvestigator.com/2013/06/10/showing-up/#note-6553-1)
+
+Students should be wary of skipping class. I deduct *all* participation points for a class after five unexcused absences and this can have important implications for a student's overall grade in the class. There is already a strong positive correlation between the percentage of classes a student has attended in the course and the student's final grade for the semester (*r* = `r round(cor(Attend$perattend, Attend$grade, use="complete.obs"), 3)`) for all `r nrow(Attend)` students I have taught since Fall 2014. 
+
+A simple linear regression of a student's final grade on percentage of classes attended for the semester for all classes I have taught since Fall 2014 suggests an increase of one percent in attendance for the semester leads to an estimated increase of `r round(M1$coefficients[2], 3)` in the student's final grade. Whereas one missed classes constitutes about a five-percent decrease in percentage attendance for the semester, one missed class means an estimated decrease of `r round(M1$coefficients[2], 3)*5` in the overall grade. The effect of attendance on the final grade for the class is precise (*t* = `r round(M1df$statistic[2], 3)`) and the likelihood that there is no actual relationship between attendance and final grade for the semester is almost zero. This simple linear model with just one predictor (attendance) provides a good fit as well (R$^2$ = `r round(summary(M1)$r.squared, 3)`). See `r figr("attendplot", TRUE, type="Figure")` in this document, which unpacks the relationship by each unique class type  that I have taught since Fall 2014.
+
+```{r attendplot, echo = FALSE, results="asis", cache=FALSE, fig.cap="The Relationship between Class Attendance and Final Grade, by Class Type", fig.height=7, fig.width=13, fig.pos="H"}
+
+
+Attend %>%
+  mutate(class = forcats::fct_recode(class,
+                                     "Intro to International Relations" = "1020",
+                                     "Quantitative Methods" = "3410",
+                                     "International Conflict" = "3610",
+                                     "U.S. Foreign Policy" = "3630")) %>%
+  ggplot(., aes(x = perattend, y = grade)) +
+  theme_steve() +
+  geom_point() + 
+  facet_wrap(~class) +
+  #scale_x_continuous(labels=scales::percent) +
+  labs(x="Percent Attendance in Class", y="Final Grade in Class (0-100)") +
+  geom_smooth(method = "lm", se=TRUE, formula = my.formula) +
+  stat_poly_eq(formula = my.formula, 
+               eq.with.lhs = "italic(hat(y))~`=`~",
+               aes(label = paste(..eq.label.., "~~~~~(",..rr.label..,")", sep = "")), 
+               geom = "label_npc", alpha = 0.33, fill="#619cff",
+               size=3,
+               parse = TRUE) +
+  labs(caption = "Data: My attendance records. Note: values are centered to the mean and coefficients communicate effect of a one percent increase in attendance.\nMultiply it by five to get a rough estimate of the effect of skipping/attending one class from the mean attendance rate.")
+
+```
+
+A student might object that attendance is partly endogenous to a grade since past classes deducted all participation points after five unexcused absences. This is true, but the findings hold even when I subset the data to cases where attendance is greater than 75% (i.e. roughly the threshold below which I deduct all participation points). Students who just meet the threshold for full participation points nevertheless get an estimated decrease of `r round(M2$coefficients[2], 3)*5` in their overall grade for each missed class. This effect is also precise (*t* = `r round(M2df$statistic[2], 3)`). Put another way, we would have observed this effect in my data if there were no *true* effect of attendance on grades about `r round(summary(M2)$coefficients[2,4]*1e19)` times in `r prettyNum(1e19, big.mark=",")` "trials"<!--(i.e. *p* ~ `r round(summary(M2)$coefficients[2,4], 19)`)-->, on average. That probability is effectively zero. *Attend class*.
+
+## Participation Policy
+
+I want to reward each student in the class with all the participation and attendance points. This, however, is contingent on students demonstrating in class that they have read the material and understand its basic ideas. Students routinely fail to demonstrate this en masse to the professor.
+
+I have two tactics to coerce students to do the reading. One, I will cold-call students from a list to answer a particular question. Failure to answer a question posed by me when cold-called (or failure to be in class that day) will result in a one-point deduction of the overall grade for the semester. 
+
+I may also assign a pop quiz for the lecture and cancel the remainder of my presentation for the class period. Failure to be in class for a pop quiz will result in a zero for that quiz. I will grade each quiz and weight the percentage of correct responses against the participation grade for the semester. This means a failure to be in class for what might be the only pop quiz of the semester would result in a *zero* for the participation grade for the semester. Skip class at your own peril.
+
+Finally, prove to me you have read the syllabus by sending me an email titled "Subdivisions." In that email, copy and paste the lyrics to "Subdivisions" by Rush from their woefully underappreciated 1982 album *Signals*. Also send me a YouTube link for the music video so that I may enjoy it (after you have already enjoyed it). You will get one point of extra credit for this exercise. This extra credit offer is valid until 9 a.m. (my Gmail time) of Aug. 28, 2019.
+
+## Cell Phones, Pagers, Laptops, PDAs
+
+Unless Student Disabilities Services informs me that such a device is a necessary accommodation for a student with disabilities, all laptops, tablets, cell phones, and PDAs are to be put away during class (both in lecture and during exams). There are two reasons for this. One, you are on Facebook or Instagram anyway when you are using them during class. Both can wait. Two, laptops are---and I must emphasize this---[*terrible* learning devices](http://svmiller.com/blog/2014/09/taking-good-notes/). Likewise, keep your phone or pager (do people still use those?) in your bag or pocket during class. The professor reserves the right to embarrass the student for not having a phone on "vibrate" during class. If not, the ringtone better be something good.
+
+## Late Arrival of the Professor Policy
+
+If, for some reason, I am more than fifteen minutes late to class, a volunteer student should check in 232 Brackett Hall with Ms. Angela Guido.  If class is cancelled, I will send an email in advance of class.
+
+## E-mail Policy (or: Why I May Not Respond to Your E-mail)
+
+I am usually quick to respond to student e-mails. However, student e-mails tend to do several things that try my patience. I have a new policy, effective Fall 2016, that outlines why I will not respond to certain e-mails students send. Multiple rationales follow.
+
+1. The student could answer his/her own inquiry by reading the syllabus.
+2. The student missed class for which there was no exam. I do not need to know the exact reason for a missed class. Students with excusable absences are responsible for giving me a note *in hard copy* that documents the reason for the missed class. An e-mail is unnecessary unless the impromptu absence involved missing a midterm or final.
+3. The student wants to know what topics s/he missed during a class s/he skipped. The answer is always "you missed what was on the syllabus."
+4. The student is protesting a grade without reference to specific points of objection. See the policy on protesting a grade in the syllabus. These e-mails tend to be expressive utility on the part of the student and do not require a response from me. Students interested in improving their knowledge of material should see me during office hours.
+5. The students wants to know how many classes s/he missed at some point during the semester. I assume the student has a better answer to that question than me until the end of the semester.
+6. The student is requesting an extension on an assignment for which the syllabus already established the deadline. The answer is always "no."
+7. The student is proposing an excuse for why an assignment that is late on *Turnitin* is "not actually late" by some flimsy pretense. I will ignore these e-mails.
+8. The student is ["grade grubbing"](https://www.math.uh.edu/~tomforde/GradeGrubbing.html) or asking to round up a grade. The answer is always "no." *I round grades down, not up.*
+9. The student is asking for an extra credit opportunity, a request that amounts to more grading for the professor. The answer is "no."
+
+## Make-Up Exam Policy
+
+There are **NO** make-ups for missed exams. Professors are forever intolerant of weak excuses. Do not bring them to me. Missed exams in cases of illness or personal emergency can be accommodated only with proper documentation. This *does not* mean a student can punt an exam to the near future because of a headache or the sniffles, for which a medical excuse is sought several hours after missing the exam in question. I will not accept these notes. Exams missed due to a university-sponsored event or religious holiday may also be accommodated, provided that the student informs me of the conflict *at least two weeks in advance*. Students who have valid excuses, with documentation, for missing exam dates have *one week at the most* from the original date of the exam to complete a missed exam.
+
+## Academic Dishonesty Policy
+
+I take academic integrity seriously and will show no tolerance for any instances of academic dishonesty. The logic behind cheating or plagiarism may be self-interest, but this is too myopic. Penalties for being caught are severe and the consequences of being found culpable will extend well beyond the student's time as a college student at Clemson. In the interest of clarification, I provide the definitions of several types of academic dishonesty below, [as understood by Clemson University](http://www.clemson.edu/administration/student-affairs/student-handbook/universitypolicies/academic_integrity.html).  Avoid intentionally or inadvertently committing any of these acts:
+
+- **Cheating**: Giving, receiving, or using unauthorized aid, including the inappropriate use of electronic devices, in any work submitted to fulfill academic requirements. In examination situations all electronic devices must be off and stowed unless otherwise authorized by the instructor.
+
+- **Plagiarism**: The intentional or unintentional copying of language, structure, or ideas of another and attributing the work to one's own efforts.
+
+- **Unlawful Access to Private Material**:  Attempts to copy, edit, or delete computer files that belong to another person or use of computer accounts that belong to another person without the permission of the file owner or account owner.
+
+Clemson University's Academic Integrity Statement broadly defines breaches of academic integrity as "lying, cheating, or stealing in any form." This broad definition of academic integrity that will be enforced in my classroom.
+
+## Disabilities Policy
+
+Federal laws mandate the provision of services at the university level to qualified students with disabilities. If a student requires special provisions, I encourage that student to let me know *privately* as soon as possible (preferably within the first two weeks of the semester). Afterward, I am required to refer the student to the [Student Disabilities Services](http://www.clemson.edu/campus-life/campus-services/sds/) (SDS), which will determine the necessary provisions that I must make. SDS will give its recommendations to the student, who must relay their recommendations to me. I, as the instructor, am responsible for providing the necessary accommodations, but only at the behest of SDS. The student maintains privacy rights on the matter, which I wholeheartedly will respect. That said, *it is the student's responsibility to initiate the provision process*. This can only be done, privately and securely, through SDS.
+
+Students who require quiet test rooms or extended time for exams must take the initiative to schedule a room at the [Test Proctoring Center](http://www.clemson.edu/campus-life/campus-services/sds/test-center.html) on campus. These rooms must be scheduled by the student for the day of the exam as listed in the syllabus. Failure by the student to schedule a room at the Test Proctoring Center for the day of the exam will lead to a zero on the assignment.
+
+## Disputing an Assignment Grade
+
+I am willing to accommodate students who believe my grading of an assignment was too harsh or misunderstanding. Students who wish to dispute a grade on an assignment must submit a one-page, single-spaced argument for a grade change before I consider the request. From there, I will re-grade the entire assignment. The student should not assume a "ratchet effect" for disputing an assignment as the subsequent reevaluation may result in a lower grade.
+
+
+\newpage
+
+# Class Schedule
+
+Students must read the following *before* Tuesday's class session each week.  Important: class readings are subject to change, contingent on mitigating circumstances and the progress we make as a class. Students should attend lectures and follow the course website to keep track of any changes to the schedule. Weeks corresponding with midterms will have the exams on Thursday preceded by an in-class review on Tuesday. <!-- Figure 2 outlines the plan and highlights important dates for the semester. Dates within the semester that correspond with university holidays or in which the professor will be out of town are whitened out.-->
+
+
+```{r echo=F, fig.cap="A Calendar for POSC 3610 (International Conflict, Fall 2019)", results="hide", eval=T, fig.width=11, fig.height=5}
+
+ggcal(mydate, myfills) +
+  theme(plot.title=element_text(face="bold"),
+        plot.caption=element_text(hjust=1, size=9,
+                                    margin=margin(t=10), face="italic")) +
+  scale_fill_manual(values=c("Class Day"="steelblue", 
+                             "Other Day"="lightsteelblue",
+                             "Exam"="lightpink2",
+                             "Paper Due (Turnitin)" = "indianred4"),
+                    breaks=c("Class Day","Exam","Paper Due (Turnitin)")) +
+  theme(legend.position="bottom") +
+#  geom_point(shape=1, size=7) +
+  geom_text(aes(label=give_me_days)) +
+  labs(caption = "Notable dates: Football game (Aug. 29), DSE-ECSA Conference (Oct. 1-6), Fall Break (Oct. 15), Thanskgiving Break (Nov. 25-29)")
+
+```
+
+
+## `r advdate(mon, 1)`: Syllabus Day
+
+Read *all* associated documents on course website.
+  
+- [Taking Good Notes](http://svmiller.com/blog/2014/09/taking-good-notes/)
+- [Set Up Google Scholar to Find Class Readings on Your Syllabus](http://svmiller.com/blog/2017/07/set-up-google-scholar-to-find-class-readings/)
+- [Dos and Dont's of Writing for Students](http://svmiller.com/blog/2015/06/dos-and-donts-of-writing-for-students/)
+- [Assorted Tips for Students on Writing Research Papers](http://svmiller.com/blog/2015/12/assorted-tips-students-research-papers/)
+- [Exam Grading Policy](https://www.dropbox.com/s/apihjs7di81aqcv/svm-exam-grading-policy.pdf?dl=0)
+- [Fun with Attendance and Grades (i.e. Students Should Attend Class)](http://svmiller.com/blog/2016/05/fun-with-attendance-grades/)
+- [The Educational Power of Discomfort](http://svmiller.com/blog/2016/05/educational-power-discomfort/)
+- [Everybody Writes: A Web Content Approach for Students](http://svmiller.com/blog/2016/05/everybody-writes-academic/)
+- [Put Your Laptops Away, Kids (Vol. 2)](http://svmiller.com/blog/2016/05/put-your-laptops-away-2/)
+- [Reading a Regression Table: A Guide for Students](http://svmiller.com/blog/2014/08/reading-a-regression-table-a-guide-for-students/)
+
+## `r advdate(mon, 2)`: The Scientific Study of War
+
+*Note: Clemson has scheduled what it's euphemestically calling an "E-Learning Day" for Aug. 29 in order to promote "eLearning" across statewide classrooms.*[^elearning]
+
+
+[^elearning]: The [official rationale](https://www.clemson.edu/online/elearning/student-resources.html) for this is ~~Clemson wants to stress test its servers in the event of the kind of emergency that shuts down class rooms and access to the university while also forgetting that the kind of event for which it wants to "stress test" would also knock out university servers. It's a pained way to provide cover for~~ the football game and that tailgaters are going to shut down the university anyway. Enjoy the football game. I'm going to upload what would've been this lecture on the course website and you'll be responsible for it anyway.
+
+*For "E-Learning Day", I want to encourage you to ask me some questions in the "Discussion" section of Canvas. So, I'm going to offer you **a point of free credit on your overall grade** if you ask me a timely question about current events that either asks the professor's perspective or asks how to relate a reading or topic you see on the syllabus to a current event. There are a few caveats. One, you cannot duplicate one of your classmates' questions. Two, if I feel the question is good and honest from a student's perspective wanting to learn more about the world and the material, I'll start my answer with a "+1". That's how you'll know you got the point (i.e. don't be a troll, and be respectful). Three, questions are welcome if you do not understand the material, but questions like "I didn't understand the reading for this week. Could you elaborate this?" don't count and you can privately email those to me. Four, you must make your question public and ask it in the Discussion section (i.e. you cannot privately email it to me).*
+
+
+<!-- Thus, [the official rationale](https://www.clemson.edu/online/elearning/student-resources.html) that the university wants to test its ability to overcome disruptions like, as it cites, the [flooding event in 2018](https://newsstand.clemson.edu/mediarelations/reclaim-flooded-lawns-left-behind-by-hurricane-florence/) is an explanation that no one is buying on its face and the fact that the event in question was in the northeast of the state (i.e. not the Upstate) only compounds how forced it is that the university is trying to -->
+
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+bib[c("bdm1985tsu","bremer1992ddc")]
+BibOptions(sorting = "none")
+
+```
+
+##  `r advdate(mon, 3)`: Identifying Wars and MIDs
+
+```{r, echo = FALSE, results="asis"} 
+bib["diehl2006jap"]
+```
+
+```{r, echo = FALSE, results="asis"} 
+bib["jonesetal1996mid", "sarkeesetal2003isis"]
+``` 
+
+##  `r advdate(mon, 4)`: Formal/Bargaining Models of Conflict
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+bib[c("bdm1988ceut", "snyder1971pdc", "fearon1995rew")]
+BibOptions(sorting = "none")
+
+``` 
+
+### Recommended Reading
+
+```{r, echo = FALSE, results="asis"} 
+bib[c("wagner2000bw","filsonwerner2002bmwp")]
+```
+
+##  `r advdate(mon, 5)`: Contiguity and Territory 
+
+```{r, echo = FALSE, results="asis"} 
+bib[c("quackenbush2006ioc","vasquez1995wdn")]
+```
+
+
+
+##  `r advdate(mon, 6)`: Power and Structural Theories
+
+*The Forsberg (2011) and Levy and Thompson (2010) book chapters are available on Canvas*
+
+```{r, echo = FALSE, results="asis"} 
+bib[c("forsberg2011pir","levythompson2010chp2")]
+```
+
+
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+print(bib[c("waltz1988ownt", "vanevera1998odcw", "sample2017pws")])
+BibOptions(sorting = "none")
+
+```
+
+##  `r advdate(mon, 7)`: NO CLASS
+
+*The professor will be at the DSE-ECSA Conference in Aarhus, effectively all week.*
+
+##  `r advdate(mon, 8)`:  Alliances
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+print(bib[c("giblersarkees2004ma", "laireiter2000dps", "johnsonleeds2011dp", "kenwicketal2015dard")])
+BibOptions(sorting = "none")
+
+``` 
+
+### Scholarly Dialogue
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("kenwickvasquez2017dpd", "leedsjohnson2017tdd", "morrow2017wdda")])
+``` 
+
+
+## `r advdate(mon, 9)`: MIDTERM
+
+*The midterm review will be electronic, given the odd layout for the semester. Fall break is Tuesday.*
+
+##  `r advdate(mon, 10)`: Democratic Peace
+
+```{r, echo = FALSE, results="asis"} 
+bib[c("maozrussett1993nsc","rousseauetal1996adn","benoit1996drm")]
+``` 
+
+```{r, echo = FALSE, results="asis"} 
+bib[c("reiterstam1998dwiv","dixon1994dps")]
+``` 
+
+##  `r advdate(mon, 11)`: Escalation of Disputes to War
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("reed2000usm","senesevasquez2003uet")])
+``` 
+
+
+##  `r advdate(mon, 12)`: The Evolution of War
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+print(bib[c("altfeldbdm1979csw","siversonstarr1990owdw","bennettstam1996diw","bennettstam1998dad")])
+BibOptions(sorting = "none")
+``` 
+
+
+## `r advdate(mon, 13)`: War Termination and Consequences
+
+*The Thompson (1993) reading is available on Canvas.*
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+print(bib[c("slantchev2003pcwn","ramsay2008sif","reiter2003ebmw")])
+BibOptions(sorting = "none")
+``` 
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("thompson1993cw")])
+``` 
+
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("organskikugler1977cmw","bdmetal1992wfr","koubi2005wep")])
+``` 
+
+
+##  `r advdate(mon, 14)`: Recurrent Conflict and Rivalry
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("quackenbushventeicher2008sorc","frazierdixon2006tpi")])
+``` 
+
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("goertzdiehl1992eier","thompson2001irr","kleinetal2006nrd")])
+``` 
+
+
+##  `r advdate(mon, 15)`: THANKSGIVING BREAK
+
+<!-- War Termination and Consequences
+
+*The Thompson (1993) reading is available on Canvas.*
+
+```{r, echo = FALSE, results="asis"} 
+BibOptions(sorting = "ynt")
+print(bib[c("slantchev2003pcwn","ramsay2008sif","reiter2003ebmw")])
+BibOptions(sorting = "none")
+``` 
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("thompson1993cw")])
+``` 
+
+
+```{r, echo = FALSE, results="asis"} 
+print(bib[c("organskikugler1977cmw","bdmetal1992wfr","koubi2005wep")])
+``` 
+-->
+
+
+
+##  `r advdate(mon, 16)`: What Have We Learned About Disputes and War
+
+##  `r advdate(mon, 17)`: FINAL EXAMS 
