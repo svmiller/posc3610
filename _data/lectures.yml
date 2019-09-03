@@ -12,11 +12,11 @@
   filename: dangerous-dyads
   dirname: dangerous-dyads
   tldr: "Bremer's (1992) 'dangerous dyads' served as a foundation statistical model for evaluating conflict onset. Also: here's how to read a research design section and regression table."
-# #
-# #- title: "Defining Conflicts and Disputes"
-# #  filename: defining-conflict-disputes
-# #  dirname: defining-conflict-disputes
-# #  tldr: "Conflict is an interconnected process and MIDs are our ubiquitous measure of conflict in peace science."
+
+- title: "Defining Conflicts and Disputes"
+  filename: defining-conflict-disputes
+  dirname: defining-conflict-disputes
+  tldr: "Conflict is an interconnected process and MIDs are our ubiquitous measure of conflict in peace science."
 # #
 # # - title: "States, War, and Conflict Patterns"
 # #  filename: states-war-mid-patterns
