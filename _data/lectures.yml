@@ -17,11 +17,11 @@
   filename: defining-conflict-disputes
   dirname: defining-conflict-disputes
   tldr: "Conflict is an interconnected process and MIDs are our ubiquitous measure of conflict in peace science."
-# #
-# # - title: "States, War, and Conflict Patterns"
-# #  filename: states-war-mid-patterns
-# #  dirname: states-war-mid-patterns
-# #  tldr: "This graph-heavy lecture defines states and wars and explores the data we have on wars and MIDs."
+
+- title: "States, War, and Conflict Patterns"
+  filename: states-war-mid-patterns
+  dirname: states-war-mid-patterns
+  tldr: "This graph-heavy lecture defines states and wars and explores the data we have on wars and MIDs."
 # #
 # # - title: "Thinking Rationally and Strategically"
 # # filename: rationality-1
