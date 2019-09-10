@@ -22,11 +22,11 @@
   filename: states-war-mid-patterns
   dirname: states-war-mid-patterns
   tldr: "This graph-heavy lecture defines states and wars and explores the data we have on wars and MIDs."
-# #
-# # - title: "Thinking Rationally and Strategically"
-# # filename: rationality-1
-# #  dirname: rationality-1
-# #  tldr: "Rational decision-makers encounter strategic problems in IR. Here's how to think about that."
+
+- title: "Thinking Rationally and Strategically"
+  filename: rationality-1
+  dirname: rationality-1
+  tldr: "Rational decision-makers encounter strategic problems in IR. Here's how to think about that."
 # #
 # # - title: "War as Bargaining"
 # #  filename: rationality-2
