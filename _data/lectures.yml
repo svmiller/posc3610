@@ -27,11 +27,11 @@
   filename: rationality-1
   dirname: rationality-1
   tldr: "Rational decision-makers encounter strategic problems in IR. Here's how to think about that."
-# #
-# # - title: "War as Bargaining"
-# #  filename: rationality-2
-# #  dirname: rationality-2
-# #  tldr: "War is bargaining failure. Here's how to model it, and why it happens."
+
+- title: "War as Bargaining"
+  filename: rationality-2
+  dirname: rationality-2
+  tldr: "War is bargaining failure. Here's how to model it, and why it happens."
 # #
 # - title: "Identifying Opportunity for Conflict"
 #   filename: opportunity-conflict
