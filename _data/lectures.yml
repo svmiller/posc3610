@@ -38,10 +38,10 @@
   dirname: opportunity-conflict
   tldr: "Rethinking the contiguity-conflict relationship as more of an opportunity/'necessity' argument."
 
-# - title: "Territorial Conflict"
-#   filename: territorial-conflict
-#   dirname: territorial-conflict
-#   tldr: "Most wars are fought over territory and contiguity is just a rough proxy for that."
+- title: "Territorial Conflict"
+  filename: territorial-conflict
+  dirname: territorial-conflict
+  tldr: "Most wars are fought over territory and contiguity is just a rough proxy for that."
 
 # - title: "Power and the Realisms"
 #   filename: power-1
