@@ -419,7 +419,7 @@ Important methodological notes:
 
 ###
 
-```{r reed2000-tab1-mod1, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+```{r reed2000-tab1-mod1, eval=F, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
 library(dotwhisker)
 tribble(
   ~term, ~estimate, ~std.error, ~model,
@@ -443,6 +443,8 @@ tribble(
   scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
 ```
 
+![](reed2000-tab1.png)
+
 ### What Do We Know About Dispute Onset?
 
 Reed's simple model of MID onset has the following findings:
@@ -456,7 +458,7 @@ Reed's simple model of MID onset has the following findings:
 
 ###
 
-```{r reed2000-tab1-mod2, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+```{r reed2000-tab1-mod2, eval=F, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
 
 tribble(
   ~term, ~estimate, ~std.error, ~model,
@@ -480,6 +482,8 @@ tribble(
   scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
 ```
 
+![](reed2000-tab1.png)
+
 ### What Do We Know About Dispute Escalation?
 
 Reed's simple model of MID escalation suggests:
@@ -493,7 +497,7 @@ Reed's simple model of MID escalation suggests:
 
 ###
 
-```{r reed2000-tab1-mod3, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+```{r reed2000-tab1-mod3, eval=F, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
 
 tribble(
   ~term, ~estimate, ~std.error, ~model,
@@ -521,6 +525,8 @@ dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 1.1)) + them
   scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
 
 ```
+
+![](reed2000-tab1.png)
 
 ### What Do We Know About Dispute Escalation?
 
