@@ -73,10 +73,10 @@
   dirname: escalation-1
   tldr: "What's correlates with dispute onset need not correlate with dispute escalation, which is what Reed (2000) finds."
 
-# - title: "A Unified Explanation of Territorial Conflict"
-#   filename: escalation-2
-#   dirname: escalation-2
-#   tldr: "Senese and Vasquez (2003) find that disputed territory is conflict-prone at both the initiation and escalation phases."
+- title: "A Unified Explanation of Territorial Conflict"
+  filename: escalation-2
+  dirname: escalation-2
+  tldr: "Senese and Vasquez (2003) find that disputed territory is conflict-prone at both the initiation and escalation phases."
 
 # - title: "War Expansion"
 #   filename: war-evolution-1
