@@ -49,6 +49,8 @@ syllabus/figs*
 syllabus/new
 cache
 figs
+1-lectures
+_readings
 
 # Ignore some jekyll stuff
 _site
