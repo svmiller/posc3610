@@ -46,6 +46,7 @@ syllabus/old*
 syllabus/cyprus*
 syllabus/sum*
 syllabus/figs*
+syllabus/new
 cache
 figs
 
@@ -57,3 +58,4 @@ _site
 
 # don't ignore the .gitignore file
 !.gitignore
+.Rproj.user
