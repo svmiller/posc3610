@@ -2429,7 +2429,7 @@ Fatalities are approximate and informed by a great deal of archival work. Unders
 
 Finally, I will add the caveat here that any paper you write without first clearing your topic with me gets an automatic zero. You must consult with me what case you will do before submission of your paper.
 
-To close, here are some participant summaries of these wars, if they may help you choose which war you would like to research. Several of the same caveats apply here. Start dates and end dates communicate confrontation participation irregarding confrontation severity. Participants can drop out and reappear. Side A is the side that side that initiated the first militarized event in the confrontation. Further, not all participants in the war are active belligerents. For example, the United States and Russia both participated in the Second Taiwan Straits Crisis, but never engaged in a use of force.
+To close, here are some participant summaries of these wars, if they may help you choose which war you would like to research. Several of the same caveats apply here. Start dates and end dates communicate confrontation participation irregarding confrontation severity. Participants can drop out and reappear. Side A is the side that side that initiated the first militarized event in the confrontation. Battles indicate sustained military campaigns in heat of an ostensible war, though “clashes” may minimally indicate that we do not know who initiated a particular skirmish. Take care here in thinking about a case like Saudi Arabia in the Iraq War. Further, not all participants in the war are active belligerents. For example, the United States and Russia both participated in the Second Taiwan Straits Crisis, but never engaged in a use of force.
 
 <span id="participants"></span>
 
@@ -2495,7 +2495,7 @@ Mar 4, 1857
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,500
@@ -2527,7 +2527,7 @@ Mar 4, 1857
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 400
@@ -2559,7 +2559,7 @@ Aug 9, 1848
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 26
@@ -2591,7 +2591,7 @@ Aug 9, 1848
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 26
@@ -2623,7 +2623,7 @@ Aug 8, 1849
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,400
@@ -2655,7 +2655,7 @@ Aug 8, 1849
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,852
@@ -2719,7 +2719,7 @@ May 21, 1833
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 600
@@ -2751,7 +2751,7 @@ May 21, 1833
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 400
@@ -2911,7 +2911,7 @@ Jan 16, 1901
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -2943,7 +2943,7 @@ Jan 16, 1901
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 26
@@ -2975,7 +2975,7 @@ Jan 16, 1901
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -3007,7 +3007,7 @@ Jan 16, 1901
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 501
@@ -3039,7 +3039,7 @@ Jan 16, 1901
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 501
@@ -3071,7 +3071,7 @@ Jan 16, 1901
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,090
@@ -3103,7 +3103,7 @@ Dec 22, 1929
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 200
@@ -3135,7 +3135,7 @@ Dec 22, 1929
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,000
@@ -3199,7 +3199,7 @@ Jun 12, 1957
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,507
@@ -3231,7 +3231,7 @@ Jun 12, 1957
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,494
@@ -3295,7 +3295,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 35
@@ -3327,7 +3327,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 87
@@ -3359,7 +3359,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 80
@@ -3391,7 +3391,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 100
@@ -3423,7 +3423,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 104
@@ -3455,7 +3455,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 235
@@ -3487,7 +3487,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 57
@@ -3519,7 +3519,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 52
@@ -3551,7 +3551,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 964
@@ -3583,7 +3583,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 251
@@ -3615,7 +3615,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 802
@@ -3647,7 +3647,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 606
@@ -3679,7 +3679,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,008
@@ -3711,7 +3711,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 198,126
@@ -3743,7 +3743,7 @@ Jul 25, 1953
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 109,824
@@ -3775,7 +3775,7 @@ Jul 27, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 40,929
@@ -3807,7 +3807,7 @@ Jul 27, 1953
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 215,684
@@ -3871,7 +3871,7 @@ Jan -9, 1953
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2
@@ -3903,7 +3903,7 @@ Mar 30, 1856
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 25
@@ -3935,7 +3935,7 @@ Mar 30, 1856
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 88,225
@@ -3967,7 +3967,7 @@ Mar 30, 1856
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,200
@@ -3999,7 +3999,7 @@ Mar 30, 1856
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 44,000
@@ -4031,7 +4031,7 @@ Mar 30, 1856
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 21,000
@@ -4063,7 +4063,7 @@ Mar 30, 1856
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 93,000
@@ -4095,7 +4095,7 @@ Feb 26, 1871
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 42,000
@@ -4127,7 +4127,7 @@ Nov 1870
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 501
@@ -4159,7 +4159,7 @@ Feb 26, 1871
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 148,400
@@ -4191,7 +4191,7 @@ Nov 22, 1870
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 501
@@ -4223,7 +4223,7 @@ Nov 15, 1870
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,200
@@ -4287,7 +4287,7 @@ May 5, 1936
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 16,000
@@ -4319,7 +4319,7 @@ May 9, 1936
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 4,000
@@ -4351,7 +4351,7 @@ Oct 1912
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 12,000
@@ -4383,7 +4383,7 @@ Oct 1912
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,200
@@ -4447,7 +4447,7 @@ Jul 11, 1859
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 11,500
@@ -4479,7 +4479,7 @@ Jul 11, 1859
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 8,000
@@ -4511,7 +4511,7 @@ Jul 11, 1859
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,000
@@ -4543,7 +4543,7 @@ May 31, 1933
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 40,000
@@ -4575,7 +4575,7 @@ May 31, 1933
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 9,000
@@ -4671,7 +4671,7 @@ Feb 5, 1867
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 11,000
@@ -4703,7 +4703,7 @@ Feb 5, 1867
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 7,500
@@ -4735,7 +4735,7 @@ Apr -9, 1828
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 40
@@ -4767,7 +4767,7 @@ Apr -9, 1828
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 55
@@ -4799,7 +4799,7 @@ Apr -9, 1828
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 65
@@ -4831,7 +4831,7 @@ Apr -9, 1828
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 2,000
@@ -4863,7 +4863,7 @@ Dec 7, 1941
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 600,000
@@ -4895,7 +4895,7 @@ Dec 7, 1941
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 200,000
@@ -4991,7 +4991,7 @@ Mar 20, 1959
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 552
@@ -5023,7 +5023,7 @@ Mar 20, 1959
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 613
@@ -5055,7 +5055,7 @@ Jul 1, 1849
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 26
@@ -5087,7 +5087,7 @@ Jul 1, 1849
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 900
@@ -5119,7 +5119,7 @@ Jul 1, 1849
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 26
@@ -5151,7 +5151,7 @@ Jul 1, 1849
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,252
@@ -5183,7 +5183,7 @@ Mar 12, 1940
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 120,000
@@ -5215,7 +5215,7 @@ Mar 12, 1940
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 22,000
@@ -5279,7 +5279,7 @@ Sep 1905
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 70,001
@@ -5311,7 +5311,7 @@ Sep 1905
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 78,001
@@ -5343,7 +5343,7 @@ Sep 16, 1939
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 4,800
@@ -5375,7 +5375,7 @@ Sep 1939
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 19,000
@@ -5407,7 +5407,7 @@ Sep 1939
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,800
@@ -5439,7 +5439,7 @@ Aug 1938
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,200
@@ -5471,7 +5471,7 @@ Aug 1938
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 526
@@ -5503,7 +5503,7 @@ Mar 3, 1878
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 120,000
@@ -5535,7 +5535,7 @@ Mar 3, 1878
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 165,000
@@ -5567,7 +5567,7 @@ Sep 1829
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 50,000
@@ -5599,7 +5599,7 @@ Sep 1829
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 80,000
@@ -5823,7 +5823,7 @@ Jul 20, 1864
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 251
@@ -5855,7 +5855,7 @@ Jul 20, 1864
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,000
@@ -5887,7 +5887,7 @@ Jul 20, 1864
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,800
@@ -5919,7 +5919,7 @@ Apr 1, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 300
@@ -5951,7 +5951,7 @@ Oct 25, 1922
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1,100
@@ -5983,7 +5983,7 @@ Apr 1, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 3
@@ -6015,7 +6015,7 @@ Apr 1, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 3
@@ -6047,7 +6047,7 @@ Oct 25, 1922
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 4,500
@@ -6079,7 +6079,7 @@ Apr 1, 1920
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 250
@@ -6111,7 +6111,7 @@ Apr 1, 1920
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 101
@@ -6143,7 +6143,7 @@ Mar 9, 1918
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 40
@@ -6175,7 +6175,7 @@ Dec 25, 1963
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 443
@@ -6207,7 +6207,7 @@ Dec 25, 1963
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,059
@@ -6239,7 +6239,7 @@ Nov 6, 1956
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 9
@@ -6271,7 +6271,7 @@ Nov 6, 1956
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 18
@@ -6367,7 +6367,7 @@ Nov 6, 1956
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,629
@@ -6399,7 +6399,7 @@ Nov 6, 1956
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 340
@@ -6431,7 +6431,7 @@ Jun 9, 1885
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 10,050
@@ -6463,7 +6463,7 @@ Jun 9, 1885
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,200
@@ -6495,7 +6495,7 @@ Mar 29, 1939
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 8,400
@@ -6527,7 +6527,7 @@ Mar 29, 1939
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 200
@@ -6559,7 +6559,7 @@ Mar 29, 1939
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 2,000
@@ -6591,7 +6591,7 @@ Mar 29, 1939
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 4,000
@@ -6623,7 +6623,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -6655,7 +6655,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -6687,7 +6687,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -6719,7 +6719,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,800
@@ -6751,7 +6751,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 0
@@ -6783,7 +6783,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -6815,7 +6815,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 300
@@ -6847,7 +6847,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 200
@@ -6879,7 +6879,7 @@ Jul 26, 1866
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,000
@@ -6911,7 +6911,7 @@ Jul 1866
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 10,014
@@ -6943,7 +6943,7 @@ Jul 1866
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 27,650
@@ -6975,7 +6975,7 @@ Dec 8, 1941
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 2,300
@@ -7007,7 +7007,7 @@ Dec 8, 1941
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 60
@@ -7231,7 +7231,7 @@ Jul 10, 1849
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,500
@@ -7263,7 +7263,7 @@ Jul 10, 1849
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,500
@@ -7295,7 +7295,7 @@ Nov 14, 1956
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,401
@@ -7327,7 +7327,7 @@ Nov 14, 1956
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 691
@@ -7359,7 +7359,7 @@ Nov -9, 1969
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 500
@@ -7391,7 +7391,7 @@ Jun -9, 1971
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 36
@@ -7423,7 +7423,7 @@ Mar 12, 1972
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 365
@@ -7455,7 +7455,7 @@ Jan 28, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,479
@@ -7487,7 +7487,7 @@ Apr 30, 1975
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 70,945
@@ -7519,7 +7519,7 @@ Apr 30, 1975
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 272,646
@@ -7551,7 +7551,7 @@ Jan 28, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 170
@@ -7583,7 +7583,7 @@ Dec 1969
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 9
@@ -7615,7 +7615,7 @@ Jun 30, 1970
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,750
@@ -7647,7 +7647,7 @@ Apr 30, 1975
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 534,102
@@ -7679,7 +7679,7 @@ Apr 8, 1968
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -7711,7 +7711,7 @@ Oct 7, 1935
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 50,000
@@ -7743,7 +7743,7 @@ Oct 7, 1935
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 34,000
@@ -7839,7 +7839,7 @@ Jun 11, 1967
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,861
@@ -7871,7 +7871,7 @@ Jun 11, 1967
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 550
@@ -7903,7 +7903,7 @@ Jun 11, 1967
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 436
@@ -7935,7 +7935,7 @@ Jun 11, 1967
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 429
@@ -7967,7 +7967,7 @@ Oct 24, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 20
@@ -7999,7 +7999,7 @@ Oct 24, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 26
@@ -8031,7 +8031,7 @@ Oct 28, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 101
@@ -8063,7 +8063,7 @@ Oct 28, 1973
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,059
@@ -8095,7 +8095,7 @@ Oct 28, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,240
@@ -8127,7 +8127,7 @@ Oct 28, 1973
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,655
@@ -8191,7 +8191,7 @@ Mar 23, 1910
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 7,500
@@ -8223,7 +8223,7 @@ Mar 23, 1910
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,800
@@ -8255,7 +8255,7 @@ Jun 14, 1934
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 75
@@ -8287,7 +8287,7 @@ Jun 14, 1934
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,800
@@ -8415,7 +8415,7 @@ Jul 18, 1969
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 64
@@ -8447,7 +8447,7 @@ Jul 18, 1969
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,105
@@ -8479,7 +8479,7 @@ Sep 18, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 55,000
@@ -8511,7 +8511,7 @@ Sep 18, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 35,000
@@ -8575,7 +8575,7 @@ Jan 1, 1949
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,130
@@ -8607,7 +8607,7 @@ Jan 1, 1949
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,049
@@ -8639,7 +8639,7 @@ Apr 19, 1913
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 31,000
@@ -8671,7 +8671,7 @@ Apr 19, 1913
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,000
@@ -8703,7 +8703,7 @@ Apr 19, 1913
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 30,000
@@ -8735,7 +8735,7 @@ Apr 19, 1913
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 15,000
@@ -8767,7 +8767,7 @@ Aug 10, 1913
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 19,000
@@ -8799,7 +8799,7 @@ Aug 10, 1913
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 17,500
@@ -8831,7 +8831,7 @@ Aug 10, 1913
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 17,300
@@ -8863,7 +8863,7 @@ Jul 30, 1913
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,400
@@ -8895,7 +8895,7 @@ Jul 30, 1913
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,400
@@ -8927,7 +8927,7 @@ Aug 18, 1919
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -8959,7 +8959,7 @@ Aug 18, 1919
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 0
@@ -9055,7 +9055,7 @@ Aug 18, 1919
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,001
@@ -9087,7 +9087,7 @@ Aug 18, 1919
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,500
@@ -9119,7 +9119,7 @@ Aug 18, 1919
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,500
@@ -9151,7 +9151,7 @@ Oct 11, 1922
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 18,000
@@ -9183,7 +9183,7 @@ Oct 11, 1922
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 25,000
@@ -9215,7 +9215,7 @@ Jan 10, 1966
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,046
@@ -9247,7 +9247,7 @@ Jan 10, 1966
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,585
@@ -9279,7 +9279,7 @@ Feb 20, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 247
@@ -9343,7 +9343,7 @@ Feb 1973
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,047
@@ -9375,7 +9375,7 @@ Feb 1973
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 4,648
@@ -9535,7 +9535,7 @@ May 6, 1962
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 0
@@ -9599,7 +9599,7 @@ Feb 15, 1973
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 35
@@ -9631,7 +9631,7 @@ Feb -9, 1971
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 101
@@ -9663,7 +9663,7 @@ Jan 1979
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 977
@@ -9695,7 +9695,7 @@ Jan 1979
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,382
@@ -9727,7 +9727,7 @@ Dec 17, 1971
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,536
@@ -9759,7 +9759,7 @@ Dec 17, 1971
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,935
@@ -9791,7 +9791,7 @@ Jul 1970
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2
@@ -9823,7 +9823,7 @@ Aug 7, 1970
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 300
@@ -9855,7 +9855,7 @@ Aug 7, 1970
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 849
@@ -9887,7 +9887,7 @@ Mar 21, 1968
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 35
@@ -9919,7 +9919,7 @@ Jul 19, 1969
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -9951,7 +9951,7 @@ Jul 23, 1894
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 26
@@ -9983,7 +9983,7 @@ Apr 17, 1895
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 9,900
@@ -10015,7 +10015,7 @@ Apr 17, 1895
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 4,926
@@ -10047,7 +10047,7 @@ Oct 20, 1883
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 9,500
@@ -10079,7 +10079,7 @@ Oct 20, 1883
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,100
@@ -10111,7 +10111,7 @@ Jun 22, 1880
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 600
@@ -10143,7 +10143,7 @@ Feb 1852
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 500
@@ -10175,7 +10175,7 @@ Feb 1852
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 800
@@ -10207,7 +10207,7 @@ May 1876
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,000
@@ -10239,7 +10239,7 @@ May 1876
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,000
@@ -10271,7 +10271,7 @@ Feb 2, 1848
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,900
@@ -10303,7 +10303,7 @@ Feb 2, 1848
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 12,400
@@ -10335,7 +10335,7 @@ Aug 12, 1898
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,910
@@ -10367,7 +10367,7 @@ Aug 12, 1898
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 775
@@ -10399,7 +10399,7 @@ May 1897
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 550
@@ -10431,7 +10431,7 @@ May 1897
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,300
@@ -10463,7 +10463,7 @@ Apr 26, 1860
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,800
@@ -10495,7 +10495,7 @@ Apr 26, 1860
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,800
@@ -10527,7 +10527,7 @@ Mar 1, 1870
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 192,002
@@ -10559,7 +10559,7 @@ Mar 1, 1870
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 96,001
@@ -10591,7 +10591,7 @@ Mar 1, 1870
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 10,001
@@ -10623,7 +10623,7 @@ Jan 7, 1949
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 195
@@ -10655,7 +10655,7 @@ Nov 18, 1948
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 11
@@ -10687,7 +10687,7 @@ Jan 7, 1949
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 130
@@ -10719,7 +10719,7 @@ Jan 7, 1949
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,100
@@ -10751,7 +10751,7 @@ Jan 7, 1949
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 188
@@ -10783,7 +10783,7 @@ Jan 7, 1949
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 195
@@ -10815,7 +10815,7 @@ Mar 9, 1978
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 76
@@ -10847,7 +10847,7 @@ Mar 15, 1978
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,952
@@ -10879,7 +10879,7 @@ Mar 15, 1978
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,425
@@ -10911,7 +10911,7 @@ Feb 15, 1978
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -10943,7 +10943,7 @@ Aug 20, 1988
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 154,109
@@ -10975,7 +10975,7 @@ Aug 20, 1988
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 95,147
@@ -11007,7 +11007,7 @@ Jan 3, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 6,955
@@ -11039,7 +11039,7 @@ Jan 3, 1920
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,001
@@ -11103,7 +11103,7 @@ Jan 1920
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 51
@@ -11199,7 +11199,7 @@ Mar 1979
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 4,572
@@ -11231,7 +11231,7 @@ Mar 1979
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,080
@@ -11263,7 +11263,7 @@ Oct 20, 1921
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,400
@@ -11295,7 +11295,7 @@ Oct 20, 1921
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,400
@@ -11327,7 +11327,7 @@ May 4, 1994
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,732
@@ -11359,7 +11359,7 @@ May 4, 1994
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 2,660
@@ -11519,7 +11519,7 @@ Sep 15, 1882
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 26
@@ -11551,7 +11551,7 @@ Sep 15, 1882
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 9,500
@@ -11583,7 +11583,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -11615,7 +11615,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -11647,7 +11647,7 @@ Mar 26, 1991
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -11679,7 +11679,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 49
@@ -11711,7 +11711,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 11
@@ -11743,7 +11743,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 11
@@ -11775,7 +11775,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 21
@@ -11807,7 +11807,7 @@ Mar 3, 1991
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 153
@@ -11839,7 +11839,7 @@ Jan 31, 1991
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1,661
@@ -11871,7 +11871,7 @@ Mar 3, 1991
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 7,816
@@ -11903,7 +11903,7 @@ Jun 18, 2000
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 37,124
@@ -11935,7 +11935,7 @@ Jun 18, 2000
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 17,904
@@ -11967,7 +11967,7 @@ May 1, 2003
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 3,497
@@ -12351,7 +12351,7 @@ Aug 24, 2001
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -12383,7 +12383,7 @@ May 1, 2003
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 20
@@ -12415,7 +12415,7 @@ May 1, 2003
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 75
@@ -12511,7 +12511,7 @@ May 1, 2003
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 0
@@ -12735,7 +12735,7 @@ May 1, 2003
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 11
@@ -12863,7 +12863,7 @@ Dec 17, 2001
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 5,417
@@ -12895,7 +12895,7 @@ Dec 17, 2001
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
@@ -13183,7 +13183,7 @@ Oct 9, 2001
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 0
@@ -13215,7 +13215,7 @@ Nov 15, 2001
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 0
@@ -13247,7 +13247,7 @@ Dec 17, 2001
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 4
@@ -13279,7 +13279,7 @@ Dec 17, 2001
 1
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 0
@@ -13311,7 +13311,7 @@ Oct -9, 2001
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+Clash
 </td>
 <td style="text-align:center;">
 0
@@ -13343,7 +13343,7 @@ Dec 7, 2001
 0
 </td>
 <td style="text-align:left;">
-Active War Participant
+War Battle
 </td>
 <td style="text-align:center;">
 1
