@@ -1,0 +1,85 @@
+#stevetable {
+	width: 100%;
+	margin-bottom: 15px;
+	border-collapse: collapse; 
+
+}
+
+#stevetable caption {
+	font-weight: bold;
+	padding-bottom: 5px;
+} 
+
+#stevetable th {
+	font-weight: bold;
+	color: #fff;
+	border-bottom: 1px #ddd solid;
+	background: $clemson-purple;
+	padding: 7px 3px 7px 10px
+}
+
+
+#stevetable td {
+	padding: 3px 3px 3px 10px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#stevetable tr:nth-child(even) {background: #f9f9f9}
+#stevetable tr:nth-child(odd) {background: #fdfdfd}
+
+
+#stargazer table {
+  margin: 0px auto;
+}
+
+
+#stargazer td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+#modelsummary table {
+
+ margin: 0px auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+border-spacing: 0px;
+}
+
+#modelsummary table caption {
+	font-weight: bold;
+
+}
+
+
+
+#modelsummary table thead tr th {
+	margin: 0px;
+	padding: 5px;
+	font-weight: normal;
+	font-style: italic;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+#modelsummary tfoot {
+	border-top: 1px solid #000000;
+	font-size: .85em;
+	text-align: right;
+}
+
+#modelsummary tbody tr:last-child td {
+
+border-bottom: 1px solid #000000;
+
+}
+
+#modelsummary td {
+  padding-left: 10px;
+  padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
