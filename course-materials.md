@@ -20,7 +20,8 @@ I list this book as "recommended reading" despite the fact the book will be "req
 
 The following documents outline expectations for the "Steps to War" paper due at the end of the semester. An additional document describing most of the wars is [available on Canvas](https://www.clemson.edu/canvas/).
 
-- ["Steps to War" Paper Instructions](http://posc3610.svmiller.com/steps-to-war-assignment/steps-to-war-assignment.pdf)
+- ["Steps to War" War Cases](http://posc3610.svmiller.com/steps-to-war/#wars)
+- ["Steps to War" Paper Instructions](http://posc3610.svmiller.com/steps-to-war/#crafting-your-paper)
 - ["Steps to War" Paper Rubric](http://posc3610.svmiller.com/steps-to-war-assignment/steps-to-war-paper-rubric.pdf)
 
 
