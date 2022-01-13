@@ -1,15 +1,15 @@
 ---
-title: "Steps to War Assignment and Instructions"
+always_allow_html: true
+author: steve
+excerpt: SFSFSFS
+layout: page
 output:
   md_document:
+    pandoc_args:
+    - –wrap=preserve
+    preserve_yaml: true
     variant: gfm
-    preserve_yaml: TRUE
-    pandoc_args: 
-      - "--wrap=preserve"
-author: "steve"
-excerpt: "SFSFSFS"
-layout: page
-always_allow_html: true
+title: Steps to War Assignment and Instructions
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -874,6 +874,38 @@ United Kingdom; Denmark
 </tr>
 <tr>
 <td style="text-align:center;">
+196
+</td>
+<td style="text-align:left;">
+<a href="https://en.wikipedia.org/wiki/Franco-Siamese_War">Franco-Siamese War</a>
+</td>
+<td style="text-align:center;">
+Feb 4, 1893
+</td>
+<td style="text-align:center;">
+Oct 3, 1893
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Imposed
+</td>
+<td style="text-align:left;">
+France
+</td>
+<td style="text-align:left;">
+United Kingdom; Thailand
+</td>
+<td style="text-align:center;">
+602
+</td>
+<td style="text-align:center;">
+1,249
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
 197
 </td>
 <td style="text-align:left;">
@@ -1578,6 +1610,38 @@ Turkey
 </tr>
 <tr>
 <td style="text-align:center;">
+1293
+</td>
+<td style="text-align:left;">
+<a href="https://en.wikipedia.org/wiki/Turkish_invasion_of_Cyprus">Turkish Invasion of Cyprus</a>
+</td>
+<td style="text-align:center;">
+Jul 15, 1974
+</td>
+<td style="text-align:center;">
+Aug 16, 1974
+</td>
+<td style="text-align:left;">
+Victory for Side A
+</td>
+<td style="text-align:left;">
+Imposed
+</td>
+<td style="text-align:left;">
+Turkey
+</td>
+<td style="text-align:left;">
+Greece; Cyprus
+</td>
+<td style="text-align:center;">
+720
+</td>
+<td style="text-align:center;">
+1,560
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
 1312
 </td>
 <td style="text-align:left;">
@@ -1965,7 +2029,7 @@ Turkey
 1580
 </td>
 <td style="text-align:left;">
-<a href="https://en.wikipedia.org/wiki/Rif_War">Rif War</a>
+<a href="https://en.wikipedia.org/wiki/Hispano-Moroccan_War_(1859%E2%80%931860)">Hispano-Moroccan War</a>
 </td>
 <td style="text-align:center;">
 Oct 25, 1859
@@ -2250,6 +2314,38 @@ Azerbaijan; Iran; Turkey
 </tr>
 <tr>
 <td style="text-align:center;">
+3630
+</td>
+<td style="text-align:left;">
+<a href="https://en.wikipedia.org/wiki/Falklands_War">Falklands War</a>
+</td>
+<td style="text-align:center;">
+Mar 31, 1982
+</td>
+<td style="text-align:center;">
+Jun 14, 1982
+</td>
+<td style="text-align:left;">
+Victory for Side B
+</td>
+<td style="text-align:left;">
+Imposed
+</td>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+United Kingdom
+</td>
+<td style="text-align:center;">
+740
+</td>
+<td style="text-align:center;">
+1,286
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
 3725
 </td>
 <td style="text-align:left;">
@@ -2310,6 +2406,38 @@ Syria; Canada; United Arab Emirates; United Kingdom; Egypt; France; Saudi Arabia
 </td>
 <td style="text-align:center;">
 46,645
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4007
+</td>
+<td style="text-align:left;">
+<a href="https://en.wikipedia.org/wiki/Kargil_War">Kargil War</a>
+</td>
+<td style="text-align:center;">
+Sep 17, 1993
+</td>
+<td style="text-align:center;">
+Jul 26, 1999
+</td>
+<td style="text-align:left;">
+Stalemate
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:left;">
+Pakistan
+</td>
+<td style="text-align:center;">
+615
+</td>
+<td style="text-align:center;">
+1,531
 </td>
 </tr>
 <tr>
@@ -2411,9 +2539,11 @@ Afghanistan
 </tbody>
 </table>
 
-First, these data are forthcoming and are potentially subject to some slight revisions. We are constantly working on militarized events within cases like these. Feel free to raise questions or point out what you believe to be errors.
+First, feel free to ask me for some insight on some of these wars. I do not profess to be an expert on all these wars, but I can often tell you at least something about the wars on these tables. Some of these comments will range from the useful (e.g. the Kargil War is operationally a war even if the fatality threshold associated with war was only met because of a series of low-level incidents before the onset of major fighting in 1999) to the not as useful (e.g. my grandfather’s older brother and family namesake was wounded \[and almost assuredly died\] in the Second Spanish-Moroccan War). Even in the latter case, I could point you in the direction of some places to start, like understanding disputed territory or rivalry relationships.
 
-Second, World War I and World War II are conspicuously absent, mostly because these are atypical wars. This is one thing I will mention often through the course. These two wars may be the most conspicuous wars we’ll ever learn, and World War I itself is disproportionately responsible—or to blame—for the lion’s share of our theoretical arguments and perspectives, but these are far from a typical case of war. Thank goodness too! The world would be a worse place if most wars looked like these, rather than something more typical like the so-called Football War of the assorted Indo-Pakistan conflicts over Kashmir. That said, there are a few wars clearly related to, derivative of, or merged into these massive conflicts.
+Second, these data are forthcoming and are potentially subject to some slight revisions. We are constantly working on militarized events within cases like these. Feel free to raise questions or point out what you believe to be errors.
+
+Third, World War I and World War II are conspicuously absent, mostly because these are atypical wars. This is one thing I will mention often through the course. These two wars may be the most conspicuous wars we’ll ever learn, and World War I itself is disproportionately responsible—or to blame—for the lion’s share of our theoretical arguments and perspectives, but these are far from a typical case of war. Thank goodness too! The world would be a worse place if most wars looked like these, rather than something more typical like the so-called Football War of the assorted Indo-Pakistan conflicts over Kashmir. That said, there are a few wars clearly related to, derivative of, or merged into these massive conflicts.
 
 Start dates and end dates are for the *confrontation*, and not the war, per se. This is something I will emphasize a lot, and something that Vasquez emphasizes as well through the course of his book. War is a subset of a confrontation. Not all confrontations escalate to war (thank goodness, again), and understanding why confrontations escalate to war involve understanding how leaders handle (or mishandle) contentious issues. Don’t expect these dates to correspond with what you see on Wikipedia.
 
@@ -5898,6 +6028,102 @@ War Battle
 </tr>
 <tr>
 <td style="text-align:center;">
+196
+</td>
+<td style="text-align:left;">
+Franco-Siamese War
+</td>
+<td style="text-align:center;">
+United Kingdom
+</td>
+<td style="text-align:center;">
+Jul 1, 1893
+</td>
+<td style="text-align:center;">
+Aug 3, 1893
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+Show of Force
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+196
+</td>
+<td style="text-align:left;">
+Franco-Siamese War
+</td>
+<td style="text-align:center;">
+France
+</td>
+<td style="text-align:center;">
+Feb 4, 1893
+</td>
+<td style="text-align:center;">
+Oct 3, 1893
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+101
+</td>
+<td style="text-align:center;">
+250
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+196
+</td>
+<td style="text-align:left;">
+Franco-Siamese War
+</td>
+<td style="text-align:center;">
+Thailand
+</td>
+<td style="text-align:center;">
+Feb 4, 1893
+</td>
+<td style="text-align:center;">
+Oct 3, 1893
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+501
+</td>
+<td style="text-align:center;">
+999
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
 197
 </td>
 <td style="text-align:left;">
@@ -9194,6 +9420,102 @@ War Battle
 </tr>
 <tr>
 <td style="text-align:center;">
+1293
+</td>
+<td style="text-align:left;">
+Turkish Invasion of Cyprus
+</td>
+<td style="text-align:center;">
+Greece
+</td>
+<td style="text-align:center;">
+Jul 15, 1974
+</td>
+<td style="text-align:center;">
+Aug 16, 1974
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+196
+</td>
+<td style="text-align:center;">
+465
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1293
+</td>
+<td style="text-align:left;">
+Turkish Invasion of Cyprus
+</td>
+<td style="text-align:center;">
+Cyprus
+</td>
+<td style="text-align:center;">
+Jul 20, 1974
+</td>
+<td style="text-align:center;">
+Aug 16, 1974
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+154
+</td>
+<td style="text-align:center;">
+380
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1293
+</td>
+<td style="text-align:left;">
+Turkish Invasion of Cyprus
+</td>
+<td style="text-align:center;">
+Turkey
+</td>
+<td style="text-align:center;">
+Jul 15, 1974
+</td>
+<td style="text-align:center;">
+Aug 16, 1974
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+370
+</td>
+<td style="text-align:center;">
+715
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
 1312
 </td>
 <td style="text-align:left;">
@@ -10445,7 +10767,7 @@ War Battle
 1580
 </td>
 <td style="text-align:left;">
-Rif War
+Hispano-Moroccan War
 </td>
 <td style="text-align:center;">
 Spain
@@ -10477,7 +10799,7 @@ War Battle
 1580
 </td>
 <td style="text-align:left;">
-Rif War
+Hispano-Moroccan War
 </td>
 <td style="text-align:center;">
 Morocco
@@ -11466,6 +11788,70 @@ Attack
 </tr>
 <tr>
 <td style="text-align:center;">
+3630
+</td>
+<td style="text-align:left;">
+Falklands War
+</td>
+<td style="text-align:center;">
+United Kingdom
+</td>
+<td style="text-align:center;">
+Mar 31, 1982
+</td>
+<td style="text-align:center;">
+Jun 14, 1982
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+246
+</td>
+<td style="text-align:center;">
+415
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3630
+</td>
+<td style="text-align:left;">
+Falklands War
+</td>
+<td style="text-align:center;">
+Argentina
+</td>
+<td style="text-align:center;">
+Mar 31, 1982
+</td>
+<td style="text-align:center;">
+Jun 14, 1982
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+494
+</td>
+<td style="text-align:center;">
+871
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
 3725
 </td>
 <td style="text-align:left;">
@@ -11878,6 +12264,70 @@ War Battle
 </td>
 <td style="text-align:center;">
 44,170
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4007
+</td>
+<td style="text-align:left;">
+Kargil War
+</td>
+<td style="text-align:center;">
+India
+</td>
+<td style="text-align:center;">
+Sep 17, 1993
+</td>
+<td style="text-align:center;">
+Jul 26, 1999
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+291
+</td>
+<td style="text-align:center;">
+734
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4007
+</td>
+<td style="text-align:left;">
+Kargil War
+</td>
+<td style="text-align:center;">
+Pakistan
+</td>
+<td style="text-align:center;">
+Sep 17, 1993
+</td>
+<td style="text-align:center;">
+Jul 26, 1999
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+War Battle
+</td>
+<td style="text-align:center;">
+324
+</td>
+<td style="text-align:center;">
+797
 </td>
 </tr>
 <tr>
@@ -13365,7 +13815,7 @@ That said, the nature of this assignment is going to make the introduction rathe
 
 1.  Give me a paragraph synopsis of what the “steps to war” argument is. Sell me at least a little bit on its importance (i.e. why should I care what “steps to war” is?).
 2.  Transition to the war you will evaluate. Describe the war but also make sure to bridge the previous paragraph to this. In other words, start by asking if this prominent theory of how disputes become war matches the particular case. Do not forget you should also give me some indication why the war is important. In other words, what is important about, say, the Seven Weeks War and why should the reader evaluate this war in the “steps to war” framework?
-3.  Outline the paper to follow. This will be a cookie-cutter “The paper proceeds in the following fashion. First, I summarize the ‘steps to war’ argument. Then, I outline how the MID escalated to war.” Make it work for what you’re doing, and obviously expand on this simple passage I wrote, but make sure the final paragraph of the section outlines the rest of the paper.
+3.  Outline the paper to follow. This will be a cookie-cutter “The paper proceeds in the following fashion. First, I summarize the ‘steps to war’ argument. Then, I outline how the confrontation escalated to war.” Make it work for what you’re doing, and obviously expand on this simple passage I wrote, but make sure the final paragraph of the section outlines the rest of the paper.
 
 I will add one caveat here. Make sure your introduction previews your argument. It’s tempting to write a paper like this that tries to “surprise” the reader with some dramatic reveal at the end of the paper that finally mentions the author’s argument. Don’t do that. Make sure you write this section of the paper *knowing what you intend to argue* (i.e. how well Vasquez’ steps to war argument fits the case you will describe).
 
@@ -13382,7 +13832,7 @@ This section will be the meat of your paper. Here, you’ll relate Vasquez’ ge
 -   Was the motivating issue consistent with what Vasquez argues generally leads states to war? Why or why not? Be mindful that Vasquez’ primary interest might be what he terms ‘territoriality’ but his treatment is nebulous enough to include concerns of proximity, contiguity, and rivalry.
 -   How did the *confrontation* start? Please again internalize what the dates communicate. In other words, this is the start date that corresponds with the first threat, display, or use of force in what *became* a war. Your treatment here *must sequence the events by which the MID culminated in war* and I will read it carefully to see how thorough you are. This will require you digging through newspaper archives for [*Times of London*](http://libproxy.clemson.edu/login?url=http://infotrac.galegroup.com/itweb/clemsonu_main?db=TTDA) and/or the [*New York Times*](http://libproxy.clemson.edu/login?url=https://search.proquest.com/hnpnewyorktimes?accountid=6167) in addition to [other newspaper data sources](https://clemson.libguides.com/az.php) that [Clemson’s library](https://libraries.clemson.edu) has available. Start doing searches on [Google Books](https://books.google.com) and [Google Scholar](https://scholar.google.com) as well.
 -   What were the initial positions of the multiple state leaders and elites with a stake in the issue that ultimately led to war? Who was trying to influence the resolution of the dispute and toward what end? Identify the “hard-liners” and “soft-liners”/“accommodationists” that would interest Vasquez for his “steps to war” model. Your treatment here should identify the major players (e.g. foreign ministers, ministers of war, heads of state, other decision-making elites, even, when appropriate, the general public). It’s worth saying you cannot adequately do this part of your analysis without hitting the books. [Google Books](https://books.google.com) and [Google Scholar](https://scholar.google.com) will be your friend.
--   How did the “hard-liners” push for war and ultimately get it? Do notice there’s a selection effect in this assignment. You’re covering wars, so invariably a set of decision-making elites that wanted war were able to secure policies that escalated the MID to war. You’ll need to tell me how the “hard-liners” in the decision-making circle were able to get what they wanted and how they were able to quell the policies proposed by those who wanted some kind of accommodation or peaceful conflict resolution. How did the “soft-liners” acquiesce? Were they simply outnumbered or did they come around and support the policies that ultimately led to war?
+-   How did the “hard-liners” push for war and ultimately get it? Do notice there’s a selection effect in this assignment. You’re covering wars, so invariably a set of decision-making elites that wanted war were able to secure policies that escalated the confrontation to war. You’ll need to tell me how the “hard-liners” in the decision-making circle were able to get what they wanted and how they were able to quell the policies proposed by those who wanted some kind of accommodation or peaceful conflict resolution. How did the “soft-liners” acquiesce? Were they simply outnumbered or did they come around and support the policies that ultimately led to war?
 -   How did the war unfold and was it consistent with Vasquez’ chapter on what accounts for the size, scope, and severity of war? Do note there is a wide variation in war and Vasquez’ treatment here is almost certainly thinking of “world wars” that may not describe your case. For example, the Battle of Navarino was a multilateral war that was effectively one major battle and other cases, like the Boxer Rebellion and Crimean War, were major conflicts that dragged in multiple actors from around the globe. Some of these cases were simple bilateral fights (e.g. Spanish-Moroccan War). Vasquez’ chapter on “world wars” need not describe your case, but it’s likely there will be certain features he describes of these wars that partially fit the case you describe. Take care to discuss that here.
 -   What was the epilogue of the war? Clearly the war ended, but how? What was the nature of the “peace” that followed and how might it conform to Vasquez’ chapter on the nature of peace and its relationship to war?
 
