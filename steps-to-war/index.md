@@ -1,15 +1,15 @@
 ---
-always_allow_html: true
-author: steve
-excerpt: SFSFSFS
-layout: page
+title: "Steps to War Assignment and Instructions"
 output:
   md_document:
-    pandoc_args:
-    - –wrap=preserve
-    preserve_yaml: true
     variant: gfm
-title: Steps to War Assignment and Instructions
+    preserve_yaml: TRUE
+    pandoc_args: 
+      - "--wrap=preserve"
+author: "steve"
+excerpt: "SFSFSFS"
+layout: page
+always_allow_html: true
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -33,8 +33,8 @@ What follows is a table of eligible wars for your to choose for your paper. Thes
 
 <span id="wars"></span>
 
-<table id="stevetable">
-<caption>
+<table id="stevetable" class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
 A Select List of Wars in the Gibler and Miller (Forthcoming) Confrontation Data
 </caption>
 <thead>
@@ -46,9 +46,12 @@ MIC No. 
 War Name
 </th>
 <th style="text-align:center;">
-Start Date
+Taken?
 </th>
 <th style="text-align:center;">
+Start Date
+</th>
+<th style="text-align:left;">
 End Date
 </th>
 <th style="text-align:left;">
@@ -60,7 +63,7 @@ Settlement?
 <th style="text-align:left;">
 State(s) on Side A
 </th>
-<th style="text-align:left;">
+<th style="text-align:center;">
 State(s) on Side B
 </th>
 <th style="text-align:center;">
@@ -79,10 +82,12 @@ Maximum Fatalities
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Anglo-Persian_War">Anglo-Persian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 11, 1856
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 4, 1857
 </td>
 <td style="text-align:left;">
@@ -94,7 +99,7 @@ Imposed
 <td style="text-align:left;">
 United Kingdom
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Iran
 </td>
 <td style="text-align:center;">
@@ -111,10 +116,12 @@ Iran
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/First_Italian_War_of_Independence">Austro-Sardinian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 15, 1848
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 8, 1849
 </td>
 <td style="text-align:left;">
@@ -126,7 +133,7 @@ Negotiated
 <td style="text-align:left;">
 Austria-Hungary
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Tuscany; Modena; Italy
 </td>
 <td style="text-align:center;">
@@ -143,10 +150,12 @@ Tuscany; Modena; Italy
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Belgian_Revolution">Belgian Revolution</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Aug 2, 1831
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 21, 1833
 </td>
 <td style="text-align:left;">
@@ -158,7 +167,7 @@ Negotiated
 <td style="text-align:left;">
 Netherlands
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United Kingdom; Belgium; France
 </td>
 <td style="text-align:center;">
@@ -175,10 +184,12 @@ United Kingdom; Belgium; France
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Boxer_Rebellion">Boxer Rebellion</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 30, 1900
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jan 16, 1901
 </td>
 <td style="text-align:left;">
@@ -190,7 +201,7 @@ Negotiated
 <td style="text-align:left;">
 Austria-Hungary; Italy; Germany; United States; United Kingdom; France; Russia; Japan
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 China
 </td>
 <td style="text-align:center;">
@@ -207,10 +218,12 @@ China
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Sino-Soviet_conflict_(1929)">Manchurian War (1929)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 27, 1929
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Dec 22, 1929
 </td>
 <td style="text-align:left;">
@@ -222,7 +235,7 @@ Negotiated
 <td style="text-align:left;">
 China
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Russia
 </td>
 <td style="text-align:center;">
@@ -239,10 +252,12 @@ Russia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/First_Taiwan_Strait_Crisis">First Taiwan Strait Crisis</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Feb 9, 1953
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jun 12, 1957
 </td>
 <td style="text-align:left;">
@@ -254,7 +269,7 @@ None
 <td style="text-align:left;">
 United States; Taiwan; United States
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 China
 </td>
 <td style="text-align:center;">
@@ -271,10 +286,13 @@ China
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Korean_War">Korean War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+Yes
+</td>
 <td style="text-align:center;">
 Jun 25, 1950
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 27, 1953
 </td>
 <td style="text-align:left;">
@@ -286,7 +304,7 @@ Negotiated
 <td style="text-align:left;">
 China; North Korea
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 New Zealand; Philippines; Netherlands; Greece; Belgium; Colombia; Thailand; Ethiopia; Canada; France; Australia; Turkey; United Kingdom; South Korea; United States; South Africa; Luxembourg
 </td>
 <td style="text-align:center;">
@@ -303,10 +321,12 @@ New Zealand; Philippines; Netherlands; Greece; Belgium; Colombia; Thailand; Ethi
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Crimean_War">Crimean War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 31, 1853
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 30, 1856
 </td>
 <td style="text-align:left;">
@@ -318,7 +338,7 @@ Negotiated
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Austria-Hungary; Italy; Turkey; United Kingdom; France
 </td>
 <td style="text-align:center;">
@@ -335,10 +355,12 @@ Austria-Hungary; Italy; Turkey; United Kingdom; France
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 6, 1870
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Feb 26, 1871
 </td>
 <td style="text-align:left;">
@@ -350,7 +372,7 @@ Imposed
 <td style="text-align:left;">
 France
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Germany; Baden; Wuerttemburg; Bavaria
 </td>
 <td style="text-align:center;">
@@ -367,10 +389,12 @@ Germany; Baden; Wuerttemburg; Bavaria
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Italo-Ethiopian_War">Second Italo-Ethiopian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 22, 1934
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 9, 1936
 </td>
 <td style="text-align:left;">
@@ -382,7 +406,7 @@ Imposed
 <td style="text-align:left;">
 United Kingdom; Ethiopia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Italy
 </td>
 <td style="text-align:center;">
@@ -399,10 +423,12 @@ Italy
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Italo-Turkish_War">Italo-Turkish War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Sep 1911
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 1912
 </td>
 <td style="text-align:left;">
@@ -414,7 +440,7 @@ Negotiated
 <td style="text-align:left;">
 Italy
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -431,10 +457,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Italian_War_of_Independence">Second Italian War of Independence</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 29, 1859
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 11, 1859
 </td>
 <td style="text-align:left;">
@@ -446,7 +474,7 @@ Negotiated
 <td style="text-align:left;">
 Germany; Austria-Hungary
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 France; Italy
 </td>
 <td style="text-align:center;">
@@ -463,10 +491,12 @@ France; Italy
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Japanese_invasion_of_Manchuria">Japanese Invasion of Manchuria</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Sep 18, 1931
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 31, 1933
 </td>
 <td style="text-align:left;">
@@ -478,7 +508,7 @@ Imposed
 <td style="text-align:left;">
 Japan
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 China
 </td>
 <td style="text-align:center;">
@@ -495,10 +525,12 @@ China
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_French_intervention_in_Mexico">Franco-Mexican War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 31, 1861
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Feb 5, 1867
 </td>
 <td style="text-align:left;">
@@ -510,7 +542,7 @@ Imposed
 <td style="text-align:left;">
 Spain; United Kingdom; France
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Mexico
 </td>
 <td style="text-align:center;">
@@ -527,10 +559,12 @@ Mexico
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Battle_of_Navarino">Battle of Navarino</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Aug 16, 1827
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Apr -9, 1828
 </td>
 <td style="text-align:left;">
@@ -542,7 +576,7 @@ Imposed
 <td style="text-align:left;">
 France; Russia; United Kingdom
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -559,10 +593,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Sino-Japanese_War">Second Sino-Japanese War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 7, 1937
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Dec 7, 1941
 </td>
 <td style="text-align:left;">
@@ -574,7 +610,7 @@ Imposed
 <td style="text-align:left;">
 Japan
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 China
 </td>
 <td style="text-align:center;">
@@ -591,10 +627,12 @@ China
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Taiwan_Strait_Crisis">Second Taiwan Straits Crisis</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 17, 1958
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 20, 1959
 </td>
 <td style="text-align:left;">
@@ -606,7 +644,7 @@ None
 <td style="text-align:left;">
 Russia; China
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United States; Taiwan
 </td>
 <td style="text-align:center;">
@@ -623,10 +661,12 @@ United States; Taiwan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Roman_Republic_(1849)">War of the Roman Republic</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Feb 18, 1849
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 1, 1849
 </td>
 <td style="text-align:left;">
@@ -638,7 +678,7 @@ Imposed
 <td style="text-align:left;">
 Austria-Hungary; France; Two Sicilies
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Vatican City
 </td>
 <td style="text-align:center;">
@@ -655,10 +695,12 @@ Vatican City
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Winter_War">Winter War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 8, 1939
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 12, 1940
 </td>
 <td style="text-align:left;">
@@ -670,7 +712,7 @@ Imposed
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Finland
 </td>
 <td style="text-align:center;">
@@ -687,10 +729,12 @@ Finland
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Russo-Japanese_War">Russo-Japanese War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 1903
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Sep 1905
 </td>
 <td style="text-align:left;">
@@ -702,7 +746,7 @@ Negotiated
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Korea; Japan
 </td>
 <td style="text-align:center;">
@@ -719,10 +763,12 @@ Korea; Japan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Battles_of_Khalkhin_Gol">Battles of Khalkhin Gol</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 1939
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Sep 1939
 </td>
 <td style="text-align:left;">
@@ -734,7 +780,7 @@ Negotiated
 <td style="text-align:left;">
 Russia; Mongolia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Japan
 </td>
 <td style="text-align:center;">
@@ -751,10 +797,12 @@ Japan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Battle_of_Lake_Khasan">Changkufeng Incident</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 1938
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 1938
 </td>
 <td style="text-align:left;">
@@ -766,7 +814,7 @@ Negotiated
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Japan
 </td>
 <td style="text-align:center;">
@@ -783,10 +831,12 @@ Japan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)">Russo-Turkish War (1877–1878)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 31, 1876
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 3, 1878
 </td>
 <td style="text-align:left;">
@@ -798,7 +848,7 @@ Negotiated
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -815,10 +865,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Russo-Turkish_War_(1828%E2%80%931829)">Russo-Turkish War (1828–1829)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 1827
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Sep 1829
 </td>
 <td style="text-align:left;">
@@ -830,7 +882,7 @@ Negotiated
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -847,10 +899,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Schleswig_War">Second Schleswig War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Apr 17, 1863
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 20, 1864
 </td>
 <td style="text-align:left;">
@@ -862,7 +916,7 @@ Imposed
 <td style="text-align:left;">
 Hanover; Baden; Wuerttemburg; Hesse Grand Ducal; Saxony; Austria-Hungary; Germany
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United Kingdom; Denmark
 </td>
 <td style="text-align:center;">
@@ -879,14 +933,15 @@ United Kingdom; Denmark
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Franco-Siamese_War">Franco-Siamese War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Feb 4, 1893
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 3, 1893
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Imposed
@@ -894,7 +949,7 @@ Imposed
 <td style="text-align:left;">
 France
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United Kingdom; Thailand
 </td>
 <td style="text-align:center;">
@@ -911,10 +966,12 @@ United Kingdom; Thailand
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Allied_intervention_in_the_Russian_Civil_War">Allied Intervention in the Russian Civil War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 23, 1917
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 25, 1922
 </td>
 <td style="text-align:left;">
@@ -926,7 +983,7 @@ None
 <td style="text-align:left;">
 United Kingdom; Japan; France; Italy; United States; Canada; Romania
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Russia
 </td>
 <td style="text-align:center;">
@@ -943,10 +1000,12 @@ Russia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Sino-Indian_War">Sino-Indian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 24, 1961
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Dec 25, 1963
 </td>
 <td style="text-align:left;">
@@ -958,7 +1017,7 @@ Imposed
 <td style="text-align:left;">
 China
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 India
 </td>
 <td style="text-align:center;">
@@ -975,10 +1034,12 @@ India
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Suez_Crisis">Suez Crisis</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Sep 1, 1955
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Nov 6, 1956
 </td>
 <td style="text-align:left;">
@@ -990,7 +1051,7 @@ Imposed
 <td style="text-align:left;">
 Russia; Egypt
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 France; United Kingdom; United States; Israel
 </td>
 <td style="text-align:center;">
@@ -1007,10 +1068,12 @@ France; United Kingdom; United States; Israel
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Sino-French_War">Sino-French War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Apr 14, 1883
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jun 9, 1885
 </td>
 <td style="text-align:left;">
@@ -1022,7 +1085,7 @@ Negotiated
 <td style="text-align:left;">
 China
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 France
 </td>
 <td style="text-align:center;">
@@ -1039,10 +1102,12 @@ France
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Spanish_Civil_War#Foreign_involvement">Spanish Civil War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 28, 1936
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 29, 1939
 </td>
 <td style="text-align:left;">
@@ -1054,7 +1119,7 @@ Imposed
 <td style="text-align:left;">
 Germany; Portugal; Italy
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Spain
 </td>
 <td style="text-align:center;">
@@ -1071,10 +1136,12 @@ Spain
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Austro-Prussian_War">Seven Weeks War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Mar 1866
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 1866
 </td>
 <td style="text-align:left;">
@@ -1086,7 +1153,7 @@ Imposed
 <td style="text-align:left;">
 Baden; Hesse Electoral; Hesse Grand Ducal; Wuerttemburg; Bavaria; Hanover; Saxony; Austria-Hungary
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Italy; Mecklenburg Schwerin; Germany
 </td>
 <td style="text-align:center;">
@@ -1103,10 +1170,12 @@ Italy; Mecklenburg Schwerin; Germany
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Events_leading_to_the_attack_on_Pearl_Harbor#Background_to_conflict">“Pearl Harbor”</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Mar 28, 1940
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Dec 8, 1941
 </td>
 <td style="text-align:left;">
@@ -1118,7 +1187,7 @@ None
 <td style="text-align:left;">
 United States
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Japan
 </td>
 <td style="text-align:center;">
@@ -1135,10 +1204,12 @@ Japan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/First_Schleswig_War">First Schleswig War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Apr 1, 1848
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 10, 1849
 </td>
 <td style="text-align:left;">
@@ -1150,7 +1221,7 @@ Negotiated
 <td style="text-align:left;">
 Bavaria; Hanover; Saxony; Germany
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United Kingdom; Russia; Sweden; Denmark
 </td>
 <td style="text-align:center;">
@@ -1167,10 +1238,12 @@ United Kingdom; Russia; Sweden; Denmark
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Hungarian_Revolution_of_1956">Hungarian Uprising</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 23, 1956
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Nov 14, 1956
 </td>
 <td style="text-align:left;">
@@ -1182,7 +1255,7 @@ Imposed
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Hungary
 </td>
 <td style="text-align:center;">
@@ -1199,10 +1272,13 @@ Hungary
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Vietnam_War">Vietnam War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+Yes
+</td>
 <td style="text-align:center;">
 May 25, 1964
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Apr 30, 1975
 </td>
 <td style="text-align:left;">
@@ -1214,7 +1290,7 @@ Imposed
 <td style="text-align:left;">
 China; Vietnam
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 New Zealand; Australia; South Korea; United States; Republic of Vietnam; Thailand; Philippines; Cambodia; Laos
 </td>
 <td style="text-align:center;">
@@ -1231,10 +1307,12 @@ New Zealand; Australia; South Korea; United States; Republic of Vietnam; Thailan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Chaco_War">Chaco War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jun 15, 1931
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 7, 1935
 </td>
 <td style="text-align:left;">
@@ -1246,7 +1324,7 @@ Negotiated
 <td style="text-align:left;">
 Paraguay
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Bolivia
 </td>
 <td style="text-align:center;">
@@ -1263,10 +1341,12 @@ Bolivia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Six-Day_War">Six-Day War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Dec 17, 1966
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jun 11, 1967
 </td>
 <td style="text-align:left;">
@@ -1278,7 +1358,7 @@ Imposed
 <td style="text-align:left;">
 Israel
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Kuwait; Iraq; Egypt; Syria; Jordan
 </td>
 <td style="text-align:center;">
@@ -1295,10 +1375,12 @@ Kuwait; Iraq; Egypt; Syria; Jordan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Yom_Kippur_War">Yom Kippur War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 14, 1971
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 28, 1973
 </td>
 <td style="text-align:left;">
@@ -1310,7 +1392,7 @@ Negotiated
 <td style="text-align:left;">
 Jordan; Saudi Arabia; Iraq; Egypt; Syria; Jordan
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Israel
 </td>
 <td style="text-align:center;">
@@ -1327,10 +1409,12 @@ Israel
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Melillan_campaign">Second Spanish-Moroccan War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 9, 1909
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 23, 1910
 </td>
 <td style="text-align:left;">
@@ -1342,7 +1426,7 @@ Imposed
 <td style="text-align:left;">
 Spain
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Morocco
 </td>
 <td style="text-align:center;">
@@ -1359,10 +1443,12 @@ Morocco
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Saudi%E2%80%93Yemeni_War_(1934)">Saudi-Yemeni War (1934)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 14, 1933
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jun 14, 1934
 </td>
 <td style="text-align:left;">
@@ -1374,7 +1460,7 @@ Negotiated
 <td style="text-align:left;">
 Saudi Arabia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Yemen Arab Republic; Italy; United Kingdom; France
 </td>
 <td style="text-align:center;">
@@ -1391,10 +1477,12 @@ Yemen Arab Republic; Italy; United Kingdom; France
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Football_War">Football War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jun 24, 1969
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 18, 1969
 </td>
 <td style="text-align:left;">
@@ -1406,7 +1494,7 @@ Negotiated
 <td style="text-align:left;">
 El Salvador
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Honduras
 </td>
 <td style="text-align:center;">
@@ -1423,10 +1511,12 @@ Honduras
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Soviet_War">Polish-Soviet War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 1, 1919
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Sep 18, 1920
 </td>
 <td style="text-align:left;">
@@ -1438,7 +1528,7 @@ Negotiated
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Poland; United Kingdom
 </td>
 <td style="text-align:center;">
@@ -1455,10 +1545,12 @@ Poland; United Kingdom
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1947%E2%80%931948">First Kashmir War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 22, 1947
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jan 1, 1949
 </td>
 <td style="text-align:left;">
@@ -1470,7 +1562,7 @@ Negotiated
 <td style="text-align:left;">
 India
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Pakistan
 </td>
 <td style="text-align:center;">
@@ -1487,10 +1579,12 @@ Pakistan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/First_Balkan_War">First Balkan War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Sep 3, 1912
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Apr 19, 1913
 </td>
 <td style="text-align:left;">
@@ -1502,7 +1596,7 @@ Imposed
 <td style="text-align:left;">
 Bulgaria; Greece; Yugoslavia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -1519,10 +1613,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Second_Balkan_War">Second Balkan War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Apr 18, 1913
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 10, 1913
 </td>
 <td style="text-align:left;">
@@ -1534,7 +1630,7 @@ Imposed
 <td style="text-align:left;">
 Bulgaria
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey; Yugoslavia; Greece; Romania
 </td>
 <td style="text-align:center;">
@@ -1551,10 +1647,12 @@ Turkey; Yugoslavia; Greece; Romania
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Hungarian%E2%80%93Romanian_War">Hungarian-Romanian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Mar 20, 1919
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 18, 1919
 </td>
 <td style="text-align:left;">
@@ -1566,7 +1664,7 @@ Imposed
 <td style="text-align:left;">
 France; Yugoslavia; Italy; United Kingdom; Romania; Czechoslovakia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Hungary
 </td>
 <td style="text-align:center;">
@@ -1583,10 +1681,12 @@ Hungary
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Greco-Turkish_War_(1919%E2%80%931922)">Greco-Turkish War (1919-22)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 4, 1919
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 11, 1922
 </td>
 <td style="text-align:left;">
@@ -1598,7 +1698,7 @@ Negotiated
 <td style="text-align:left;">
 Greece
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -1615,10 +1715,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Turkish_invasion_of_Cyprus">Turkish Invasion of Cyprus</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jul 15, 1974
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 16, 1974
 </td>
 <td style="text-align:left;">
@@ -1630,7 +1732,7 @@ Imposed
 <td style="text-align:left;">
 Turkey
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Greece; Cyprus
 </td>
 <td style="text-align:center;">
@@ -1647,10 +1749,12 @@ Greece; Cyprus
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1965">Second Kashmir War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Feb 21, 1964
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jan 10, 1966
 </td>
 <td style="text-align:left;">
@@ -1662,7 +1766,7 @@ Negotiated
 <td style="text-align:left;">
 India
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Pakistan
 </td>
 <td style="text-align:center;">
@@ -1679,10 +1783,12 @@ Pakistan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Laotian_Civil_War">“The Secret War” (Laotian Civil War)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 1962
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Feb 1973
 </td>
 <td style="text-align:left;">
@@ -1694,7 +1800,7 @@ Negotiated
 <td style="text-align:left;">
 Vietnam; Russia; China
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United States; Thailand; Laos; New Zealand; United Kingdom; Australia; Republic of Vietnam; Thailand; Republic of Vietnam
 </td>
 <td style="text-align:center;">
@@ -1711,10 +1817,12 @@ United States; Thailand; Laos; New Zealand; United Kingdom; Australia; Republic 
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Cambodian%E2%80%93Vietnamese_War#Invasion_of_Kampuchea">Cambodian-Vietnamese War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 1975
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jan 1979
 </td>
 <td style="text-align:left;">
@@ -1726,7 +1834,7 @@ Imposed
 <td style="text-align:left;">
 Cambodia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Vietnam
 </td>
 <td style="text-align:center;">
@@ -1743,10 +1851,12 @@ Vietnam
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1971">Indo-Pakistani War of 1971</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Mar 25, 1971
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Dec 17, 1971
 </td>
 <td style="text-align:left;">
@@ -1758,7 +1868,7 @@ Negotiated
 <td style="text-align:left;">
 Pakistan
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 India
 </td>
 <td style="text-align:center;">
@@ -1775,10 +1885,12 @@ India
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/War_of_Attrition">“The War of Attrition”</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jun 29, 1967
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 7, 1970
 </td>
 <td style="text-align:left;">
@@ -1790,7 +1902,7 @@ Negotiated
 <td style="text-align:left;">
 Israel
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Russia; Egypt; Jordan; Syria
 </td>
 <td style="text-align:center;">
@@ -1807,10 +1919,12 @@ Russia; Egypt; Jordan; Syria
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/First_Sino-Japanese_War">First Sino-Japanese War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jun 5, 1894
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Apr 17, 1895
 </td>
 <td style="text-align:left;">
@@ -1822,7 +1936,7 @@ Imposed
 <td style="text-align:left;">
 Japan
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Korea; China
 </td>
 <td style="text-align:center;">
@@ -1839,10 +1953,12 @@ Korea; China
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/War_of_the_Pacific">War of the Pacific</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 8, 1878
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 20, 1883
 </td>
 <td style="text-align:left;">
@@ -1854,7 +1970,7 @@ Imposed
 <td style="text-align:left;">
 Chile
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Peru; Bolivia
 </td>
 <td style="text-align:center;">
@@ -1871,10 +1987,12 @@ Peru; Bolivia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Platine_War">Platine War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Apr 1851
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Feb 1852
 </td>
 <td style="text-align:left;">
@@ -1886,7 +2004,7 @@ Imposed
 <td style="text-align:left;">
 Brazil
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Argentina
 </td>
 <td style="text-align:center;">
@@ -1903,10 +2021,12 @@ Argentina
 <td style="text-align:left;">
 <a href="https://www.onwar.com/data/guathond1867.html">First Central American War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 1876
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 1876
 </td>
 <td style="text-align:left;">
@@ -1918,7 +2038,7 @@ Imposed
 <td style="text-align:left;">
 Guatemala
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 El Salvador
 </td>
 <td style="text-align:center;">
@@ -1935,10 +2055,12 @@ El Salvador
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Mexican%E2%80%93American_War">Mexican-American War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Aug 23, 1843
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Feb 2, 1848
 </td>
 <td style="text-align:left;">
@@ -1950,7 +2072,7 @@ Imposed
 <td style="text-align:left;">
 United States
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Mexico
 </td>
 <td style="text-align:center;">
@@ -1967,10 +2089,12 @@ Mexico
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Spanish%E2%80%93American_War">Spanish-American War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 3, 1898
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 12, 1898
 </td>
 <td style="text-align:left;">
@@ -1982,7 +2106,7 @@ Imposed
 <td style="text-align:left;">
 United States
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Spain
 </td>
 <td style="text-align:center;">
@@ -1999,10 +2123,12 @@ Spain
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Greco-Turkish_War_(1897)">Greco-Turkish War (1897)</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Dec 1896
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 1897
 </td>
 <td style="text-align:left;">
@@ -2014,7 +2140,7 @@ Negotiated
 <td style="text-align:left;">
 Greece
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -2031,10 +2157,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Hispano-Moroccan_War_(1859%E2%80%931860)">Hispano-Moroccan War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 25, 1859
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Apr 26, 1860
 </td>
 <td style="text-align:left;">
@@ -2046,7 +2174,7 @@ Imposed
 <td style="text-align:left;">
 Spain
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Morocco
 </td>
 <td style="text-align:center;">
@@ -2063,10 +2191,12 @@ Morocco
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Paraguayan_War">Paraguayan War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Aug 30, 1863
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 1, 1870
 </td>
 <td style="text-align:left;">
@@ -2078,7 +2208,7 @@ Imposed
 <td style="text-align:left;">
 Paraguay
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Brazil; Argentina
 </td>
 <td style="text-align:center;">
@@ -2095,10 +2225,12 @@ Brazil; Argentina
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/1948_Arab%E2%80%93Israeli_War">Arab-Israeli War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 14, 1948
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jan 7, 1949
 </td>
 <td style="text-align:left;">
@@ -2110,7 +2242,7 @@ Negotiated
 <td style="text-align:left;">
 Iraq; Lebanon; Egypt; Jordan; Syria
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Israel
 </td>
 <td style="text-align:center;">
@@ -2127,10 +2259,12 @@ Israel
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Ogaden_War">Ogaden War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Feb 22, 1977
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 15, 1978
 </td>
 <td style="text-align:left;">
@@ -2142,7 +2276,7 @@ None
 <td style="text-align:left;">
 Somalia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Cuba; Ethiopia; Russia
 </td>
 <td style="text-align:center;">
@@ -2159,10 +2293,12 @@ Cuba; Ethiopia; Russia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War">Iran-Iraq War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 4, 1979
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Aug 20, 1988
 </td>
 <td style="text-align:left;">
@@ -2174,7 +2310,7 @@ Negotiated
 <td style="text-align:left;">
 Iran
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Iraq
 </td>
 <td style="text-align:center;">
@@ -2191,10 +2327,12 @@ Iraq
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Estonian_War_of_Independence">Estonian War of Independence</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 22, 1918
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jan 3, 1920
 </td>
 <td style="text-align:left;">
@@ -2206,7 +2344,7 @@ Imposed
 <td style="text-align:left;">
 Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Estonia; United Kingdom; Finland; France
 </td>
 <td style="text-align:center;">
@@ -2223,10 +2361,12 @@ Estonia; United Kingdom; Finland; France
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Sino-Vietnamese_War">Sino-Vietnamese War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Feb 1978
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 1979
 </td>
 <td style="text-align:left;">
@@ -2238,7 +2378,7 @@ Negotiated
 <td style="text-align:left;">
 China
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Russia; Vietnam
 </td>
 <td style="text-align:center;">
@@ -2255,10 +2395,12 @@ Russia; Vietnam
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Franco-Turkish_War">Franco-Turkish War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Nov 1, 1919
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Oct 20, 1921
 </td>
 <td style="text-align:left;">
@@ -2270,7 +2412,7 @@ Negotiated
 <td style="text-align:left;">
 France
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Turkey
 </td>
 <td style="text-align:center;">
@@ -2287,10 +2429,12 @@ Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War">First Nagorno-Karabakh War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jan 26, 1992
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 4, 1994
 </td>
 <td style="text-align:left;">
@@ -2302,7 +2446,7 @@ Negotiated
 <td style="text-align:left;">
 Armenia; Russia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Azerbaijan; Iran; Turkey
 </td>
 <td style="text-align:center;">
@@ -2319,10 +2463,12 @@ Azerbaijan; Iran; Turkey
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Falklands_War">Falklands War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Mar 31, 1982
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jun 14, 1982
 </td>
 <td style="text-align:left;">
@@ -2334,7 +2480,7 @@ Imposed
 <td style="text-align:left;">
 Argentina
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 United Kingdom
 </td>
 <td style="text-align:center;">
@@ -2351,10 +2497,12 @@ United Kingdom
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Anglo-Egyptian_War">Anglo-Egyptian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jun 2, 1882
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Sep 15, 1882
 </td>
 <td style="text-align:left;">
@@ -2366,7 +2514,7 @@ Imposed
 <td style="text-align:left;">
 France; United Kingdom
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Egypt
 </td>
 <td style="text-align:center;">
@@ -2383,10 +2531,12 @@ Egypt
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Gulf_War">Gulf War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Jun 26, 1990
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Mar 3, 1991
 </td>
 <td style="text-align:left;">
@@ -2398,7 +2548,7 @@ Imposed
 <td style="text-align:left;">
 Iraq
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Syria; Canada; United Arab Emirates; United Kingdom; Egypt; France; Saudi Arabia; United States; Kuwait
 </td>
 <td style="text-align:center;">
@@ -2415,10 +2565,12 @@ Syria; Canada; United Arab Emirates; United Kingdom; Egypt; France; Saudi Arabia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Kargil_War">Kargil War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Sep 17, 1993
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jul 26, 1999
 </td>
 <td style="text-align:left;">
@@ -2430,7 +2582,7 @@ None
 <td style="text-align:left;">
 India
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Pakistan
 </td>
 <td style="text-align:center;">
@@ -2447,10 +2599,12 @@ Pakistan
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Eritrean%E2%80%93Ethiopian_War">Eritrean-Ethiopian War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 May 6, 1998
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Jun 18, 2000
 </td>
 <td style="text-align:left;">
@@ -2462,7 +2616,7 @@ Negotiated
 <td style="text-align:left;">
 Eritrea
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Ethiopia
 </td>
 <td style="text-align:center;">
@@ -2479,10 +2633,12 @@ Ethiopia
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/Iraq_War">Iraq War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Oct 7, 1997
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 May 1, 2003
 </td>
 <td style="text-align:left;">
@@ -2494,7 +2650,7 @@ Imposed
 <td style="text-align:left;">
 Turkey; Egypt; France; Germany; Greece; Italy; Jordan; Netherlands; United Arab Emirates; Israel; Kuwait; Saudi Arabia; United Kingdom; United States; Israel; Kuwait; Australia; United Arab Emirates; Saudi Arabia; Bahrain; Netherlands; Oman; Qatar; Poland; Kuwait; Kuwait; Kuwait
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Iraq
 </td>
 <td style="text-align:center;">
@@ -2511,10 +2667,12 @@ Iraq
 <td style="text-align:left;">
 <a href="https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001%E2%80%932021)">Afghanistan War</a>
 </td>
+<td style="text-align:center;font-weight: bold;">
+</td>
 <td style="text-align:center;">
 Sep 15, 2001
 </td>
-<td style="text-align:center;">
+<td style="text-align:left;">
 Dec 17, 2001
 </td>
 <td style="text-align:left;">
@@ -2526,7 +2684,7 @@ None
 <td style="text-align:left;">
 Germany; Greece; Netherlands; Portugal; Spain; Tajikistan; Canada; France; Turkey; Pakistan; Russia; United Kingdom; United States; Uzbekistan; Australia
 </td>
-<td style="text-align:left;">
+<td style="text-align:center;">
 Afghanistan
 </td>
 <td style="text-align:center;">
@@ -2563,8 +2721,8 @@ To close, here are some participant summaries of these wars, if they may help yo
 
 <span id="participants"></span>
 
-<table id="stevetable">
-<caption>
+<table id="stevetable" class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
 Participant Summaries from a Select List of Wars in the Gibler and Miller (Forthcoming) Confrontation Data
 </caption>
 <thead>
@@ -13830,7 +13988,7 @@ To be clear, the “review” in this context means summarizing Vasquez’ core 
 This section will be the meat of your paper. Here, you’ll relate Vasquez’ general argument to the war you will examine and explain how well Vasquez’ “steps to war” model explains the war you chose. Your treatment here will need to be broad in scope but narrowed in detail. In other words, your treatment here will need to focus on the following attributes of the war.
 
 -   Was the motivating issue consistent with what Vasquez argues generally leads states to war? Why or why not? Be mindful that Vasquez’ primary interest might be what he terms ‘territoriality’ but his treatment is nebulous enough to include concerns of proximity, contiguity, and rivalry.
--   How did the *confrontation* start? Please again internalize what the dates communicate. In other words, this is the start date that corresponds with the first threat, display, or use of force in what *became* a war. Your treatment here *must sequence the events by which the MID culminated in war* and I will read it carefully to see how thorough you are. This will require you digging through newspaper archives for [*Times of London*](http://libproxy.clemson.edu/login?url=http://infotrac.galegroup.com/itweb/clemsonu_main?db=TTDA) and/or the [*New York Times*](http://libproxy.clemson.edu/login?url=https://search.proquest.com/hnpnewyorktimes?accountid=6167) in addition to [other newspaper data sources](https://clemson.libguides.com/az.php) that [Clemson’s library](https://libraries.clemson.edu) has available. Start doing searches on [Google Books](https://books.google.com) and [Google Scholar](https://scholar.google.com) as well.
+-   How did the *confrontation* start? Please again internalize what the dates communicate. In other words, this is the start date that corresponds with the first threat, display, or use of force in what *became* a war. Your treatment here *must sequence the events by which the confrontation escalated to war* and I will read it carefully to see how thorough you are. This will require you digging through newspaper archives for [*Times of London*](http://libproxy.clemson.edu/login?url=http://infotrac.galegroup.com/itweb/clemsonu_main?db=TTDA) and/or the [*New York Times*](http://libproxy.clemson.edu/login?url=https://search.proquest.com/hnpnewyorktimes?accountid=6167) in addition to [other newspaper data sources](https://clemson.libguides.com/az.php) that [Clemson’s library](https://libraries.clemson.edu) has available. Start doing searches on [Google Books](https://books.google.com) and [Google Scholar](https://scholar.google.com) as well.
 -   What were the initial positions of the multiple state leaders and elites with a stake in the issue that ultimately led to war? Who was trying to influence the resolution of the dispute and toward what end? Identify the “hard-liners” and “soft-liners”/“accommodationists” that would interest Vasquez for his “steps to war” model. Your treatment here should identify the major players (e.g. foreign ministers, ministers of war, heads of state, other decision-making elites, even, when appropriate, the general public). It’s worth saying you cannot adequately do this part of your analysis without hitting the books. [Google Books](https://books.google.com) and [Google Scholar](https://scholar.google.com) will be your friend.
 -   How did the “hard-liners” push for war and ultimately get it? Do notice there’s a selection effect in this assignment. You’re covering wars, so invariably a set of decision-making elites that wanted war were able to secure policies that escalated the confrontation to war. You’ll need to tell me how the “hard-liners” in the decision-making circle were able to get what they wanted and how they were able to quell the policies proposed by those who wanted some kind of accommodation or peaceful conflict resolution. How did the “soft-liners” acquiesce? Were they simply outnumbered or did they come around and support the policies that ultimately led to war?
 -   How did the war unfold and was it consistent with Vasquez’ chapter on what accounts for the size, scope, and severity of war? Do note there is a wide variation in war and Vasquez’ treatment here is almost certainly thinking of “world wars” that may not describe your case. For example, the Battle of Navarino was a multilateral war that was effectively one major battle and other cases, like the Boxer Rebellion and Crimean War, were major conflicts that dragged in multiple actors from around the globe. Some of these cases were simple bilateral fights (e.g. Spanish-Moroccan War). Vasquez’ chapter on “world wars” need not describe your case, but it’s likely there will be certain features he describes of these wars that partially fit the case you describe. Take care to discuss that here.
