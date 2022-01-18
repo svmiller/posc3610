@@ -1,15 +1,15 @@
 ---
-title: "Steps to War Assignment and Instructions"
+always_allow_html: true
+author: steve
+excerpt: SFSFSFS
+layout: page
 output:
   md_document:
+    pandoc_args:
+    - –wrap=preserve
+    preserve_yaml: true
     variant: gfm
-    preserve_yaml: TRUE
-    pandoc_args: 
-      - "--wrap=preserve"
-author: "steve"
-excerpt: "SFSFSFS"
-layout: page
-always_allow_html: true
+title: Steps to War Assignment and Instructions
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -2534,6 +2534,7 @@ Egypt
 <a href="https://en.wikipedia.org/wiki/Gulf_War">Gulf War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jun 26, 1990
