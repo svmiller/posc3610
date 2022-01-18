@@ -594,6 +594,7 @@ Turkey
 <a href="https://en.wikipedia.org/wiki/Second_Sino-Japanese_War">Second Sino-Japanese War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 7, 1937
@@ -2294,6 +2295,7 @@ Cuba; Ethiopia; Russia
 <a href="https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War">Iran-Iraq War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Nov 4, 1979
