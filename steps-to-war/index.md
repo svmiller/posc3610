@@ -968,6 +968,7 @@ United Kingdom; Thailand
 <a href="https://en.wikipedia.org/wiki/Allied_intervention_in_the_Russian_Civil_War">Allied Intervention in the Russian Civil War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Nov 23, 1917
@@ -1172,6 +1173,7 @@ Italy; Mecklenburg Schwerin; Germany
 <a href="https://en.wikipedia.org/wiki/Events_leading_to_the_attack_on_Pearl_Harbor#Background_to_conflict">“Pearl Harbor”</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Mar 28, 1940
@@ -1785,6 +1787,7 @@ Pakistan
 <a href="https://en.wikipedia.org/wiki/Laotian_Civil_War">“The Secret War” (Laotian Civil War)</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jan 1962
@@ -2091,6 +2094,7 @@ Mexico
 <a href="https://en.wikipedia.org/wiki/Spanish%E2%80%93American_War">Spanish-American War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jan 3, 1898
@@ -2193,6 +2197,7 @@ Morocco
 <a href="https://en.wikipedia.org/wiki/Paraguayan_War">Paraguayan War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Aug 30, 1863
@@ -2637,6 +2642,7 @@ Ethiopia
 <a href="https://en.wikipedia.org/wiki/Iraq_War">Iraq War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Oct 7, 1997
