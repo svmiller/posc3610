@@ -2,6 +2,11 @@
   filename: welcome
   dirname: welcome
   tldr: "This lecture discusses the syllabus and outlines course expectations for the rest of the semester."
+  
+- title: "Whither War? An Empirical Assessment of the Patterns of War"
+  filename: whither-war
+  dirname: whither-war
+  tldr: "An overview of what inter-state war typically looks like, with a discussion of the 'decline of war' hypothesis."
 # 
 # - title: "The Scientific Study of War"
 #   filename: scientific-study-war
