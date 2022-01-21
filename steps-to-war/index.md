@@ -1481,6 +1481,7 @@ Yemen Arab Republic; Italy; United Kingdom; France
 <a href="https://en.wikipedia.org/wiki/Football_War">Football War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jun 24, 1969
@@ -2233,6 +2234,7 @@ Brazil; Argentina
 <a href="https://en.wikipedia.org/wiki/1948_Arab%E2%80%93Israeli_War">Arab-Israeli War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 May 14, 1948
