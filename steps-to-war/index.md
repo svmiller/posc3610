@@ -1105,6 +1105,7 @@ France
 <a href="https://en.wikipedia.org/wiki/Spanish_Civil_War#Foreign_involvement">Spanish Civil War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 28, 1936
