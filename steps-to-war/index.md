@@ -2062,6 +2062,7 @@ El Salvador
 <a href="https://en.wikipedia.org/wiki/Mexican%E2%80%93American_War">Mexican-American War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Aug 23, 1843
