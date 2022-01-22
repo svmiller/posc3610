@@ -901,6 +901,7 @@ Turkey
 <a href="https://en.wikipedia.org/wiki/Second_Schleswig_War">Second Schleswig War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Apr 17, 1863
@@ -1037,6 +1038,7 @@ India
 <a href="https://en.wikipedia.org/wiki/Suez_Crisis">Suez Crisis</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Sep 1, 1955
