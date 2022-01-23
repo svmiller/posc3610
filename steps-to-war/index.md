@@ -1929,6 +1929,7 @@ Russia; Egypt; Jordan; Syria
 <a href="https://en.wikipedia.org/wiki/First_Sino-Japanese_War">First Sino-Japanese War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jun 5, 1894
