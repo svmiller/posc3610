@@ -185,6 +185,7 @@ United Kingdom; Belgium; France
 <a href="https://en.wikipedia.org/wiki/Boxer_Rebellion">Boxer Rebellion</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 May 30, 1900
@@ -526,6 +527,7 @@ China
 <a href="https://en.wikipedia.org/wiki/Second_French_intervention_in_Mexico">Franco-Mexican War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Oct 31, 1861
@@ -1519,6 +1521,7 @@ Honduras
 <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Soviet_War">Polish-Soviet War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jan 1, 1919
