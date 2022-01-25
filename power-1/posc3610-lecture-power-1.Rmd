@@ -43,7 +43,7 @@ library(stevemisc)
 
 # ICOWactive <- read.csv("~/Dropbox/data/icow/icow-provisional-1.01/200199.csv") %>% tbl_df()
 CINC <- read.csv("~/Dropbox/data/cow/nmc/NMC_5_0.csv") %>% tbl_df()
-
+NMC <- read_csv("~/Dropbox/data/cow/nmc/6.0/NMC-60-abridged.csv")
 
 ```
 
@@ -129,24 +129,21 @@ $$
 
 ###
 
-```{r cinc-scores-usa-ukg-gmy-rus-1816-2010, echo=F, eval=T, fig.width = 14, fig.height = 8.5}
+```{r cinc-scores-usa-ukg-gmy-rus-1816-2016, echo=F, eval=T, fig.width = 14, fig.height = 8.5}
 
-CINC %>%
+NMC %>%
+  filter(ccode %in% c(2, 200, 255, 260, 365)) %>%
   mutate(ccode = ifelse(ccode == 260, 255, ccode)) %>%
-  filter(ccode == 2 | ccode == 200 | ccode == 255 | ccode == 365) %>%
-  ggplot(., aes(year, cinc, group=factor(ccode), color=factor(ccode))) + geom_line(size=1.5) +
+  mutate(state = countrycode::countrycode(ccode, "cown", "country.name")) %>%
+  ggplot(.,aes(year, cinc, color=state, linetype = state)) +
   theme_steve_web() +
-  scale_x_continuous(breaks=seq(1820, 2010, by=10)) +
-  xlab("Year") + ylab("CINC Score") + 
-  labs(color = "Country",
-       subtitle="The U.S. has long been the most powerful country in the world, but notice the various power transitions.",
-       title="CINC Scores for the U.S., UK, Germany and Russia, 1816-2010",
-       caption="Source: Correlates of War National Military Capabilities Data (v. 5.0)") +
-  scale_colour_discrete(name="Country", 
-                          labels=c("United States", "United Kingdom", "Germany/GFR",
-                                   "Russia/USSR")) +
-  theme(legend.position = "bottom")
-
+  geom_line(size = 1.5)  +
+  scale_x_continuous(breaks=seq(1820, 2020, by=10)) +
+  scale_color_brewer(palette="Set1") +
+  labs(color = "", linetype = "", x = "", y = "CINC Score",
+       title = "CINC Scores for the U.S., UK, Germany and Russia, 1816-2016",
+       subtitle = "The U.S. has long been the most powerful country in the world, but notice the various power transitions implied by these data.",
+       caption = "Source: Correlates of War National Military Capabilities Data (v. 6.0)")
 
 ```
 
