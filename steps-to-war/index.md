@@ -701,6 +701,7 @@ Vatican City
 <a href="https://en.wikipedia.org/wiki/Winter_War">Winter War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Oct 8, 1939
