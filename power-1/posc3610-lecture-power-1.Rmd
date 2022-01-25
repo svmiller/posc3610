@@ -1,22 +1,19 @@
 ---
+output: 
+  stevetemplates::beamer:
+    latex_engine: xelatex # use xelatex here instead! I recommend it, but this is minimal reprex
+    dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+    slide_level: 3 # I prefer this, but I won't force it on you.
 title: "Power and the Realisms"
 subtitle: POSC 3610  -- International Conflict
 author: Steven V. Miller
 institute: Department of Political Science
-titlegraphic: /Dropbox/teaching/clemson-academic.png
-date: 
-fontsize: 10pt
-output:
- beamer_presentation:
-    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-beamer.tex
-    latex_engine: xelatex
-    dev: cairo_pdf
-    fig_caption: true
-    slide_level: 3
+titlegraphic: "`r paste0(Sys.getenv('HOME'), '/Dropbox/clemson/watermarks/clemson-university-wordmark-orange-purple.png')`"
 make149: true
 mainfont: "Open Sans"
 titlefont: "Titillium Web"
 ---
+
 
 ```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
 knitr::opts_chunk$set(cache=TRUE, warning=F)
@@ -45,7 +42,7 @@ library(stevemisc)
 ```{r loaddata, cache=T, eval=T, echo=F, message=F, error=F, warning=F}
 
 # ICOWactive <- read.csv("~/Dropbox/data/icow/icow-provisional-1.01/200199.csv") %>% tbl_df()
-CINC <- read.csv("~/Dropbox/data/cow/cinc/NMC_5_0.csv") %>% tbl_df()
+CINC <- read.csv("~/Dropbox/data/cow/nmc/NMC_5_0.csv") %>% tbl_df()
 
 
 ```
@@ -54,6 +51,15 @@ CINC <- read.csv("~/Dropbox/data/cow/cinc/NMC_5_0.csv") %>% tbl_df()
 ### Goal for Today
 
 *Discuss power as structural property and the various realism paradigms surrounding it.*
+
+### MIC of the Day: Crimean War (MIC#0057)
+
+![Franz Roubaud's (1904) Siege of Sevastopol](crimean-war.jpg)
+
+### MIC of the Day: Crimean War (MIC#0057)
+
+![An Excerpt from John Coleman's (1855) "The Four Points"](bop-crimean-war.png)
+
 
 ### What is Power?
 
