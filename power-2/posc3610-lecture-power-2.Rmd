@@ -152,7 +152,7 @@ Notice the inferential problem?
 
 ### The Measurement Problem
 
-We need an ex ante indicator of revisionist state. Attempts include:
+We need an ex ante indicator of a revisionist state. Attempts include:
 
 - National size and development (Houweling and Siccama, 1988)
 - Gross national income (Organski and Kugler, 1980)
