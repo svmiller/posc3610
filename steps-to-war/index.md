@@ -1,15 +1,15 @@
 ---
-always_allow_html: true
-author: steve
-excerpt: SFSFSFS
-layout: page
+title: "Steps to War Assignment and Instructions"
 output:
   md_document:
-    pandoc_args:
-    - –wrap=preserve
-    preserve_yaml: true
     variant: gfm
-title: Steps to War Assignment and Instructions
+    preserve_yaml: TRUE
+    pandoc_args: 
+      - "--wrap=preserve"
+author: "steve"
+excerpt: "SFSFSFS"
+layout: page
+always_allow_html: true
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -83,6 +83,7 @@ Maximum Fatalities
 <a href="https://en.wikipedia.org/wiki/Anglo-Persian_War">Anglo-Persian War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 11, 1856
@@ -494,6 +495,7 @@ France; Italy
 <a href="https://en.wikipedia.org/wiki/Japanese_invasion_of_Manchuria">Japanese Invasion of Manchuria</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Sep 18, 1931
