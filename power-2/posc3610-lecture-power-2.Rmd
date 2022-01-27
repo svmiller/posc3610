@@ -217,9 +217,9 @@ annotate("text", x = 1947, y = .27,
 annotate("text", x = 1947, y = .11, 
          label = "USSR/Russia",
          family = "Open Sans") + 
-annotate("rect", xmin = 1970, xmax = 1989, ymin = -Inf, ymax = Inf, alpha = .2) +
+annotate("rect", xmin = 1971, xmax = 1988, ymin = -Inf, ymax = Inf, alpha = .2) +
 annotate("text", x = 1980, y = .11, 
-         label = "Power Transition\n(1970-1988)",
+         label = "Power Transition\n(1971-1988)",
          family = "Open Sans") +
   labs(title = "Why Didn't the Cold War Get Hot?",
        subtitle = "We observe a power transition incidentally around the time of a détente between both Cold War rivals.",
