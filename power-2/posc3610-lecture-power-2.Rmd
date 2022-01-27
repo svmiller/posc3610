@@ -4,7 +4,7 @@ output:
     latex_engine: xelatex # use xelatex here instead! I recommend it, but this is minimal reprex
     dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
     slide_level: 3 # I prefer this, but I won't force it on you.
-title: "Power Transition and an Empirical Analysis of Power and Conflict"
+title: "Power Transition Theory and an Empirical Analysis of Power and Conflict"
 subtitle: POSC 3610  -- International Conflict
 author: Steven V. Miller
 institute: Department of Political Science
@@ -313,7 +313,7 @@ cow_ddy %>%
   select(ccode1, ccode2, year) %>%
   head(10) %>%
   kable(., caption="A Simple Table of Ten Dyad Years for the U.S. (2) and Canada (20)",
-        longtable = T, booktabs = TRUE)
+        longtable = T, booktabs = TRUE, linesep='')
 
 ```
 
@@ -332,7 +332,7 @@ cow_ddy %>%
 
 Data[[1]] %>%
   kable(., caption="A Simple Table of Ten Dyad Years for India (750) and Pakistan (770)",
-        longtable = T, booktabs = TRUE) %>%
+        longtable = T, booktabs = TRUE, linesep='') %>%
   kable_styling(font_size = 8)
 
 ```
