@@ -255,6 +255,7 @@ Russia
 <a href="https://en.wikipedia.org/wiki/First_Taiwan_Strait_Crisis">First Taiwan Strait Crisis</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Feb 9, 1953
@@ -634,6 +635,7 @@ China
 <a href="https://en.wikipedia.org/wiki/Second_Taiwan_Strait_Crisis">Second Taiwan Straits Crisis</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 17, 1958
@@ -738,6 +740,7 @@ Finland
 <a href="https://en.wikipedia.org/wiki/Russo-Japanese_War">Russo-Japanese War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 1903
