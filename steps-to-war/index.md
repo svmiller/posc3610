@@ -2491,6 +2491,7 @@ Azerbaijan; Iran; Turkey
 <a href="https://en.wikipedia.org/wiki/Falklands_War">Falklands War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Mar 31, 1982
