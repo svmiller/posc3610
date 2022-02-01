@@ -22,6 +22,7 @@
 *.dvi
 *.fdb_latexmk
 *.R
+*.rds
 
 
 # ignore my old files and other irrelevant directories
