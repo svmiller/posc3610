@@ -135,12 +135,12 @@ Land-contiguous states and those separated by less than 150 miles of water are d
 - Richardson (1960): Of 200 wars between 1480 and 1941, half were dyadic.
     - 75% were fought involving no more than three states.
     
-### The Problem of Contiguity
+<!-- ### The Problem of Contiguity -->
 
-If war were *just* about the balance of power, these findings wouldn't make sense.
+<!-- If war were *just* about the balance of power, these findings wouldn't make sense. -->
 
-- The balance of power concerns everyone.
-- We should expect more World War Is and Thirty Years' Wars.
+<!-- - The balance of power concerns everyone. -->
+<!-- - We should expect more World War Is and Thirty Years' Wars. -->
 
 ## Why Are Contiguous States Prone to Conflict?
 ### Why Are Contiguous States Prone to Conflict?
