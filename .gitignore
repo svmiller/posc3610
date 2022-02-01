@@ -23,6 +23,8 @@
 *.fdb_latexmk
 *.R
 *.rds
+*.csv
+*.xlsx
 
 
 # ignore my old files and other irrelevant directories
