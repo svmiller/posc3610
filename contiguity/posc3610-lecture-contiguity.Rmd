@@ -302,7 +302,8 @@ Data[[2]] %>%
 modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]], 
                   "Max. Fatalities" = Mods[[4]],
                   "Dyadic War" = Mods[[5]]),
-             output="latex",  longtable=TRUE,
+             # output="latex",  
+             longtable=TRUE,
              title = "A Dangerous Dyad-ish Analysis of Inter-state Conflict",
              gof_omit = "IC|F|Log.|R2$|R2",
              coef_map = c(
@@ -337,7 +338,8 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
 modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]], 
                   "Max. Fatalities" = Mods[[4]],
                   "Dyadic War" = Mods[[5]]),
-             output="latex",  longtable=TRUE,
+             # output="latex",  
+             longtable=TRUE,
              title = "The Important Results of Our Analysis (Omitting the Control Variables)",
              gof_omit = "IC|F|Log.|R2$|R2",
              coef_map = c("landcontig" = "Land Contiguity",
@@ -356,17 +358,18 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
 modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]], 
                   "Max. Fatalities" = Mods[[4]],
                   "Dyadic War" = Mods[[5]]),
-             output="latex",  longtable=TRUE,
+             # output="latex",  
+             longtable=TRUE,
              title = "The Important Results of Our Analysis (Omitting the Control Variables and Color Coded)",
              gof_omit = "IC|F|Log.|R2$|R2",
              coef_map = c("landcontig" = "Land Contiguity",
                           "othercontig" = "Other Contiguity"),
              stars = TRUE)  %>%
   kable_styling(font_size = 8) %>%
-  column_spec(c(2, 3), color="#00cc00") %>%
-  column_spec(c(4,5), color="#cc0000") %>%
-  row_spec(5, color="#000000", bold=FALSE)
-
+  column_spec(c(2), color = c(rep("#00cc00", 4), "black")) %>%
+  column_spec(c(3), color = c(rep("#00cc00", 2), rep("#cc0000", 2), "black")) %>%
+  column_spec(c(4), color = c(rep("#00cc00", 2), rep("#cc0000", 2), "black")) %>%
+  column_spec(c(5), color = c(rep("#cc0000", 4), "black"))
 ```
 
 ###
@@ -383,11 +386,12 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
                           "othercontig" = "Other Contiguity"),
              stars = TRUE)  %>%
   kable_styling(font_size = 8) %>%
-  column_spec(c(2, 3), color="#00cc00") %>%
-  column_spec(c(4,5), color="#cc0000") %>%
-  column_spec(2, bold=TRUE) %>%
-  column_spec(5, bold=TRUE) %>%
-  row_spec(5, color="#000000", bold=FALSE)
+  column_spec(c(2), color = c(rep("#00cc00", 4), "black"),
+              bold = c(rep(TRUE, 4), FALSE)) %>%
+  column_spec(c(3), color = c(rep("#00cc00", 2), rep("#cc0000", 2), "black")) %>%
+  column_spec(c(4), color = c(rep("#00cc00", 2), rep("#cc0000", 2), "black")) %>%
+  column_spec(c(5), color = c(rep("#cc0000", 4), "black"),
+              bold = c(rep(FALSE, 2), rep(TRUE, 2), FALSE))
 
 ```
 
