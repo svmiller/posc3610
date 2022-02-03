@@ -88,6 +88,13 @@ Data <- readRDS("Data.rds")
 knitr::include_graphics("india-refugee-boy-1947.jpg")
 ```
 
+
+###
+
+```{r kashmir, eval=TRUE, echo=FALSE, out.width="100%"}
+knitr::include_graphics("kashmir.jpg")
+```
+
 <!-- ### Dangerous Dyads -->
 
 <!-- | **Factor** | **Rank** | **Relationship** | -->
