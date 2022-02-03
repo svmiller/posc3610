@@ -126,7 +126,7 @@ But, it seems issues must be underlying inter-state conflict.
 
 - Contiguity was our clue, but not our answer.
 
-
+## What's Wrong with Contiguity?
 ### The Contiguity Arguments
 
 1. Opportunity
@@ -174,7 +174,7 @@ However, this link is questionable.
 
 This argument is incurably underspecified.
 
-## Territoriality
+## Why Territory?
 ### Territoriality
 
 Vasquez argues neighbors fight because they disagree about the distribution of territory among them.
@@ -253,7 +253,7 @@ Per Senese and Vasquez (2003, Table 1), it's plausible that:
 - Territory is neither of these (i.e. we've screwed everything up).
 
 
-# A Dyadic Analysis of Contiguity and Conflict
+# A Dyadic Analysis of Territory and Conflict
 ### What Does This Look Like Dyadically?
 
 **Unit of analysis**: non-directed dyad-year
