@@ -24,6 +24,11 @@
   dirname: contiguity
   tldr: "Contiguity is the classic control variable, and it's a correlate of conflict onset (not escalation/severity)."
 
+- title: "Territorial Conflict"
+  filename: territorial-conflict
+  dirname: territorial-conflict
+  tldr: "Most wars are fought over territory and contiguity is just a rough proxy for that."
+
 # 
 # 
 # - title: "The Scientific Study of War"
