@@ -1,15 +1,15 @@
 ---
-always_allow_html: true
-author: steve
-excerpt: SFSFSFS
-layout: page
+title: "Steps to War Assignment and Instructions"
 output:
   md_document:
-    pandoc_args:
-    - –wrap=preserve
-    preserve_yaml: true
     variant: gfm
-title: Steps to War Assignment and Instructions
+    preserve_yaml: TRUE
+    pandoc_args: 
+      - "--wrap=preserve"
+author: "steve"
+excerpt: "SFSFSFS"
+layout: page
+always_allow_html: true
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -1737,6 +1737,7 @@ Turkey
 <a href="https://en.wikipedia.org/wiki/Turkish_invasion_of_Cyprus">Turkish Invasion of Cyprus</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 15, 1974
