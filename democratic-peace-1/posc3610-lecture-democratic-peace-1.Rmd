@@ -393,7 +393,7 @@ modelsummary(list("Dyadic War" = Mods[[5]]),
                        FALSE)) %>%
   row_spec(c(14, 16), hline_after = TRUE) %>%
   row_spec(c( 15, 16), background="#eeeeee") %>%
-  footnote(general = "Model is Bayesian GLM with default ({rstanarm}) priors.")
+  footnote(general = "Model is Bayesian GLM with default {rstanarm} priors.")
 
 ```
 
