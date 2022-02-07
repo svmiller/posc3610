@@ -29,8 +29,12 @@
   dirname: territorial-conflict
   tldr: "Most wars are fought over territory and contiguity is just a rough proxy for that."
 
-# 
-# 
+- title: "The Democratic Peace"
+  filename: democratic-peace-1
+  dirname: democratic-peace-1
+  tldr: "Democracies do not fight each other, and almost never in war, but are not really more peaceful in general."
+
+
 # - title: "The Scientific Study of War"
 #   filename: scientific-study-war
 #   dirname: scientific-study-war
