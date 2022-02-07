@@ -497,22 +497,27 @@ Sims[[2]] %>%
   coord_flip() +
   labs(y = "Mean Probability of Confrontation Escalation to Dyadic War (with 95% Intervals)",
        x = "",
-       title = "The Probability of Dyadic War Between Joint Democracies is Fantastically Rare, Almost Zero",
+       title = "The Probability of Dyadic War Between Joint Democracies is Fantastically Small, Almost Zero",
        subtitle = "The baseline probability of escalation, all things equal, is .141. With joint democracy: about .00037.",
-       caption = "Simulation by way of multivariate normal distribution, given Model 5 in this presentation.")
+       caption = "Summaries of estimated predictive draws from the Bayesian probit model from earlier in this presentation.")
 
 ```
 
 
-### What Are These Jointly Democratic Wars?
+### What Are The Jointly Democratic Wars We Observe?
 
 Flukes, coding artifacts, odd cases, and almost exceptions that prove the rule.
 
 - Coding artifact of ephemeral declaration of war from WWII allies to Finland
-- Franco-Siamese War (MIC#0196) even though Britain never actually fought France.
-- India-Pakistan "Kargil War" (MIC#4007) even though Pakistan was reverting to a police state.
-- Cyprus-Turkey 1974 conflict (MIC#1293) even though Turkey would soon have a coup.
+    - There were some low-level skirmishes between the UK and Finland in 1941, with no more than 25 fatalities through the year.
+- Franco-Siamese War (MIC#0196) 
+    - Britain never actually fought France.
+- India-Pakistan "Kargil War" (MIC#4007) 
+    - Pakistan would soon have a military takeover of the state.
+- Cyprus-Turkey 1974 conflict (MIC#1293)
+    - Turkey had a coup (by memorandum) in 1971, and another in 1980.
 - Lithuania's campaign for independence against (in part) Germany (MIC#2604) in 1919/1920.
+    - A weird case at a weird moment in time.
 
 
 # Conclusion
