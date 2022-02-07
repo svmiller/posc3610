@@ -285,6 +285,7 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
                           "jointdem" = "Joint Democracy",
                           "minwbgdppc" = "Min. GDP per Capita in Dyad"),
              stars = TRUE) %>%
+  row_spec(0, bold=TRUE) %>%
   kable_styling(font_size = 7)
 
 ```
@@ -311,6 +312,7 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
              gof_omit = "IC|F|Log.|R2$|R2",
              coef_map = c("jointdem" = "Joint Democracy"),
              stars = TRUE)  %>%
+  row_spec(0, bold=TRUE) %>%
   kable_styling(font_size = 8)  %>%
   column_spec(1, italic = FALSE, color='#000000')
 
@@ -329,6 +331,7 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
              gof_omit = "IC|F|Log.|R2$|R2",
              coef_map = c("jointdem" = "Joint Democracy"),
              stars = TRUE)  %>%
+  row_spec(0, bold=TRUE) %>%
   kable_styling(font_size = 8) %>%
   column_spec(c(2, 3, 4), color = c(rep("#cc0000", 2), "black"))
 ```
@@ -344,6 +347,7 @@ modelsummary(list("Conf. Onset" = Mods[[1]], "Min. Fatalities" = Mods[[3]],
              gof_omit = "IC|F|Log.|R2$|R2",
              coef_map = c("jointdem" = "Joint Democracy"),
              stars = TRUE)  %>%
+  row_spec(0, bold=TRUE) %>%
   kable_styling(font_size = 8) %>%
   column_spec(c(2, 3, 4), color = c(rep("#cc0000", 2), "black")) %>%
   column_spec(c(2, 3, 4), bold = c(rep(TRUE, 2), FALSE))
@@ -370,6 +374,7 @@ modelsummary(list("Dyadic War" = Mods[[5]]),
                           "minwbgdppc" = "Min. GDP per Capita in Dyad"),
             statistic = "conf.int")  %>%
   kable_styling(font_size = 6) %>%
+  row_spec(0, bold=TRUE) %>%
   column_spec(c(2), color = c(rep("#00cc00", 2),
                               rep("#cc0000", 2),
                               rep("#cc0000", 2),
@@ -398,7 +403,7 @@ modelsummary(list("Dyadic War" = Mods[[5]]),
 
 modelsummary(list("Conf. Onset" = Mods[[6]], "Min. Fatalities" = Mods[[8]], 
                   "Max. Fatalities" = Mods[[9]],
-                  "Dyadic War" = Mods[[10]]),
+                  "War" = Mods[[10]]),
              # output="latex",  
              longtable=TRUE,
              title = "A Monadic Analysis of Inter-state Conflict",
@@ -411,6 +416,7 @@ modelsummary(list("Conf. Onset" = Mods[[6]], "Min. Fatalities" = Mods[[8]],
                           "polity_dem" = "Is Democracy (Polity)",
                           "wbgdppc2011est" = "GDP per Capita"),
              stars = TRUE) %>%
+  row_spec(0, bold=TRUE) %>%
   kable_styling(font_size = 7)
 
 ```
@@ -421,7 +427,7 @@ modelsummary(list("Conf. Onset" = Mods[[6]], "Min. Fatalities" = Mods[[8]],
 
 modelsummary(list("Conf. Onset" = Mods[[6]], "Min. Fatalities" = Mods[[8]], 
                   "Max. Fatalities" = Mods[[9]],
-                  "Dyadic War" = Mods[[10]]),
+                  "War" = Mods[[10]]),
              # output="latex",  
              longtable=TRUE,
              title = "A Monadic Analysis of Inter-state Conflict",
@@ -430,6 +436,7 @@ modelsummary(list("Conf. Onset" = Mods[[6]], "Min. Fatalities" = Mods[[8]],
                           "polity_dem" = "Is Democracy (Polity)"),
              stars = TRUE) %>%
   kable_styling(font_size = 8) %>%
+  row_spec(0, bold=TRUE) %>%
   column_spec(c(2, 3, 4, 5), color = c(rep("#cc0000", 2), "black")) %>%
   column_spec(c(3, 4, 5), bold = c(rep(TRUE, 2), FALSE))
   
