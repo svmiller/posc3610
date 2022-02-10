@@ -78,7 +78,7 @@ Data <- readRDS("Data.rds")
 # Introduction
 ### Goal for Today
 
-*Discuss the core findings and intuition behind "the democratic peace."*
+*Critique the core findings and intuition behind "the democratic peace."*
 
 ### Confrontation of the Day: The Turkish Invasion of Cyprus (MIC#1293)
 
