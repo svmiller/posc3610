@@ -75,6 +75,7 @@ CYs %>%
     group_by(year) %>%
     summarize(numstates = n()) -> Numstates
 
+library(cowplot)
 
 ```
 
@@ -82,6 +83,21 @@ CYs %>%
 ### Goal for Today
 
 *Define alliances, why states form them, and the drawbacks they have.*
+
+### Confrontation of the Day: The Austro-Prussian [Six Weeks] War (MIC#0261)
+
+
+```{r mic-of-the-day, eval=TRUE, echo=FALSE, out.width="100%"}
+
+p1 <- ggdraw() + draw_image("friedrich-franz-crop.jpg", scale = 0.5)
+p2 <- ggdraw() + draw_image("austria-prussia-war-crop.jpg", scale = 1.3)
+#p3 <- ggdraw() + draw_image("img/crush-india-march.png", scale = 0.9)
+# p4 <- ggdraw() + draw_image("img/anti-china-protest-2011.jpg", scale = 0.9)
+
+plot_grid(p2, p1)
+# nitr::include_graphics("friedrich-franz-crop.jpg")
+```
+
 
 # What We Know About Alliances
 ## What Is An Alliance?
@@ -456,15 +472,21 @@ tribble(
 ) %>%
   mutate(statistic = estimate/std.error,
          p.value = 1.96*pnorm(-abs(statistic))) %>%
-  dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 3.5)) + theme_steve_web() +
-  xlab("Coefficient Estimate") +
-  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
-  theme(legend.position = "bottom") +
+  ggplot(.,aes(term, estimate, 
+               color = model, shape = model,
+               ymin= estimate-(p_z(.05)*std.error),
+               ymax = estimate+(p_z(.05)*std.error))) +
+  geom_pointrange(size=1.1, position = position_dodge(width = .3)) +
+  coord_flip() +
+  theme_steve_web() +
+  #dwplot(.,dot_args = list(aes(colour = model, shape = model), size = 3.5)) + theme_steve_web() +
+  geom_hline(yintercept = 0, colour = "grey60", linetype = 2) +
+  #theme(legend.position = "bottom") +
   labs(title = "Probit Results of Dyadic Alliance Formation",
        subtitle = "Generally, alliances form from shared regime type, homophily, and mutual threats.",
        caption = "Reproduction of Table II in Gibler and Sarkees (2004).
-       Note: Controls for distance, major power, learning, and ally lags excluded for presentation.") +
-  scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
+       Note: Controls for distance, major power, learning, and ally lags excluded for presentation.",
+       color = "", shape = "", y = "Coefficient Estimate (with 95% Bounds)", x = "") 
 ```
 
 
