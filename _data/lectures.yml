@@ -39,6 +39,12 @@
   dirname: democratic-peace-2
   tldr: "The democratic peace is a fact still in search of a good explanation."
 
+- title: "Alliances: What Are They and Why Form Them?"
+  filename: alliance-1
+  dirname: alliance-1
+  tldr: "Alliances exchange some autonomy for some security and are largely born from shared institutions/culture/threat."
+
+
 # - title: "The Scientific Study of War"
 #   filename: scientific-study-war
 #   dirname: scientific-study-war
@@ -89,11 +95,7 @@
 #   dirname: od-balance-ptt
 #   tldr: "Offense-defense balance and power transition theory are other structural theories with similar argumentation problems."
 # 
-# - title: "Alliances: What Are They and Why Form Them?"
-#   filename: alliance-1
-#   dirname: alliance-1
-#   tldr: "Alliances exchange some autonomy for some security and are largely born from shared institutions/culture/threat."
-# 
+
 # - title: "Are Alliances Paths to Peace or Steps to War?"
 #   filename: alliance-2
 #   dirname: alliance-2
