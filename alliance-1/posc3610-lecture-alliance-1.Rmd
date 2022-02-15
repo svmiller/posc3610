@@ -1,21 +1,29 @@
 ---
-title: "Alliances: What Are They and Why Form Them?"
+output: 
+  stevetemplates::beamer:
+    latex_engine: xelatex # use xelatex here instead! I recommend it, but this is minimal reprex
+    dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+    slide_level: 3 # I prefer this, but I won't force it on you.
+title: "Alliances: What Are They And Why Form Them?"
 subtitle: POSC 3610  -- International Conflict
 author: Steven V. Miller
 institute: Department of Political Science
-titlegraphic: /Dropbox/teaching/clemson-academic.png
-date: 
-fontsize: 10pt
-output:
- beamer_presentation:
-    template: ~/Dropbox/miscelanea/svm-r-markdown-templates/svm-latex-beamer.tex
-    latex_engine: xelatex
-    dev: cairo_pdf
-    fig_caption: true
-    slide_level: 3
+titlegraphic: "`r paste0(Sys.getenv('HOME'), '/Dropbox/clemson/watermarks/clemson-university-wordmark-orange-purple.png')`"
 make149: true
 mainfont: "Open Sans"
 titlefont: "Titillium Web"
+header-includes:
+- \usepackage{dcolumn}
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{array}
+- \usepackage{multirow}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \usepackage{colortbl}
+- \usepackage{pdflscape}
+- \usepackage{tabu}
+- \usepackage{threeparttable}
 ---
 
 ```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
@@ -349,13 +357,13 @@ Therefore: A and B form a costly alliance when:
 
 Empirical analysis for today: what do we know about who forms alliances more generally?
 
-### Evaluating a Regression Analysis
+<!-- ### Evaluating a Regression Analysis -->
 
-I mention there are three things to do when evaluating a regression analysis.
+<!-- I mention there are three things to do when evaluating a regression analysis. -->
 
-1. Know (however, general) the data used.
-2. Know what the objects in the regression table are saying.
-3. Know what the regression table *isn't* saying.
+<!-- 1. Know (however, general) the data used. -->
+<!-- 2. Know what the objects in the regression table are saying. -->
+<!-- 3. Know what the regression table *isn't* saying. -->
 
 ### Lai and Reiter's (2000) Data
 
