@@ -1,15 +1,15 @@
 ---
-always_allow_html: true
-author: steve
-excerpt: SFSFSFS
-layout: page
+title: "Steps to War Assignment and Instructions"
 output:
   md_document:
-    pandoc_args:
-    - –wrap=preserve
-    preserve_yaml: true
     variant: gfm
-title: Steps to War Assignment and Instructions
+    preserve_yaml: TRUE
+    pandoc_args: 
+      - "--wrap=preserve"
+author: "steve"
+excerpt: "SFSFSFS"
+layout: page
+always_allow_html: true
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -361,6 +361,7 @@ Austria-Hungary; Italy; Turkey; United Kingdom; France
 <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jul 6, 1870
@@ -1980,6 +1981,7 @@ Korea; China
 <a href="https://en.wikipedia.org/wiki/War_of_the_Pacific">War of the Pacific</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Nov 8, 1878
@@ -3485,7 +3487,7 @@ Jun 12, 1957
 Jun 12, 1957
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:center;">
 0
@@ -3511,13 +3513,13 @@ First Taiwan Strait Crisis
 China
 </td>
 <td style="text-align:center;">
-Feb 9, 1953
+Mar 5, 1950
 </td>
 <td style="text-align:center;">
 Jun 12, 1957
 </td>
 <td style="text-align:center;">
-0
+1
 </td>
 <td style="text-align:center;">
 1
@@ -3543,13 +3545,13 @@ First Taiwan Strait Crisis
 Taiwan
 </td>
 <td style="text-align:center;">
-Feb 11, 1953
+Mar 5, 1950
 </td>
 <td style="text-align:center;">
 Jun 12, 1957
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:center;">
 0
@@ -3575,19 +3577,51 @@ First Taiwan Strait Crisis
 United States
 </td>
 <td style="text-align:center;">
-Feb 9, 1953
+Jun 27, 1950
 </td>
 <td style="text-align:center;">
-Feb 15, 1953
+Jun 27, 1950
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:left;">
-Attack
+Show of Force
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+50
+</td>
+<td style="text-align:left;">
+First Taiwan Strait Crisis
+</td>
+<td style="text-align:center;">
+United States
+</td>
+<td style="text-align:center;">
+Nov 1951
+</td>
+<td style="text-align:center;">
+Jun 1952
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+Show of Force
 </td>
 <td style="text-align:center;">
 0
@@ -4410,7 +4444,7 @@ Germany
 Jul 6, 1870
 </td>
 <td style="text-align:center;">
-Feb 26, 1871
+Jun 29, 1871
 </td>
 <td style="text-align:center;">
 0
@@ -4474,7 +4508,7 @@ France
 Jul 6, 1870
 </td>
 <td style="text-align:center;">
-Feb 26, 1871
+Jun 29, 1871
 </td>
 <td style="text-align:center;">
 1
@@ -6586,7 +6620,7 @@ China
 Oct 24, 1961
 </td>
 <td style="text-align:center;">
-Dec 25, 1963
+Dec 7, 1964
 </td>
 <td style="text-align:center;">
 1
@@ -6618,7 +6652,7 @@ India
 Oct 24, 1961
 </td>
 <td style="text-align:center;">
-Dec 25, 1963
+Dec 7, 1964
 </td>
 <td style="text-align:center;">
 0
@@ -8212,22 +8246,54 @@ Show of Force
 Six-Day War
 </td>
 <td style="text-align:center;">
+Saudi Arabia
+</td>
+<td style="text-align:center;">
+Jan 20, 1970
+</td>
+<td style="text-align:center;">
+Jan 21, 1970
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+No Militarized Action
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1035
+</td>
+<td style="text-align:left;">
+Six-Day War
+</td>
+<td style="text-align:center;">
 Iraq
 </td>
 <td style="text-align:center;">
 Dec 17, 1966
 </td>
 <td style="text-align:center;">
-Jun 11, 1967
+Nov 17, 1969
 </td>
 <td style="text-align:center;">
 0
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:left;">
-Show of Force
+Attack
 </td>
 <td style="text-align:center;">
 0
@@ -8247,7 +8313,7 @@ Six-Day War
 Egypt
 </td>
 <td style="text-align:center;">
-Dec 17, 1966
+Sep 24, 1966
 </td>
 <td style="text-align:center;">
 Jun 11, 1967
@@ -8256,7 +8322,7 @@ Jun 11, 1967
 0
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:left;">
 War Battle
@@ -8279,10 +8345,10 @@ Six-Day War
 Syria
 </td>
 <td style="text-align:center;">
-Dec 17, 1966
+Aug 15, 1966
 </td>
 <td style="text-align:center;">
-Jun 11, 1967
+Jun 10, 1967
 </td>
 <td style="text-align:center;">
 0
@@ -8311,10 +8377,10 @@ Six-Day War
 Jordan
 </td>
 <td style="text-align:center;">
-May 18, 1967
+Oct 10, 1966
 </td>
 <td style="text-align:center;">
-Jun 11, 1967
+Aug 14, 1970
 </td>
 <td style="text-align:center;">
 0
@@ -8343,10 +8409,10 @@ Six-Day War
 Israel
 </td>
 <td style="text-align:center;">
-Dec 17, 1966
+Aug 15, 1966
 </td>
 <td style="text-align:center;">
-Jun 11, 1967
+Aug 14, 1970
 </td>
 <td style="text-align:center;">
 1
@@ -8362,6 +8428,38 @@ War Battle
 </td>
 <td style="text-align:center;">
 942
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1035
+</td>
+<td style="text-align:left;">
+Six-Day War
+</td>
+<td style="text-align:center;">
+Syria
+</td>
+<td style="text-align:center;">
+Nov 17, 1967
+</td>
+<td style="text-align:center;">
+Nov 17, 1967
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+No Militarized Action
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
 </td>
 </tr>
 <tr>
@@ -11130,7 +11228,7 @@ Iraq
 May 14, 1948
 </td>
 <td style="text-align:center;">
-Jan 7, 1949
+Jul 20, 1949
 </td>
 <td style="text-align:center;">
 1
@@ -11290,7 +11388,7 @@ Syria
 May 15, 1948
 </td>
 <td style="text-align:center;">
-Jan 7, 1949
+Jul 20, 1949
 </td>
 <td style="text-align:center;">
 1
@@ -11354,7 +11452,7 @@ Somalia
 Feb 22, 1977
 </td>
 <td style="text-align:center;">
-Mar 15, 1978
+Feb -9, 1979
 </td>
 <td style="text-align:center;">
 1
@@ -11386,7 +11484,7 @@ Ethiopia
 Feb 22, 1977
 </td>
 <td style="text-align:center;">
-Mar 15, 1978
+Feb -9, 1979
 </td>
 <td style="text-align:center;">
 0
@@ -11447,7 +11545,7 @@ Iran-Iraq War
 Iran
 </td>
 <td style="text-align:center;">
-Nov 4, 1979
+Jun 4, 1979
 </td>
 <td style="text-align:center;">
 Aug 20, 1988
@@ -11479,7 +11577,7 @@ Iran-Iraq War
 Iraq
 </td>
 <td style="text-align:center;">
-Nov 4, 1979
+Jun 4, 1979
 </td>
 <td style="text-align:center;">
 Aug 20, 1988
@@ -11898,7 +11996,7 @@ Iran
 Sep 1993
 </td>
 <td style="text-align:center;">
-Sep 1993
+Mar 1994
 </td>
 <td style="text-align:center;">
 0
@@ -12250,7 +12348,7 @@ United Kingdom
 Jan 17, 1991
 </td>
 <td style="text-align:center;">
-Mar 3, 1991
+May 5, 1991
 </td>
 <td style="text-align:center;">
 0
@@ -12314,7 +12412,7 @@ France
 Jan 17, 1991
 </td>
 <td style="text-align:center;">
-Mar 3, 1991
+Jul 14, 1991
 </td>
 <td style="text-align:center;">
 0
@@ -12378,7 +12476,7 @@ United States
 Jul 24, 1990
 </td>
 <td style="text-align:center;">
-Mar 3, 1991
+Jan 2, 1992
 </td>
 <td style="text-align:center;">
 0
@@ -12442,7 +12540,7 @@ Iraq
 Jun 26, 1990
 </td>
 <td style="text-align:center;">
-Mar 3, 1991
+Jan 2, 1992
 </td>
 <td style="text-align:center;">
 1
