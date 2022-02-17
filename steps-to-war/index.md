@@ -1,15 +1,15 @@
 ---
-title: "Steps to War Assignment and Instructions"
+always_allow_html: true
+author: steve
+excerpt: SFSFSFS
+layout: page
 output:
   md_document:
+    pandoc_args:
+    - –wrap=preserve
+    preserve_yaml: true
     variant: gfm
-    preserve_yaml: TRUE
-    pandoc_args: 
-      - "--wrap=preserve"
-author: "steve"
-excerpt: "SFSFSFS"
-layout: page
-always_allow_html: true
+title: Steps to War Assignment and Instructions
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -2396,6 +2396,7 @@ Estonia; United Kingdom; Finland; France
 <a href="https://en.wikipedia.org/wiki/Sino-Vietnamese_War">Sino-Vietnamese War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Feb 1978
@@ -3554,7 +3555,7 @@ Jun 12, 1957
 0
 </td>
 <td style="text-align:center;">
-0
+1
 </td>
 <td style="text-align:left;">
 War Battle
@@ -3564,6 +3565,38 @@ War Battle
 </td>
 <td style="text-align:center;">
 4,015
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+50
+</td>
+<td style="text-align:left;">
+First Taiwan Strait Crisis
+</td>
+<td style="text-align:center;">
+United States
+</td>
+<td style="text-align:center;">
+Feb 9, 1953
+</td>
+<td style="text-align:center;">
+Feb 15, 1953
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+Attack
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
 </td>
 </tr>
 <tr>
@@ -8255,13 +8288,13 @@ Jan 20, 1970
 Jan 21, 1970
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:center;">
 0
 </td>
 <td style="text-align:left;">
-No Militarized Action
+Clash
 </td>
 <td style="text-align:center;">
 1
@@ -8441,10 +8474,10 @@ Six-Day War
 Syria
 </td>
 <td style="text-align:center;">
-Nov 17, 1967
+Nov 17, 1969
 </td>
 <td style="text-align:center;">
-Nov 17, 1967
+Nov 17, 1969
 </td>
 <td style="text-align:center;">
 0
@@ -11228,7 +11261,7 @@ Iraq
 May 14, 1948
 </td>
 <td style="text-align:center;">
-Jul 20, 1949
+Mar -9, 1949
 </td>
 <td style="text-align:center;">
 1
@@ -11260,7 +11293,7 @@ Lebanon
 May 15, 1948
 </td>
 <td style="text-align:center;">
-Nov 18, 1948
+Mar 23, 1949
 </td>
 <td style="text-align:center;">
 1
@@ -11292,7 +11325,7 @@ Egypt
 May 14, 1948
 </td>
 <td style="text-align:center;">
-Jan 7, 1949
+Feb 24, 1949
 </td>
 <td style="text-align:center;">
 1
@@ -11324,7 +11357,7 @@ Israel
 May 14, 1948
 </td>
 <td style="text-align:center;">
-Jan 7, 1949
+Jul 20, 1949
 </td>
 <td style="text-align:center;">
 0
@@ -11356,7 +11389,7 @@ Jordan
 May 15, 1948
 </td>
 <td style="text-align:center;">
-Jan 7, 1949
+Apr 3, 1949
 </td>
 <td style="text-align:center;">
 1
@@ -11551,7 +11584,7 @@ Jun 4, 1979
 Aug 20, 1988
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 <td style="text-align:center;">
 1
@@ -11583,7 +11616,7 @@ Jun 4, 1979
 Aug 20, 1988
 </td>
 <td style="text-align:center;">
-0
+1
 </td>
 <td style="text-align:center;">
 1
@@ -12348,7 +12381,7 @@ United Kingdom
 Jan 17, 1991
 </td>
 <td style="text-align:center;">
-May 5, 1991
+Jul 17, 1991
 </td>
 <td style="text-align:center;">
 0
