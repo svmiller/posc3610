@@ -267,7 +267,9 @@ Data[[1]] %>%
                       "% Change Milper (B)"),
         align = "cllccccc") %>%
   kable_styling(font_size = 6) %>%
-  row_spec(0, bold=TRUE) %>%
+  row_spec(c(1:3, 7:9), background="#eeeeee") %>%
+  column_spec(c(5, 7), bold=TRUE, color="#00cc00") %>%
+  row_spec(0, bold=TRUE, color="black") %>%
   footnote(general = "Data: CoW NMC (v. 6.0), by way of {peacesciencer}.",
            number = "Gibler et al. (2005) code an Israeli arms race (1963-1971) and Saudi arms race (1962-1968) here.")
 ```
