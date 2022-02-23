@@ -1,15 +1,15 @@
 ---
-always_allow_html: true
-author: steve
-excerpt: SFSFSFS
-layout: page
+title: "Steps to War Assignment and Instructions"
 output:
   md_document:
-    pandoc_args:
-    - –wrap=preserve
-    preserve_yaml: true
     variant: gfm
-title: Steps to War Assignment and Instructions
+    preserve_yaml: TRUE
+    pandoc_args: 
+      - "--wrap=preserve"
+author: "steve"
+excerpt: "SFSFSFS"
+layout: page
+always_allow_html: true
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -2154,6 +2154,7 @@ Spain
 <a href="https://en.wikipedia.org/wiki/Greco-Turkish_War_(1897)">Greco-Turkish War (1897)</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Dec 1896
@@ -3529,10 +3530,10 @@ Jun 12, 1957
 War Battle
 </td>
 <td style="text-align:center;">
-5,507
+8,034
 </td>
 <td style="text-align:center;">
-8,025
+12,575
 </td>
 </tr>
 <tr>
@@ -3561,10 +3562,10 @@ Jun 12, 1957
 War Battle
 </td>
 <td style="text-align:center;">
-1,494
+3,245
 </td>
 <td style="text-align:center;">
-4,015
+11,090
 </td>
 </tr>
 <tr>
@@ -8329,10 +8330,10 @@ Nov 17, 1969
 Attack
 </td>
 <td style="text-align:center;">
-0
+7
 </td>
 <td style="text-align:center;">
-0
+26
 </td>
 </tr>
 <tr>
@@ -8425,10 +8426,10 @@ Aug 14, 1970
 War Battle
 </td>
 <td style="text-align:center;">
-436
+511
 </td>
 <td style="text-align:center;">
-476
+645
 </td>
 </tr>
 <tr>
@@ -8457,10 +8458,10 @@ Aug 14, 1970
 War Battle
 </td>
 <td style="text-align:center;">
-429
+445
 </td>
 <td style="text-align:center;">
-942
+1,073
 </td>
 </tr>
 <tr>
@@ -12041,10 +12042,10 @@ Mar 1994
 Show of Force
 </td>
 <td style="text-align:center;">
-0
+13
 </td>
 <td style="text-align:center;">
-0
+13
 </td>
 </tr>
 <tr>
@@ -12585,10 +12586,10 @@ Jan 2, 1992
 War Battle
 </td>
 <td style="text-align:center;">
-7,816
+7,817
 </td>
 <td style="text-align:center;">
-44,170
+44,172
 </td>
 </tr>
 <tr>
