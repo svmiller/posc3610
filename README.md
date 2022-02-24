@@ -1,6 +1,0 @@
-POSC 3610: International Conflict
-=================================
-
-This repository contains my course notes and other supporting material for POSC 3610, an upper-division class on international conflict I teach at Clemson University.
-
-> The onset, expansion and consequences of inter-state conflict lie at the heart of international relations scholarship.  This class will explore these topics, highlighting what we know and what we do not know. We will start by clarifying our concepts and what we mean when we use terms like "dispute" and "war." The rest proceeds as an overview of the literature in the spirit of the Correlates of War project. We will discuss the ubiquitous and problematic issue of "power" in international relations. We will reiterate that most conflicts are between land-contiguous neighbors and concern territorial issues between them. Thereafter, we will discuss numerous other correlates of war and peace, like alliances, joint democracy, and rivalry. We will also talk about conflict processes like deterrence, compellence, dispute escalation and the dynamics of war. Students that complete this class should have a broad overview of prominent quantitative scholarship on the cause of disputes and war in the international system, situating them in scholarship in the "peace science" field.
