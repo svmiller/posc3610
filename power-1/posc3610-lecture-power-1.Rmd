@@ -1,0 +1,386 @@
+---
+output: 
+  stevetemplates::beamer:
+    latex_engine: xelatex # use xelatex here instead! I recommend it, but this is minimal reprex
+    dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+    slide_level: 3 # I prefer this, but I won't force it on you.
+title: "Power and the Realisms"
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: "`r paste0(Sys.getenv('HOME'), '/Dropbox/clemson/watermarks/clemson-university-wordmark-orange-purple.png')`"
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+---
+
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, warning=F)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+```
+
+
+```{r loadstuff, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+options(knitr.kable.NA = '')
+library(car)
+library(tidyverse)
+library(janitor)
+library(knitr)
+library(stevemisc)
+```
+
+```{r loaddata, cache=T, eval=T, echo=F, message=F, error=F, warning=F}
+
+# ICOWactive <- read.csv("~/Dropbox/data/icow/icow-provisional-1.01/200199.csv") %>% tbl_df()
+CINC <- read.csv("~/Dropbox/data/cow/nmc/NMC_5_0.csv") %>% tbl_df()
+NMC <- read_csv("~/Dropbox/data/cow/nmc/6.0/NMC-60-abridged.csv")
+
+```
+
+# Introduction
+### Goal for Today
+
+*Discuss power as structural property and the various realism paradigms surrounding it.*
+
+### MIC of the Day: Crimean War (MIC#0057)
+
+![Franz Roubaud's (1904) Siege of Sevastopol](crimean-war.jpg)
+
+### MIC of the Day: Crimean War (MIC#0057)
+
+![An Excerpt from John Coleman's (1855) "The Four Points"](bop-crimean-war.png)
+
+
+### What is Power?
+
+Two conceptualizations of power focus on:
+
+- relations
+- resources
+
+### Power as Relational
+
+Common argument is that power is some kind of coercion.
+
+- i.e. the ability to get someone else to do what they would otherwise not do.
+
+Various aspects to power in this framework.
+
+- Persuasion
+- Rewards
+- Punishments
+- Coercion
+- Generally: force-price-legitimacy framework
+
+### Problems With This Interpretation
+
+Several problems follow this concept of power for our purposes.
+
+- Counterfactuals are hard
+- Unobservables
+- Attribution
+
+### Power As Resources
+
+More common interpretation in IR: power is resources.
+
+- Major advantage: not conflating "power" (i.e. the cause) with outcomes we want to study (i.e. the effect)
+
+# Power, Realism, and its Flaws
+## Measuring Power
+### Elements of Power
+
+Any number of ways of measuring power (e.g. (in)tangible, observable/latent). Practically we go for:
+
+- Terrain
+- Natural resources (e.g. oil)
+- Industrial capacity
+- Military quality/preparedness
+- Population
+- Wealth (latent)
+- National character (largely unobservable/stereotypes)
+
+### Measuring Power
+
+CoW's National Military Capabilities (NMC) data offer a crude measure of this concept of power.
+
+$$
+CINC_{it} = \frac{tpr_{it} + upr_{it} + ispr_{it} + ecr_{it} + mer_{it} + mpr_{it}}{6}
+$$
+
+..where:
+
+- $tpr_{it}$ = total population ratio of country *i* in year *t*
+- $upr_{it}$ = total urban population ratio of country *i* in year *t*
+- $ispr_{it}$ = iron and steel production ratio of country *i* in year *t*
+- $ecr_{it}$ = primary energy consumption ratio of country *i* in year *t*
+- $mer_{it}$ = military expenditure ratio of country *i* in year *t*
+- $mpr_{it}$ = military personnel ratio of country *i* in year *t*
+
+###
+
+```{r cinc-scores-usa-ukg-gmy-rus-1816-2016, echo=F, eval=T, fig.width = 14, fig.height = 8.5}
+
+NMC %>%
+  filter(ccode %in% c(2, 200, 255, 260, 365)) %>%
+  mutate(ccode = ifelse(ccode == 260, 255, ccode)) %>%
+  mutate(state = countrycode::countrycode(ccode, "cown", "country.name")) %>%
+  ggplot(.,aes(year, cinc, color=state, linetype = state)) +
+  theme_steve_web() +
+  geom_line(size = 1.5)  +
+  scale_x_continuous(breaks=seq(1820, 2020, by=10)) +
+  scale_color_brewer(palette="Set1") +
+  labs(color = "", linetype = "", x = "", y = "CINC Score",
+       title = "CINC Scores for the U.S., UK, Germany and Russia, 1816-2016",
+       subtitle = "The U.S. has long been the most powerful country in the world, but notice the various power transitions implied by these data.",
+       caption = "Source: Correlates of War National Military Capabilities Data (v. 6.0)")
+
+```
+
+## The Realisms
+### Power as Structural Cause
+
+We focus on the distribution of power in the international system because long-running paradigms are built around it.
+
+
+### Classical Realism
+
+Drawn from Hans Morgenthau's *Politics Among Nations*.
+
+- Heavily inspired by Thomas Hobbes' *Leviathan*.
+	- Anarchy reduces "Man" to his "nature".
+- The state, *viz*, "Man" is hardwired to will for power.
+- End result: bellum omnium contra omnes (war of all against all)
+
+The state (i.e. "Man") pursues power to dominate his rivals.
+
+- Nothing can be done to avoid this.
+
+### Neorealism
+
+Neorealism (aka "structural realism") remains the most prominent approach in security studies. The argument:
+
+- The *structure* of the international system, not "human nature", forces states to pursue power.
+- Anarchy has a single logic that forces a state to see means to protect itself.
+- Power is the *means*, not the end.
+
+### Neorealism's Assumptions
+
+Neorealism is built on a few core assumptions (think: parsimony).
+
+1. The international system is anarchic.
+2. All states possess some type of offensive military capability.
+3. States can never be 100% certain of other states' offensive intentions.
+4. States are motivated to *survive*.
+5. States are rational/strategic actors.
+
+These assumptions will differ slightly from argument to argument.
+
+- They actually come from Mearsheimer (2001).
+- Most neorealist scholarship has done a poor job outlining its assumptions, as we shall see.
+
+### Neorealism's Main Conclusions
+
+All told, these assumptions imply states seek a **balance of power** in the international system.
+
+- States eventually fear each other.
+- This fear can never be inconsequential.
+- International politics becomes a self-help world under anarchy.
+- Power becomes the means to security.
+
+Power-seeking leads to the famous problem of the **security dilemma**.
+
+### Neorealism's Hypotheses
+
+Several hypotheses follow these arguments.
+
+- Bipolar systems are more stable than multipolar systems.
+- States engage in balancing behavior, such that power distributions converge on a balance.
+- States mimic, or echo, one another's behavior.
+
+As we will see, these explanations are flawed in multiple ways.
+
+- The assumptions do not logically imply the hypotheses.
+- The empirical record does not vindicate the hypotheses.
+
+## Bipolarity and Stability
+### Bipolarity and Stability
+
+Polarity constitutes possibly *the* core argument of neorealism:
+
+- Bipolarity: peace
+    - Reasons: certainty
+- Multipolarity: war
+    - Reasons: uncertainty. 
+    - More specifically: **buck-passing** and **chain-ganging**
+
+International system was multipolar before the Cold War
+
+- The period saw multiple systemic wars dating back to 1648.
+- Cold War was only point in history in which the two largest powers did not (directly) fight each other.
+
+### Problems with the Polarity-Stability Hypothesis
+
+- Not implied by any of the assumptions
+- There was nothing special about the "long peace."
+
+### The Hypotheses Do Not Follow the Assumptions
+
+By itself, neorealism's assumptions do not imply the relationship between polarity and stability.
+
+- i.e. "certainty" may embolden risk-taking, "uncertainty" may foster risk-aversion.
+- We'd have to add another assumption: all states are equally risk-averse in the face of certainty.
+
+If we relax this even a little bit, we've violated core assumptions of neorealism.
+
+- Violates the unitary actor assumption
+- Reduces hypothesized effect of polarity on stability to zero.
+- States no longer mimic each other.
+
+### The Polarity-Stability Relationship
+
+Consider a world with A and B in which there are 300 units of "power".
+
+- A: 150
+- B: 150
+
+Such a bipolar system would be stable.
+
+- Neither A nor B could destroy each other.
+
+### The Polarity-Stability Relationship
+
+Consider a different world with A and B with 300 units of power.
+
+- A: 151
+- B: 149
+
+Neorealism assumes this should be stable, but A could destroy B.
+
+- Only when power is perfectly balanced does bipolarity produce peace.
+
+Objection: power is balanced "enough".
+
+- However, this would deny neorealism's own claim. Bipolarity is supposed to reduce uncertainty!
+
+### The Polarity-Stability Relationship
+
+Consider a five-country system as follows (with 300 units of power).
+
+- A: 75
+- B: 74
+- C: 75
+- D: 74
+- E: 2
+
+This system is incidentally stable.
+
+- No one can be eliminated, not even E.
+
+### Bipolarity, Uncertainty, and Stability
+
+Can we salvage the bipolarity-stability argument if we relax the "uncertainty" claim?
+
+- After all, our simple example may not do justice to understanding the real world.
+
+Assume A thinks there's chance *p* it could eliminate B.
+
+- *p* = A's resources/(B's resources + A's resources)
+
+A does not attack B if:
+
+\[ p(U_{AW}) + (1 - p)(U_{AL}) < U_{ASQ} \]
+
+...where $U_{AW}$ = utility for A winning and $U_{AL}$ = utility for A losing.
+
+### Bipolarity, Uncertainty, and Stability
+
+Assume $U_{AW}$ = 1 and $U_{AL}$ = 0. When would A attack B?
+
+\begin{eqnarray}
+p(U_{AW}) + (1 - p)(U_{AL}) &>& U_{ASQ}   \nonumber \\
+pU_{AW} + U_{AL} - pU_{AL}  &>& U_{ASQ} \nonumber \\
+pU_{AW}  - pU_{AL}  &>& U_{ASQ} - U_{AL} \nonumber \\
+p   &>& \frac{U_{ASQ} - U_{AL}}{U_{AW}  - U_{AL}} \nonumber \\
+p   &>& \frac{U_{ASQ} - 0}{1 - 0} \nonumber \\
+p  &>& U_{ASQ} \nonumber
+\end{eqnarray}
+
+A attacks B if the probability of winning is greater than A's utility of the status quo.
+
+### Bipolarity, Uncertainty, and Stability
+
+Assume a world of 300 units of power.
+
+- A: 60
+- B: 240
+
+When would A attack B?
+
+- $p = \frac{60}{60+240} = .2$
+- If A is really dissatisfied with the status quo (i.e. $U_{ASQ} < .2$), it'll attack B.
+
+This is intuitive but it violates a neorealist assumption of security-oriented behavior!
+
+###
+
+```{r stability-international-systems-1492-1990, echo=F, eval=T, fig.width = 14, fig.height = 8.5}
+tibble(
+  year = c(1492, 1519, 1556, 1609, 1617, 1699, 1713, 1721, 1740, 1808,
+           1861, 1898, 1905, 1918, 1943, 1945, 1949),
+  length = c(1519-1492,
+             1556-1519,
+             1609-1556,
+             1617-1609,
+             1699-1617,
+             1713-1699,
+             1721-1713,
+             1740-1721,
+             1808-1740,
+             1861-1808,
+             1898-1861,
+             1905-1898,
+             1918-1905,
+             1943-1918,
+             1945-1943,
+             1949-1945,
+             1990-1949)
+) %>%
+  ggplot(.,aes(as.factor(year), length)) + 
+  geom_bar(stat="identity", alpha=0.8, color="black", fill="#619cff") + 
+  theme_steve_web() +
+  geom_text(aes(label=length), vjust=-.5, colour="black",
+            position=position_dodge(.9), size=4, family="Open Sans") +
+  xlab("Year of Change in List of Major Powers") + ylab("Duration (in Years) of Era") +
+  ggtitle("Stability of International Systems (1492-1990)") +
+  labs(subtitle="i.e. there is nothing special about the ''Long Peace'' of the Cold War.",
+       caption = "Source: Bueno de Mesquita (2010). Note: 'Stability' defined as a change in the composition of major powers.")
+
+```
+
+# Conclusion
+### Conclusion
+
+We study power because we believes its distribution matters to war and peace.
+
+- For our purposes, better to focus on resources than relational power.
+
+
+Neorealism purports to be a parsimonious explanation of international politics.
+
+- It's also the most common approach in security studies.
+
+However, neorealism suffers from major flaws.
+
+- The assumptions do not imply the hypotheses.
+- The hypotheses, however derived, are not supported by the empirical record.

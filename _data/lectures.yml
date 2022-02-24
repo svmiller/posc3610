@@ -1,0 +1,157 @@
+- title: "Syllabus Day (i.e. Welcome)"
+  filename: welcome
+  dirname: welcome
+  tldr: "This lecture discusses the syllabus and outlines course expectations for the rest of the semester."
+  
+- title: "Whither War? An Empirical Assessment of the Patterns of War"
+  filename: whither-war
+  dirname: whither-war
+  tldr: "An overview of what inter-state war typically looks like, with a discussion of the 'decline of war' hypothesis."
+
+- title: "Power and the Realisms"
+  filename: power-1
+  dirname: power-1
+  tldr: "Power is a core component of neorealist arguments, but neorealist arguments are poorly stated."
+  
+- title: "Power Transition Theory and an Empirical Analysis of Power and Conflict"
+  filename: power-2
+  dirname: power-2
+  tldr: "Power tranisition theory is an alternative to neorealism. Empirically, the relationship between power and conflict isn't so clear."
+
+  
+- title: "Contiguity as a Correlate of Conflict"
+  filename: contiguity
+  dirname: contiguity
+  tldr: "Contiguity is the classic control variable, and it's a correlate of conflict onset (not escalation/severity)."
+
+- title: "Territorial Conflict"
+  filename: territorial-conflict
+  dirname: territorial-conflict
+  tldr: "Most wars are fought over territory and contiguity is just a rough proxy for that."
+
+- title: "The Democratic Peace"
+  filename: democratic-peace-1
+  dirname: democratic-peace-1
+  tldr: "Democracies do not fight each other, and almost never in war, but are not really more peaceful in general."
+
+- title: "Critiquing the Democratic Peace"
+  filename: democratic-peace-2
+  dirname: democratic-peace-2
+  tldr: "The democratic peace is a fact still in search of a good explanation."
+
+- title: "Alliances: What Are They and Why Form Them?"
+  filename: alliance-1
+  dirname: alliance-1
+  tldr: "Alliances exchange some autonomy for some security and are largely born from shared institutions/culture/threat."
+
+- title: "Are Alliances Paths to Peace or Steps to War?"
+  filename: alliance-2
+  dirname: alliance-2
+  tldr: "Do defense pacts deter or provoke? Depends a lot on how you try to answer the question."
+
+- title: "What is an Arms Race?"
+  filename: arms-races-1
+  dirname: arms-races-1
+  tldr: "An imporant topic with great historical interest, the 'arms race' is still a bit tricky to understand."
+
+
+- title:  "Do Arms Races Lead to War?"
+  filename: arms-races-2
+  dirname: arms-races-2
+  tldr: "Yes, they do, even if there is reason to doubt Wallace's (1979) methodology and results."
+
+# - title: "The Scientific Study of War"
+#   filename: scientific-study-war
+#   dirname: scientific-study-war
+#   tldr: "Science is a method, not a collection of facts. We seek to generalize, not explain specific events. Predictions are 'consistent' and not 'true.' All models are wrong; some are useful."
+# 
+# - title: "'Dangerous Dyads' and an Introduction to Applied Research"
+#   filename: dangerous-dyads
+#   dirname: dangerous-dyads
+#   tldr: "Bremer's (1992) 'dangerous dyads' served as a foundation statistical model for evaluating conflict onset. Also: here's how to read a research design section and regression table."
+# 
+# - title: "Defining Conflicts and Disputes"
+#   filename: defining-conflict-disputes
+#   dirname: defining-conflict-disputes
+#   tldr: "Conflict is an interconnected process and MIDs are our ubiquitous measure of conflict in peace science."
+# 
+# - title: "States, War, and Conflict Patterns"
+#   filename: states-war-mid-patterns
+#   dirname: states-war-mid-patterns
+#   tldr: "This graph-heavy lecture defines states and wars and explores the data we have on wars and MIDs."
+# 
+# - title: "Thinking Rationally and Strategically"
+#   filename: rationality-1
+#   dirname: rationality-1
+#   tldr: "Rational decision-makers encounter strategic problems in IR. Here's how to think about that."
+# 
+# - title: "War as Bargaining"
+#   filename: rationality-2
+#   dirname: rationality-2
+#   tldr: "War is bargaining failure. Here's how to model it, and why it happens."
+# 
+# - title: "Identifying Opportunity for Conflict"
+#   filename: opportunity-conflict
+#   dirname: opportunity-conflict
+#   tldr: "Rethinking the contiguity-conflict relationship as more of an opportunity/'necessity' argument."
+# 
+# - title: "Territorial Conflict"
+#   filename: territorial-conflict
+#   dirname: territorial-conflict
+#   tldr: "Most wars are fought over territory and contiguity is just a rough proxy for that."
+# 
+# - title: "Power and the Realisms"
+#   filename: power-1
+#   dirname: power-1
+#   tldr: "Power is a core component of neorealist arguments, but neorealist arguments are poorly stated."
+# 
+# - title: "Offense-Defense Balance and Power Transition Theory"
+#   filename: od-balance-ptt
+#   dirname: od-balance-ptt
+#   tldr: "Offense-defense balance and power transition theory are other structural theories with similar argumentation problems."
+# 
+
+# - title: "Are Alliances Paths to Peace or Steps to War?"
+#   filename: alliance-2
+#   dirname: alliance-2
+#   tldr: "Do defense pacts deter or provoke? Depends a lot on how you try to answer the question."
+# 
+# - title: "The Democratic Peace"
+#   filename: dp-1
+#   dirname: dp-1
+#   tldr: "Democracies do not fight each other, and never in war, but are no more or less peaceful than other state types."
+# 
+# - title: "What We Know About Escalation to War"
+#   filename: escalation-1
+#   dirname: escalation-1
+#   tldr: "What's correlates with dispute onset need not correlate with dispute escalation, which is what Reed (2000) finds."
+# 
+# - title: "A Unified Explanation of Territorial Conflict"
+#   filename: escalation-2
+#   dirname: escalation-2
+#   tldr: "Senese and Vasquez (2003) find that disputed territory is conflict-prone at both the initiation and escalation phases."
+# 
+# - title: "War Expansion"
+#   filename: war-evolution-1
+#   dirname: war-evolution-1
+#   tldr: "This lecture reviews what happens when war starts, dealing with expansion and outcomes."
+#  
+# - title: "War Termination"
+#   filename: war-termination
+#   dirname: war-termination
+#   tldr: "How does war end? Largely the same reason it began: bargaining."
+# 
+# - title: "The Consequences of War"
+#   filename: war-consequences
+#   dirname: war-consequences
+#   tldr: "The consequences of war are multifaceted, short-term and permanent... even positive and negative."
+# 
+# - title: "The Causes of Recurrent Conflict"
+#   filename: recurrent-conflict
+#   dirname: recurrent-conflict
+#   tldr: "Conflict recurs within dyads and we have four primary reasons for it."
+# 
+# # - title: "Wrapping Up: What Do We Know About International Conflict?"
+# #   filename: wrapping-up
+# #   dirname: wrapping-up
+# #   tldr: "Several decades of peace science scholarship yield several answers, and continuing sources of disagreement, to questions of conflict onset, escalation, and termination."
