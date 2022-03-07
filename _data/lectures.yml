@@ -54,11 +54,16 @@
   dirname: arms-races-1
   tldr: "An imporant topic with great historical interest, the 'arms race' is still a bit tricky to understand."
 
-
 - title:  "Do Arms Races Lead to War?"
   filename: arms-races-2
   dirname: arms-races-2
   tldr: "Yes, they do, even if there is reason to doubt Wallace's (1979) methodology and results."
+
+- title: "War Outcomes"
+  filename: war-outcomes
+  dirname: war-outcomes
+  tldr: "Most wars are not 'total wars'. Several end in stalemates. We know a bit why, but we could know more."
+
 
 # - title: "The Scientific Study of War"
 #   filename: scientific-study-war
