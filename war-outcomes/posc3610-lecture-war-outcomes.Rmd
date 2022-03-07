@@ -83,7 +83,9 @@ knitr::include_graphics("rjwar190405.jpg")
 
 No one thought Japan stood a real chance at war's onset.
 
-- Not even Japan did, actually.
+- Even the Japanese weren't terribly optimistic, but:
+    - They didn't think Russia was negotiating in good faith, and
+    - *Really* wanted to dislodge Russia from the Korean peninsula.
 
 The onset of war happened when negotiations were still on the table.
 
