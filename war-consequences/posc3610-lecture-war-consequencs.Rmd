@@ -1,0 +1,455 @@
+---
+output: 
+  stevetemplates::beamer:
+    latex_engine: xelatex # use xelatex here instead! I recommend it, but this is minimal reprex
+    dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+    slide_level: 3 # I prefer this, but I won't force it on you.
+title: "The Consequences of War"
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: "`r paste0(Sys.getenv('HOME'), '/Dropbox/clemson/watermarks/clemson-university-wordmark-orange-purple.png')`"
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+header-includes:
+- \usepackage{dcolumn}
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{array}
+- \usepackage{multirow}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \usepackage{colortbl}
+- \usepackage{pdflscape}
+- \usepackage{tabu}
+- \usepackage{threeparttable}
+---
+
+
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, warning=F, message=F, echo=FALSE, fig.width = 14, fig.height = 8.5)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+```
+
+
+```{r loadstuff, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+options(knitr.kable.NA = '')
+library(tidyverse)
+library(stevemisc)
+library(peacesciencer)
+library(fixest)
+library(kableExtra)
+library(modelsummary)
+library(patchwork)
+library(cowplot)
+
+
+options("modelsummary_format_numeric_latex" = "plain")
+```
+
+```{r loaddata, cache=T, eval=T, echo=F, message=F, error=F, warning=F}
+
+# Mods <- readRDS("Mods.rds")
+# Sims <- readRDS("Sims.rds")
+# Data <- readRDS("Data.rds")
+
+```
+
+# Introduction
+### Goal for Today
+
+*The consequences of war seem intuitive, but how would we know? How can we measure them?*
+
+### MIC of the Day: Paraguayan War (MIC#1590)
+
+```{r mic-of-the-day, eval=TRUE, echo=FALSE, out.width="85%", fig.cap = "Zoom-in of Pedro Américo's (1877) 'Battle of Avaí'"}
+knitr::include_graphics("battle-avai.jpg")
+```
+
+
+### Assorted Consequences of the Paraguayan War
+
+- Paraguay loses ~40% of its pre-war territory.
+- Paraguay disappears from state system until 1876.
+- Paraguay loses at least half (as much as 69%) of its pre-war population.
+- Paraguay's economy shrunk at least 20% (as much as 66%) from its pre-war size.
+    - *ed. note*: my napkin-math simulations.
+- Paraguay indebted to Brazil until 1943.
+- End of rivalry between Paraguay and neighbors.
+- Ascent of Brazilian military as dominant domestic player.
+- Widespread domestic revolts in Argentina (incl. three civil wars in 10-year period)
+
+
+### Saddam Hussein With His Elite Republican Guard
+
+![Saddam Hussein with his elite republican guard](hussein-rg.jpg)
+
+### Churchill's Government Goes Down in Flames
+
+![Winston Churchill goes down in flames after WWII](laborwins.png)
+
+### A Problem of Assessment
+
+No doubt war has consequences, but how do we assess them? Effects can be:
+
+- Permanent and temporary
+- Short-term and long-term
+- Direct or indirect
+- Positive and negative
+
+Indeed, war can have positive side effects (or "externalities").
+
+# A Framework for Understanding the Consequences of War
+### A Framework
+
+Thompson (1993) suggests a framework for evaluating the consequences of war.
+
+1. National Consequences
+2. International Consequences
+
+## National Consequences of War
+###  National Consequences of War
+
+We can further classify national consequences of war by three factors.
+
+1. Economic conditions
+2. Demographic factors
+3. Sociopolitical conditions
+
+### Economic Conditions
+
+Intuitively, war destroys stuff.
+
+- Destroys land, labor, and capital
+- Siphons labor force toward war effort
+
+However, some effects can be positive.
+
+- Namely: innovations in research, tech, and even medicine.
+
+### Economic Conditions
+
+In fact, it's not even clear there is a discernible negative economic consequence to war.
+
+- Koubi (2005) finds war *increased* economic growth in her sample of countries from 1960-1989.
+
+### Demographic Factors
+
+War does have pervasive effects on demography.
+
+- Increases mortality rates
+- Stunts marriage rates and child birth
+
+
+Should be no surprise this disproportionately targets young men.
+
+
+###
+
+```{r birth-rates-europe-1900-1920, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F, cache=T}
+NMC <- read_csv("~/Dropbox/data/cow/nmc/NMC_5_0.csv") # Total population in thousands
+
+NMC %>%
+  filter(stateabb == "BEL" | stateabb == "UKG" | stateabb == "FRN" | stateabb == "ITA") %>%
+  select(stateabb, year, tpop) %>%
+  rename(Year = year) -> NMC
+
+Bel <- read_table("~/Dropbox/data/hmd/Births/BEL.Births.txt", skip=2) %>%
+  mutate(Country = "Belgium", stateabb = "BEL")
+#Belpop <- read_table("~/Dropbox/data/hmd/population/Population5/BEL.Population5.txt", skip=2) %>% group_by(Year) %>%
+#  summarize(Pop = sum(Total)) %>%
+#  mutate(Country = "Belgium")
+
+
+#left_join(Belbir, Belpop) %>%
+#  filter(Year > 1915)
+
+Ukg <- read_table("~/Dropbox/data/hmd/Births/GBRCENW.Births.txt", skip=2) %>%
+  mutate(Country = "United Kingdom",
+         Female = as.numeric(Female),
+         Male = as.numeric(Male),
+         Total = as.numeric(Total),
+         stateabb = "UKG")
+Fra <- read_table("~/Dropbox/data/hmd/Births/FRATNP.Births.txt", skip=2) %>%
+  mutate(Country = "France", stateabb = "FRN")
+Ita <- read_table("~/Dropbox/data/hmd/Births/ITA.Births.txt", skip=2) %>%
+  mutate(Country = "Italy", stateabb = "ITA")
+#Ger <- read_table("~/Dropbox/data/hmd/Births/DEUTNP.Births.txt", skip=2) %>%
+#  mutate(country = "Germany")
+#Nth <- read_table("~/Dropbox/data/hmd/Births/NLD.Births.txt", skip=2) %>%
+#  mutate(country = "Netherlands") 
+
+Bel %>%
+  bind_rows(.,Ukg) %>%
+  bind_rows(.,Fra) %>%
+  bind_rows(.,Ita) %>%
+#  bind_rows(.,Nth) %>%
+  filter(Year >= 1900 & Year <= 1920) %>%
+  left_join(.,NMC) %>% 
+  mutate(tpop = ifelse(stateabb == "FRN" & Year == 1941, 38553816/1000, tpop),
+         tpop = ifelse(stateabb == "FRN" & Year == 1942, 38359515/1000, tpop),
+         tpop = ifelse(stateabb == "FRN" & Year == 1943, 38100000/1000, tpop),
+         tpop = ifelse(stateabb == "FRN" & Year == 1944, 37938417/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1941, 8323415/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1942, 8310173/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1943, 8304673/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1944, 8350309/1000, tpop),) %>%
+  mutate(birthrate = ((Total/1000)/tpop)*1000) %>% 
+  ggplot(.,aes(Year, birthrate, color=Country,linetype=Country)) + theme_steve_web() +
+  geom_line(size=1.1) + scale_color_brewer(palette = "Set1") +
+  scale_x_continuous(breaks = seq(1900, 1920, by = 2)) +
+  ylab("Birth Rates (per 1,000 in the Population)") +
+  labs(title = "War Is Hell on Birth Rates and It Especially Was During World War I",
+       subtitle = "This four-year war saw as high as a 50% decrease in birth rates by the war's end for Italy.",
+       caption = "Data: Human Mortality Database (birth rates) and Correlates of War (total population)")
+
+```
+
+###
+
+```{r birth-rates-europe-1920-1950, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F, cache=T}
+Bel %>%
+  bind_rows(.,Ukg) %>%
+  bind_rows(.,Fra) %>%
+  bind_rows(.,Ita) %>%
+#  bind_rows(.,Nth) %>%
+  filter(Year >= 1920 & Year <= 1950) %>%
+  left_join(.,NMC) %>% 
+  mutate(tpop = ifelse(stateabb == "FRN" & Year == 1941, 38553816/1000, tpop),
+         tpop = ifelse(stateabb == "FRN" & Year == 1942, 38359515/1000, tpop),
+         tpop = ifelse(stateabb == "FRN" & Year == 1943, 38100000/1000, tpop),
+         tpop = ifelse(stateabb == "FRN" & Year == 1944, 37938417/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1941, 8323415/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1942, 8310173/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1943, 8304673/1000, tpop),
+         tpop = ifelse(stateabb == "BEL" & Year == 1944, 8350309/1000, tpop),) %>%
+  mutate(birthrate = ((Total/1000)/tpop)*1000) %>% 
+  ggplot(.,aes(Year, birthrate, color=Country,linetype=Country)) + theme_steve_web() +
+  geom_line(size=1.1) + scale_color_brewer(palette = "Set1") +
+  scale_x_continuous(breaks = seq(1920, 1950, by = 2)) +
+  ylab("Birth Rates (per 1,000 in the Population)") +
+  labs(title = "Birth Rates for Select World War II Countries, 1920-1950",
+       subtitle = "The decline of birth rates during WW2 is less pronounced than it was during WW1, and you even see no real effect in the United Kingdom.",
+       caption = "Data: Human Mortality Database (birth rates) and Correlates of War (total population)")
+
+```
+
+
+### Demographic Factors
+
+But again, some effects can be positive.
+
+- WWI empowered suffrage movements
+- Vietnam War empowered broader movements of franchise for kids your age.
+- WWII further integrated the military and the civilian workforce.
+
+### Sociopolitical Conditions
+
+"War makes the state and the state makes war."
+
+- War empowers state capacity
+- War increases revenue/extraction/spending.
+
+Some effects might actually be positive in the long-run.
+
+
+### War and Regime Change
+
+By far, most concerns for sociopolitical consequences of war concern regime change.
+
+###
+
+```{r war-outcome-violent-replacement-bdm-etal-1992-1, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+library(dotwhisker)
+tribble(
+  ~term, ~estimate, ~std.error,
+  "Initiator Wins", -1.16, .364,
+  "Target Wins", -1.13, .349,
+  "Target Loses", -.589, .290,
+  "Log(battle deaths/population)", .142, .07
+  
+) %>%
+  mutate(statistic = estimate/std.error,
+         p.value = 1.645*pnorm(-abs(statistic)),
+         model = "War Onset") %>%
+  dwplot(.,
+         dot_args = list(aes(colour = model, shape = model), size=3.5),
+         whisker_args = list(size=1)) + theme_steve_web() +
+  xlab("Coefficient Estimate") +
+  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
+  theme(legend.position = "bottom") +
+  labs(title = "Don't Initiate a War and Lose It",
+       subtitle = "States that initiate wars and lose it are more likely to experience a violent regime change than other participant-outcome types.",
+       caption = "Reproduction of Model 2 in Table 1 of Bueno de Mesquita et al. (1992). Note: the reference category is the initiator losing a war.") +
+  scale_colour_discrete(name = "Model") + scale_shape_discrete(name = "Model")
+```
+
+###
+
+```{r war-outcome-violent-replacement-bdm-etal-1992-2, eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+
+tribble(
+  ~Category, ~Probability,
+  "Initiator Wins", .008,
+  "Initiator Loses", .44,
+  "Target Wins", .11,
+  "Target Loses", .22
+) %>%
+  ggplot(.,aes(Category, Probability)) + theme_steve_web() +
+  geom_bar(stat="identity", alpha=0.8, fill="#619cff", color="black") +
+  geom_text(aes(label=Probability), vjust=-.5, colour="black",
+            position=position_dodge(.9), size=4, family="Open Sans") +
+  xlab("") +
+  labs(title = "The Greatest Probability of Violent Regime Change Comes in Losing a War a State Leader Initiated",
+       subtitle = "The lowest probability comes in an initiator winning a war but do note targets winning wars are still 13 times more likely than winning initiators to be violently replaced following the war.",
+       caption = "Reproduction of Table 2 in Bueno de Mesquita et al. (1992).")
+
+```
+
+
+## International Consequences of War
+### International Consequences of War
+
+We can lump the international consequences of war to these factors.
+
+1. Geopolitical situations/orientations
+2. Territorial changes
+3. Changes in relative capabilities
+4. Alignment patterns
+5. Economic consequences
+6. Rivalry/recurring conflict (i.e. the next week)
+
+## The Phoenix Factor
+### The Phoenix Factor
+
+What are the economic effects of major wars? Some arguments:
+
+- "Scissor effect": winners and losers diverge until economic uncertainty brings the winner to the loser.
+- "Permanent loss": winners and losers diverge and that stays in the long-run.
+
+Against this, Organski and Kugler (1977, 1980) argue for a "Phoenix Factor."
+
+- i.e. economic consequences of the war are temporary.
+
+
+### The Hypothetical Costs of Major Wars
+
+![The Costs of Major Wars](ok1977-fig1.png)
+
+
+### An Illustration of the 'Phoenix Factor'
+
+What was the economic cost of WW2 for Germany?
+
+```{r, eval=TRUE, echo=FALSE, out.width="85%"}
+knitr::include_graphics("two-german-women-1946.jpg")
+```
+
+
+###
+
+```{r}
+library(maddison)
+maddison %>%
+  filter(country == "Germany") %>%
+  filter(year >= "1900-01-01" & year < "1981-01-01") %>%
+  mutate(date = year,
+         year = lubridate::year(date)) %>%
+  select(country, date, year, gdp_pc) -> gmy_data
+  
+gmy_data %>% filter(year <= 1944 & year >= 1932) -> gmy_data44
+
+gmy_data %>%
+  filter(year <= 1944) %>%
+  ggplot(.,aes(year, gdp_pc)) + geom_line(size = 1.1) +
+  theme_steve_web() +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_x_continuous(breaks = seq(1900, 1940, by=5)) +
+  labs(title = "German GDP per Capita, 1900-1944",
+       x = "", y = "GDP per Capita (1990 USD)",
+       subtitle = "You're seeing the obvious WW1 cost and the post-war hyperinflation episodes, but German GDP per capita was growing about 5% a year from 1932 to 1944.",
+       caption = "Maddison historical GDP data (via maddison package in CRAN)") 
+```
+
+###
+
+
+```{r}
+
+library(forecast)
+y <- ts(gmy_data44$gdp_pc, start=1932)
+forecast_gdppc <- forecast(y, h=40)
+
+
+forecast_gdppc %>% tbl_df() %>%
+  mutate(year = c(1945:1984)) %>%
+  rename(forecast = 1) %>%
+  left_join(gmy_data, .) %>%
+  select(year:forecast) %>%
+  gather(var, val, -year) %>%
+  arrange(year) %>%
+  group_by(year) %>%
+  fill(val) %>%
+  mutate(label = ifelse(var == "gdp_pc", "Observed", "Forecasted")) %>%
+  filter(label == "Forecasted" & year >= 1932) %>%
+  ggplot(.,aes(year, val, color = label, linetype=label)) +
+  theme_steve_web() +
+  geom_line(size=1.1) +
+  scale_y_continuous(breaks = seq(3000, 15000, by=2000),
+                     labels = scales::dollar) +
+  labs(title = "Germany's Forecasted and (pre-1945) Observed GDP per Capita, 1932-1980.",
+       y = "GDP per Capita (1990 USD)", x = "",
+       color = "", linetype = "",
+       caption = "Maddison historical GDP data (via {maddison} package in CRAN), plus simulations in {forecast}.",
+       subtitle = "There's not much to go on, but forecasts of GDP per capita from 1932 to 1944 suggest steady growth of about 2% as a counterfactual.") +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+
+###
+
+```{r , eval=T, echo=F, fig.width=14, fig.height=8.5, warning=F, message=F}
+forecast_gdppc %>% tbl_df() %>%
+  mutate(year = c(1945:1984)) %>%
+  rename(forecast = 1) %>%
+  left_join(gmy_data, .) %>%
+  select(year:forecast) %>%
+  gather(var, val, -year) %>%
+  arrange(year) %>%
+  group_by(year) %>%
+  fill(val) %>%
+  mutate(label = ifelse(var == "gdp_pc", "Observed", "Forecasted")) %>%
+  filter( year >= 1932) %>%
+  ggplot(.,aes(year, val, color = label, linetype=label)) +
+  theme_steve_web() +
+  geom_line(size=1.1) +
+  scale_y_continuous(breaks = seq(3000, 15000, by=2000),
+                     labels = scales::dollar) +
+  labs(title = "Germany's Forecasted and (pre-1945) Observed GDP per Capita, 1932-1980.",
+       y = "GDP per Capita (1990 USD)", x = "",
+       color = "", linetype = "",
+       caption = "Maddison historical GDP data (via {maddison} package in CRAN), plus simulations in {forecast}.",
+       subtitle = "The difference between forecasted and observed from 1945 to 1963 is the opportunity cost of World War II. The greater-than-expected growth is the 'Phoenix factor.'") +
+  scale_color_brewer(palette = "Set1")
+```
+
+# Conclusion
+### Conclusion
+
+War has consequences, so how do you assess them?
+
+- National/international effects
+- Clear negative effects and positive externalities
+- The important effect on leader tenure
