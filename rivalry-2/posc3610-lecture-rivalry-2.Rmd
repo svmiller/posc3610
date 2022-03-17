@@ -1,0 +1,307 @@
+---
+output: 
+  stevetemplates::beamer:
+    latex_engine: xelatex # use xelatex here instead! I recommend it, but this is minimal reprex
+    dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+    slide_level: 3 # I prefer this, but I won't force it on you.
+title: "What Do We Know About Rivalry and International Conflict?"
+subtitle: POSC 3610  -- International Conflict
+author: Steven V. Miller
+institute: Department of Political Science
+titlegraphic: "`r paste0(Sys.getenv('HOME'), '/Dropbox/clemson/watermarks/clemson-university-wordmark-orange-purple.png')`"
+make149: true
+mainfont: "Open Sans"
+titlefont: "Titillium Web"
+header-includes:
+- \usepackage{dcolumn}
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{array}
+- \usepackage{multirow}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \usepackage{colortbl}
+- \usepackage{pdflscape}
+- \usepackage{tabu}
+- \usepackage{threeparttable}
+---
+
+
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, warning=F, message=F, echo=FALSE, fig.width = 14, fig.height = 8.5)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+```
+
+
+```{r loadstuff, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+options(knitr.kable.NA = '')
+library(tidyverse)
+library(stevemisc)
+library(peacesciencer)
+library(fixest)
+library(kableExtra)
+library(modelsummary)
+library(patchwork)
+library(cowplot)
+
+
+options("modelsummary_format_numeric_latex" = "plain")
+options(knitr.kable.NA = '')
+```
+
+```{r loaddata, cache=T, eval=T, echo=F, message=F, error=F, warning=F}
+
+Mods <- readRDS("Mods.rds")
+Sims <- readRDS("Sims.rds")
+Data <- readRDS("Data.rds")
+
+```
+
+# Introduction
+### Goal for Today
+
+*Discuss why inter-state conflict is not IID (independent and identically distributed).*
+
+
+### Confrontation of the Day: Operation Skerwe (MIC#3070)
+
+
+```{r mic-of-the-day, eval=TRUE, echo=FALSE, out.width="100%"}
+
+p1 <- ggdraw() + draw_image("mic3070-1.png", scale = 0.8)
+p2 <- ggdraw() + draw_image("mic3070-2.png", scale = 0.8)
+#p3 <- ggdraw() + draw_image("img/crush-india-march.png", scale = 0.9)
+# p4 <- ggdraw() + draw_image("img/anti-china-protest-2011.jpg", scale = 0.9)
+
+plot_grid(p2, p1)
+# nitr::include_graphics("friedrich-franz-crop.jpg")
+```
+
+
+### MIC#3070
+
+- *Who*: South Africa vs. Mozambique (13 April 1983 - 17 October 1983)
+- *Why*: anti-apartheid/support for ANC, basically
+- *What happened*:
+  - 13 April: Mozambique detains a SAF fishing vessel
+  - 20 May: car bomb in Pretoria, outside air force HQ
+  - 23 May: Operation Skerwe
+  - 17 Oct: another raid in Maputo, killing at least six
+  
+This rivalry had three total confrontations (MIC#1441 in 1975, MIC#2801 in 1987) before concluding with the end of apartheid.
+
+### Rivalry and Conflict
+
+Rivalry captures/explains two problems in the study of inter-state conflict.
+
+- Conflict is not IID.
+- States that fight once are likely to fight again.
+
+"Rivalry" defines these relationships, explaining conflict clustering and conflict recurrence.
+
+
+### Rivalry and Conflict
+
+What explains conflict *within* the rivalry?
+
+- i.e. we know to this point rivals are more likely to have (recurrent) conflict than non-rivals.
+
+However, rivalry defines a relationship, and conflict varies inside it.
+
+
+### What Can We Do Here?
+
+Let's put our own spin on this.
+
+- *Unit of analysis*: non-directed *rivalry* dyad-years
+    - e.g. USA-CUB 1959, USA-CUB 1960, etc.
+    - Temporal domain: 1900-2010
+    - *N*: 6,712
+- *DVs*: confrontation onset, confrontation fatalities (min., max.), escalation to dyadic war.
+    - You've seen these before by now.
+    
+### *International/Dyadic Factors*
+
+- CINC proportion (W/S)
+- Alliance (defense)
+- Major power status in dyad
+- Land contiguity
+
+
+### Domestic Factors
+
+- Joint democracy
+- Leadership change
+- Min. GDP per capita
+- Min. leader willingness to use force (Carter and Smith, 2020)
+
+
+### Individual Factors
+
+*Individual Factors*:
+
+- Rivalry type (positional, ideological, interventionary)
+    - Benchmarked to spatial rivalry (i.e. fixed effect)
+
+
+### "Shock" Factors
+
+- Six-year period after Cold War ended [1990:1995]
+- Six-year period after WW2 ended [1945:1950]
+- Irregular leadership change
+- Natural disaster category (a la Akcinaroglu and Radziszewski, 2021)
+
+
+### Other Notes
+
+Briefly:
+
+- Adjustments for temporal dependence/sample selection.
+- "Perfect predictors" (separation) should be obvious from results.
+    - i.e. look for unreasonably large coefficients with comically larger standard errors.
+
+
+###
+
+```{r reg-table-1, echo=F, eval=T, fig.width = 14, fig.height = 8.5, warning = F, message = F, results="asis"}
+
+modelsummary(list("Conf. Onset" = Mods[[1]], 
+                  "Min. Fatalities" = Mods[[3]],
+                  "Max. Fatalities" = Mods[[4]],
+                  "Dyadic War" = Mods[[5]]),
+             # output="latex",  
+             longtable=TRUE,
+             title = "The Effect of International/Dyadic Factors on Inter-state Conflict in Rivalries",
+             gof_omit = "IC|F|Log.|R2$|R2",
+             coef_map = c("landcontig" = "Land Contiguity",
+                          "othercontig" = "Other Contiguity",
+                          "ndircincprop" = "CINC Proportion",
+                          "bothmaj" = "Both Major Powers",
+                          "onlyonemaj" = "Major-Minor",
+                          "cow_defense" = "Defense Pact"),
+             stars = TRUE) %>%
+  row_spec(0, bold=TRUE) %>%
+  kable_styling(font_size = 7)
+
+```
+
+
+### International/Dyadic Factors and Rivalry/Conflict
+
+
+- Land-contiguous rivals are more likely to have confrontations, if not escalation/severe conflicts.
+- Major power rivalries have a mostly robust effect across all models.
+- Defense pacts among rivals don't deter onset, but do deter escalation.
+- Wealthier rivals are less likely to see their confrontations escalate.
+
+
+
+###
+
+```{r reg-table-2, echo=F, eval=T, fig.width = 14, fig.height = 8.5, warning = F, message = F, results="asis"}
+
+modelsummary(list("Conf. Onset" = Mods[[1]], 
+                  "Min. Fatalities" = Mods[[3]],
+                  "Max. Fatalities" = Mods[[4]],
+                  "Dyadic War" = Mods[[5]]),
+             # output="latex",  
+             longtable=TRUE,
+             title = "The Effect of Domestic Factors on Inter-state Conflict in Rivalries",
+             gof_omit = "IC|F|Log.|R2$|R2",
+             coef_map = c("dyadleadertransition" = "Leader Transition",
+                          "jointdem" = "Joint Democracy",
+                          "minlwuf" = "Min. Leader Willingness to Use Force",
+                          "minwbgdppc" = "Min. GDP per Capita in Dyad"),
+             stars = TRUE) %>%
+  row_spec(0, bold=TRUE) %>%
+  kable_styling(font_size = 7)
+
+```
+
+
+### Domestic Factors and Rivalry/Conflict
+
+- No real effect of leader transitions and conflict within rivalries.
+- No real effect of joint democracy (beyond the perfect predictor)
+- The more hawkish the leaders in rivalry, the more likely the conflict
+
+###
+
+```{r reg-table-3, echo=F, eval=T, fig.width = 14, fig.height = 8.5, warning = F, message = F, results="asis"}
+
+modelsummary(list("Conf. Onset" = Mods[[1]], 
+                  "Min. Fatalities" = Mods[[3]],
+                  "Max. Fatalities" = Mods[[4]],
+                  "Dyadic War" = Mods[[5]]),
+             # output="latex",  
+             longtable=TRUE,
+             title = "The Effect of Individual Factors on Inter-state Conflict in Rivalries",
+             gof_omit = "IC|F|Log.|R2$|R2",
+             coef_map = c("rivalry_facpositional" = "Positional Rivalry (vs. Spatial)",
+                          "rivalry_facideological" = "Ideological Rivalry (vs. Spatial)",
+                          "rivalry_facinterventionary" = "Interventionary Rivalry (vs. Spatial)"),
+             stars = TRUE) %>%
+  row_spec(0, bold=TRUE) %>%
+  kable_styling(font_size = 7)
+
+```
+
+
+
+### Individual Factors and Rivalry/Conflict
+
+Some evidence spatial rivalries are more severe than other rivalries.
+
+- Positional rivalries are more likely to have confrontations, but:
+- ...those conflicts are less severe.
+- Kinda the same with interventionary rivalries as well.
+
+
+
+###
+
+```{r reg-table-4, echo=F, eval=T, fig.width = 14, fig.height = 8.5, warning = F, message = F, results="asis"}
+
+modelsummary(list("Conf. Onset" = Mods[[1]], 
+                  "Min. Fatalities" = Mods[[3]],
+                  "Max. Fatalities" = Mods[[4]],
+                  "Dyadic War" = Mods[[5]]),
+             # output="latex",  
+             longtable=TRUE,
+             title = "The Effect of 'Shock' Factors on Inter-state Conflict in Rivalries",
+             gof_omit = "IC|F|Log.|R2$|R2",
+             coef_map = c("dyadirregular" = "'Irregular' Leader Transition",
+                          "ndirdisastcat" = "Natural Disasters",
+                          "post_cw" = "Post-Cold War",
+                          "post_ww2" = "Post-WW2"),
+             stars = TRUE) %>%
+  row_spec(0, bold=TRUE) %>%
+  kable_styling(font_size = 7)
+
+```
+
+
+### Shock Factors and Rivalry/Conflict
+
+- No real effect of 'irregular' leader transitions
+- Natural disasters increase likelihood of confrontation onset, but decrease escalation.
+
+
+# Conclusion
+### Conclusion
+
+We focus on distinction between rivals and non-rivals and neglect patterns within them.
+
+- Escalatory: major powers, spatial rivalries, leader hawkishness
+- De-escalatory: defense pacts, wealth, joint democracy
+- Even "shocks" can cut both ways
