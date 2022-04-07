@@ -1,15 +1,15 @@
 ---
-title: "Steps to War Assignment and Instructions"
+always_allow_html: true
+author: steve
+excerpt: SFSFSFS
+layout: page
 output:
   md_document:
+    pandoc_args:
+    - –wrap=preserve
+    preserve_yaml: true
     variant: gfm
-    preserve_yaml: TRUE
-    pandoc_args: 
-      - "--wrap=preserve"
-author: "steve"
-excerpt: "SFSFSFS"
-layout: page
-always_allow_html: true
+title: Steps to War Assignment and Instructions
 ---
 
 The paper you will write in this class will entail a summary of *The War Puzzle* and an evaluation of how well Vasquez’ core argument about how disputes become war fits a particular war of your choosing.
@@ -464,6 +464,7 @@ Turkey
 <a href="https://en.wikipedia.org/wiki/Second_Italian_War_of_Independence">Second Italian War of Independence</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Jan 29, 1859
@@ -1395,6 +1396,7 @@ Kuwait; Iraq; Egypt; Syria; Jordan
 <a href="https://en.wikipedia.org/wiki/Yom_Kippur_War">Yom Kippur War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Oct 14, 1971
@@ -3530,10 +3532,10 @@ Jun 12, 1957
 War Battle
 </td>
 <td style="text-align:center;">
-8,034
+8,079
 </td>
 <td style="text-align:center;">
-12,575
+12,630
 </td>
 </tr>
 <tr>
@@ -3562,10 +3564,10 @@ Jun 12, 1957
 War Battle
 </td>
 <td style="text-align:center;">
-3,245
+3,246
 </td>
 <td style="text-align:center;">
-11,090
+11,091
 </td>
 </tr>
 <tr>
@@ -4231,7 +4233,7 @@ Jul 1953
 0
 </td>
 <td style="text-align:left;">
-Attack
+War Battle
 </td>
 <td style="text-align:center;">
 34
@@ -8315,7 +8317,7 @@ Six-Day War
 Iraq
 </td>
 <td style="text-align:center;">
-Dec 17, 1966
+Nov 17, 1969
 </td>
 <td style="text-align:center;">
 Nov 17, 1969
@@ -8327,13 +8329,13 @@ Nov 17, 1969
 0
 </td>
 <td style="text-align:left;">
-Attack
+No Militarized Action
 </td>
 <td style="text-align:center;">
-7
+0
 </td>
 <td style="text-align:center;">
-26
+0
 </td>
 </tr>
 <tr>
@@ -8411,7 +8413,7 @@ Six-Day War
 Jordan
 </td>
 <td style="text-align:center;">
-Oct 10, 1966
+May 18, 1967
 </td>
 <td style="text-align:center;">
 Aug 14, 1970
@@ -8488,6 +8490,102 @@ Nov 17, 1969
 </td>
 <td style="text-align:left;">
 No Militarized Action
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1035
+</td>
+<td style="text-align:left;">
+Six-Day War
+</td>
+<td style="text-align:center;">
+Iraq
+</td>
+<td style="text-align:center;">
+Dec 17, 1966
+</td>
+<td style="text-align:center;">
+May 18, 1967
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+Show of Force
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1035
+</td>
+<td style="text-align:left;">
+Six-Day War
+</td>
+<td style="text-align:center;">
+Iraq
+</td>
+<td style="text-align:center;">
+Dec 2, 1968
+</td>
+<td style="text-align:center;">
+Apr 22, 1969
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+Attack
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1035
+</td>
+<td style="text-align:left;">
+Six-Day War
+</td>
+<td style="text-align:center;">
+Jordan
+</td>
+<td style="text-align:center;">
+Oct 10, 1966
+</td>
+<td style="text-align:center;">
+Oct 10, 1966
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+Threat to Use Force
 </td>
 <td style="text-align:center;">
 0
