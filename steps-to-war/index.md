@@ -1017,6 +1017,7 @@ Russia
 <a href="https://en.wikipedia.org/wiki/Sino-Indian_War">Sino-Indian War</a>
 </td>
 <td style="text-align:center;font-weight: bold;">
+Yes
 </td>
 <td style="text-align:center;">
 Oct 24, 1961
